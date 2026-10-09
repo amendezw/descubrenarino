@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mapa Nariño</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;height:100%}
+#m{height:100%;background-color:#EEF1EC;background-image:radial-gradient(#D5DBD3 1px,transparent 1px);background-size:14px 14px}
+.leaflet-container{font-family:'Public Sans',sans-serif}
+.lbl{background:#fff;border:0;border-radius:6px;box-shadow:0 1px 3px rgba(0,0,0,.18);font:600 11px/1 'Public Sans',sans-serif;color:#141A21;padding:5px 7px}
+.lbl:before{display:none}
+.town{background:none;border:0;box-shadow:none;font:500 10px/1 'Public Sans',sans-serif;color:#7A847C;padding:0}
+.town:before{display:none}
+.zone{font:700 10px/1 'Public Sans',sans-serif;letter-spacing:.24em;color:#A6AFA7;white-space:nowrap}
+.num{display:flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;color:#fff;font:700 12px/1 'Public Sans',sans-serif;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.3)}
+.volc{width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:11px solid #B9A88E}
+</style>
+</head>
+<body>
+<div id="m"></div>
+<script>
+const q = new URLSearchParams(location.search);
+const mode = q.get('mode') || 'full';
+const active = q.get('ruta') || 'naturaleza';
+const P = {
+  pasto:[1.2136,-77.2811,'Pasto'], ipiales:[0.8250,-77.6400,'Ipiales'], lajas:[0.8053,-77.5856,'Las Lajas'],
+  rumichaca:[0.8130,-77.6650,'Rumichaca'], cocha:[1.1640,-77.1610,'La Cocha'], galeras:[1.2200,-77.3600,'Volcán Galeras'],
+  sandona:[1.2850,-77.4720,'Sandoná'], tuquerres:[1.0867,-77.6175,'Túquerres'], verde:[1.0880,-77.7190,'Laguna Verde'],
+  cumbal:[0.9083,-77.7917,'Cumbal'], buesaco:[1.3833,-77.1564,'Buesaco'], union:[1.6020,-77.1310,'La Unión'], tumaco:[1.8067,-78.7647,'Tumaco']
+};
+const TOWNS = [[1.338,-77.594,'Samaniego'],[1.09,-77.39,'Tangua'],[1.11,-77.40,'Yacuanquer'],[1.21,-77.47,'Consacá'],[1.30,-77.41,'La Florida'],
+  [1.41,-77.39,'El Tambo'],[1.36,-77.28,'Chachagüí'],[0.96,-77.73,'Guachucal'],[0.85,-77.52,'Córdoba'],[1.00,-77.45,'Funes'],
+  [1.60,-76.97,'La Cruz'],[1.21,-77.99,'Ricaurte'],[0.91,-77.39,'Puerres'],[1.47,-77.08,'San José de Albán']];
+const VOLC = [[1.2200,-77.3600],[1.0870,-77.6970],[0.9530,-77.8790],[0.8000,-77.9600]];
+const R = {
+  religiosa:{c:'oklch(0.55 0.16 300)', p:['pasto','tuquerres','ipiales','lajas']},
+  carnaval:{c:'oklch(0.56 0.19 30)', p:['pasto','sandona']},
+  naturaleza:{c:'oklch(0.52 0.13 155)', p:['lajas','verde','tuquerres','galeras','cocha']},
+  cafe:{c:'oklch(0.52 0.12 60)', p:['pasto','buesaco','union','sandona']},
+  pacifico:{c:'oklch(0.52 0.14 240)', p:['pasto','tumaco']},
+  binacional:{c:'oklch(0.55 0.12 95)', p:['rumichaca','ipiales','lajas','cumbal','tuquerres']}
+};
+const mini = mode === 'mini';
+const DIR = {ipiales:'left', rumichaca:'left', pasto:'bottom', galeras:'top', verde:'right', cocha:'bottom', cumbal:'left'};
+const tip = (k, base) => { const d = DIR[k] || 'right'; const o = {left:[-base,0], right:[base,0], top:[0,-base], bottom:[0,base]}[d]; return {permanent:true, direction:d, className:'lbl', offset:o}; };
+const map = L.map('m', {zoomControl:false, attributionControl:false, scrollWheelZoom:!mini, dragging:!mini, doubleClickZoom:!mini, zoomSnap:0.25});
+const ll = k => [P[k][0], P[k][1]];
+// painted base: water bodies, volcanoes, towns, zones
+L.circle([1.105,-77.155], {radius:5200, stroke:false, fillColor:'#B9D3DE', fillOpacity:1}).addTo(map);
+L.circle([1.087,-77.716], {radius:900, stroke:false, fillColor:'#9FCFB8', fillOpacity:1}).addTo(map);
+VOLC.forEach(v => L.marker(v, {icon:L.divIcon({className:'', html:'<div class="volc"></div>', iconSize:[14,11], iconAnchor:[7,8]}), interactive:false}).addTo(map));
+if (mode !== 'mini') TOWNS.forEach(t => L.circleMarker([t[0],t[1]], {radius:2.5, stroke:false, fillColor:'#A6AFA7', fillOpacity:1, interactive:false}).addTo(map)
+  .bindTooltip(t[2], {permanent:true, direction:'right', className:'town', offset:[4,0]}));
+const zone = (latlng, txt) => L.marker(latlng, {icon:L.divIcon({className:'', html:`<div class="zone">${txt}</div>`, iconSize:[0,0]}), interactive:false}).addTo(map);
+zone([0.72,-77.80], 'ECUADOR');
+zone([1.50,-77.62], 'NARIÑO');
+const pin = (k, n, color) => L.marker(ll(k), {icon: L.divIcon({className:'', html:`<div class="num" style="background:${color}">${n}</div>`, iconSize:[24,24], iconAnchor:[12,12]})});
+if (mini) {
+  const stops = ['lajas','verde','galeras','cocha'];
+  const c = 'oklch(0.56 0.19 35)';
+  L.polyline(stops.map(ll), {color:'#141A21', weight:2, dashArray:'4 5', opacity:.7}).addTo(map);
+  const MD = {lajas:'right', verde:'left', galeras:'left', cocha:'right'};
+  stops.forEach((k,i) => { const d = MD[k]; pin(k, i+1, c).addTo(map).bindTooltip(P[k][2], {permanent:true, direction:d, className:'lbl', offset:{left:[-10,0],right:[10,0],top:[0,-10]}[d]}); });
+  map.fitBounds(stops.map(ll), {paddingTopLeft:[20,16], paddingBottomRight:[20,16]});
+} else {
+  Object.entries(R).forEach(([k,r]) => { if (k !== active) L.polyline(r.p.map(ll), {color:r.c, weight:3, opacity:.3}).addTo(map); });
+  const r = R[active];
+  L.polyline(r.p.map(ll), {color:'#fff', weight:9, opacity:.9}).addTo(map);
+  L.polyline(r.p.map(ll), {color:r.c, weight:5}).addTo(map);
+  r.p.forEach((k,i) => pin(k, i+1, r.c).addTo(map).bindTooltip(P[k][2], tip(k, 12)));
+  const hubs = ['pasto','ipiales'];
+  hubs.filter(k => !r.p.includes(k)).forEach(k =>
+    L.circleMarker(ll(k), {radius:5, color:'#fff', weight:2, fillColor:'#141A21', fillOpacity:1}).addTo(map)
+      .bindTooltip(P[k][2], tip(k, 8)));
+  const top = +(q.get('pt')||120), bot = +(q.get('pb')||330);
+  map.fitBounds([[0.78,-77.82],[1.30,-77.12]], {paddingTopLeft:[84, top], paddingBottomRight:[84, bot]});
+}
+</script>
+</body>
+</html>

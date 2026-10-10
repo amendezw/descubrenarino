@@ -1,0 +1,13 @@
+{
+  "name": "descubre-narino",
+  "private": true,
+  "version": "0.2.0",
+  "description": "Plataforma de turismo inteligente para Nariño · prototipo navegable",
+  "scripts": {
+    "dev": "vercel dev",
+    "audios": "node scripts/generar-audios.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

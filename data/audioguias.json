@@ -1,0 +1,140 @@
+{
+  "voces": {
+    "es": {
+      "nombre": "Narradora andina (es-CO)",
+      "elevenlabs_voice_id": "REEMPLAZAR_CON_VOICE_ID"
+    },
+    "en": {
+      "nombre": "Narrator (en-US)",
+      "elevenlabs_voice_id": "REEMPLAZAR_CON_VOICE_ID"
+    }
+  },
+  "recorridos": [
+    {
+      "id": "lajas",
+      "nombre": "Santuario de Las Lajas",
+      "ficha": "lajas",
+      "imagen": "img/las-lajas.jpg",
+      "minutos": 12,
+      "puntos": [
+        {
+          "id": "lajas-01",
+          "qr": "LAJ-01",
+          "titulo": "El cañón del Guáitara",
+          "ubicacion": "Mirador de la entrada · 3 min",
+          "guion_es": "Bienvenido al Santuario de Las Lajas. Antes de bajar, detente un momento en este mirador. Lo que ves abajo es el cañón del río Guáitara, que separa los municipios de Ipiales y Potosí. La basílica no está construida a un lado del cañón: está apoyada sobre él, como un puente de piedra entre las dos orillas. Si te fijas en las paredes de roca, vas a entender por qué el lugar se llama Las Lajas: así llaman aquí a estas piedras planas y lisas.",
+          "guion_en": "Welcome to the Las Lajas Sanctuary. Before you walk down, pause at this viewpoint. Below you is the Guáitara River canyon, which separates the towns of Ipiales and Potosí. The basilica is not built beside the canyon: it rests on it, like a stone bridge between both banks. Look at the rock walls and you will see why this place is called Las Lajas: that is the local name for these flat, smooth stones.",
+          "archivo_es": "audio/lajas-01.mp3",
+          "archivo_en": "audio/lajas-01-en.mp3"
+        },
+        {
+          "id": "lajas-02",
+          "qr": "LAJ-02",
+          "titulo": "La leyenda de 1754",
+          "ubicacion": "Sendero de bajada · 4 min",
+          "guion_es": "Cuenta la tradición que en 1754 una mujer indígena llamada María Mueses viajaba por este camino con su hija Rosa, que era sordomuda. Al buscar refugio de una tormenta entre las lajas, la niña señaló la piedra y habló por primera vez. En la roca había aparecido la imagen de la Virgen. Desde entonces, peregrinos de los dos lados de la frontera llegan hasta aquí. Mientras bajas, mira las placas de agradecimiento en las paredes: cada una es un favor que alguien sintió cumplido.",
+          "guion_en": "Tradition says that in 1754 an Indigenous woman named María Mueses was travelling this path with her daughter Rosa, who could not hear or speak. Taking shelter from a storm among the stones, the girl pointed at the rock and spoke for the first time. An image of the Virgin had appeared on it. Since then, pilgrims from both sides of the border have come here. As you walk down, notice the thank-you plaques on the walls: each one is a prayer someone felt was answered.",
+          "archivo_es": "audio/lajas-02.mp3",
+          "archivo_en": "audio/lajas-02-en.mp3"
+        },
+        {
+          "id": "lajas-03",
+          "qr": "LAJ-03",
+          "titulo": "La basílica",
+          "ubicacion": "Puente y atrio · 5 min",
+          "guion_es": "La basílica que tienes al frente se construyó entre 1916 y 1949, en estilo neogótico, con piedra gris y blanca de la región. Entra y camina hasta el altar: la imagen de la Virgen no está pintada sobre un lienzo, está sobre la roca original del cañón, que forma la pared del fondo. Al salir, cruza el puente y voltea a mirar el templo desde el otro lado. Es la foto que todo el mundo conoce, y ahora sabes la historia que hay detrás.",
+          "guion_en": "The basilica in front of you was built between 1916 and 1949 in Gothic Revival style, using grey and white stone from the region. Step inside and walk to the altar: the image of the Virgin is not on canvas but on the original canyon rock, which forms the back wall. On your way out, cross the bridge and look back at the church from the other side. It is the photo everyone knows, and now you know the story behind it.",
+          "archivo_es": "audio/lajas-03.mp3",
+          "archivo_en": "audio/lajas-03-en.mp3"
+        }
+      ]
+    },
+    {
+      "id": "cocha",
+      "nombre": "Laguna de La Cocha",
+      "ficha": "corota",
+      "imagen": "img/cocha-botes.avif",
+      "minutos": 7,
+      "puntos": [
+        {
+          "id": "cocha-01",
+          "qr": "COC-01",
+          "titulo": "El Encano",
+          "ubicacion": "Muelle principal · 3 min",
+          "guion_es": "Estás en El Encano, a orillas de la Laguna de La Cocha, a unos 2.700 metros de altura. Las casas de madera pintadas de colores y los balcones con flores son la marca del pueblo. Aquí la vida gira alrededor de la laguna: la pesca de trucha, las lanchas y los restaurantes del muelle. Si tienes frío, es normal; pide una bebida caliente antes de embarcar.",
+          "guion_en": "You are in El Encano, on the shores of La Cocha Lagoon, about 2,700 metres above sea level. Brightly painted wooden houses and balconies full of flowers are the town's signature. Life here revolves around the lagoon: trout fishing, boats and the restaurants along the pier. If you feel cold, that is normal; ask for a hot drink before you board.",
+          "archivo_es": "audio/cocha-01.mp3",
+          "archivo_en": "audio/cocha-01-en.mp3"
+        },
+        {
+          "id": "cocha-02",
+          "qr": "COC-02",
+          "titulo": "Isla La Corota",
+          "ubicacion": "Sendero de la isla · 4 min",
+          "guion_es": "La Isla La Corota es un santuario de flora protegido por Parques Nacionales. Es pequeña, pero guarda un bosque andino casi intacto, con musgos, orquídeas y árboles cubiertos de líquenes. Camina despacio por el sendero de madera y no salgas de él: el suelo es frágil. Al final llegarás a una pequeña capilla y a un mirador sobre la laguna.",
+          "guion_en": "La Corota Island is a flora sanctuary protected by Colombia's National Parks. It is small, but it holds an almost untouched Andean forest, with mosses, orchids and trees covered in lichens. Walk slowly along the wooden boardwalk and stay on it: the ground is fragile. At the end you will reach a small chapel and a viewpoint over the lagoon.",
+          "archivo_es": "audio/cocha-02.mp3",
+          "archivo_en": "audio/cocha-02-en.mp3"
+        }
+      ]
+    },
+    {
+      "id": "verde",
+      "nombre": "Laguna Verde, Azufral",
+      "ficha": "verde",
+      "imagen": "img/laguna-verde.jpg",
+      "minutos": 7,
+      "puntos": [
+        {
+          "id": "verde-01",
+          "qr": "VER-01",
+          "titulo": "El ascenso",
+          "ubicacion": "Inicio del sendero · 3 min",
+          "guion_es": "Empiezas a caminar hacia el cráter del Volcán Azufral, cerca de Túquerres. El sendero sube por páramo, entre frailejones y pajonal, y vas a sentir la altura: camina a tu ritmo y toma agua. Tu guía conoce el clima de la montaña; si te pide regresar por niebla o lluvia, hazle caso.",
+          "guion_en": "You are starting the walk to the crater of the Azufral Volcano, near Túquerres. The trail climbs through páramo, among frailejones and tall grasses, and you will feel the altitude: walk at your own pace and drink water. Your guide knows the mountain weather; if they ask you to turn back because of fog or rain, please do.",
+          "archivo_es": "audio/verde-01.mp3",
+          "archivo_en": "audio/verde-01-en.mp3"
+        },
+        {
+          "id": "verde-02",
+          "qr": "VER-02",
+          "titulo": "Laguna Verde",
+          "ubicacion": "Mirador del cráter · 4 min",
+          "guion_es": "Esa es la Laguna Verde, dentro del cráter del Azufral, a casi 4.000 metros. Su color cambia con la luz y viene de los minerales y el azufre disueltos en el agua. Por los gases volcánicos no está permitido bajar a la orilla ni bañarse. Quédate en el mirador, respira despacio y disfruta uno de los paisajes más impresionantes de Nariño.",
+          "guion_en": "That is Laguna Verde, inside the crater of the Azufral, at almost 4,000 metres. Its colour changes with the light and comes from minerals and sulphur dissolved in the water. Because of volcanic gases, going down to the shore or swimming is not allowed. Stay at the viewpoint, breathe slowly and enjoy one of the most striking landscapes in Nariño.",
+          "archivo_es": "audio/verde-02.mp3",
+          "archivo_en": "audio/verde-02-en.mp3"
+        }
+      ]
+    },
+    {
+      "id": "pasto",
+      "nombre": "Pasto y el Carnaval",
+      "ficha": "museo",
+      "imagen": "img/museo-carnaval.jpeg",
+      "minutos": 8,
+      "puntos": [
+        {
+          "id": "pasto-01",
+          "qr": "PAS-01",
+          "titulo": "Museo del Carnaval",
+          "ubicacion": "Sala principal · 4 min",
+          "guion_es": "Bienvenido al Museo del Carnaval de Negros y Blancos, declarado por la UNESCO Patrimonio Cultural Inmaterial de la Humanidad en 2009. Cada enero, del 2 al 7, Pasto sale a la calle. El 5 es el Día de Negros y el 6 el Día de Blancos, una celebración que nació como juego y hoy es un mensaje de igualdad. Las figuras que ves aquí fueron parte de desfiles reales.",
+          "guion_en": "Welcome to the Museum of the Carnival of Blacks and Whites, recognised by UNESCO as Intangible Cultural Heritage of Humanity in 2009. Every January, from the 2nd to the 7th, Pasto takes to the streets. The 5th is the Day of Blacks and the 6th the Day of Whites, a celebration that began as a game and today carries a message of equality. The figures you see here were part of real parades.",
+          "archivo_es": "audio/pasto-01.mp3",
+          "archivo_en": "audio/pasto-01-en.mp3"
+        },
+        {
+          "id": "pasto-02",
+          "qr": "PAS-02",
+          "titulo": "Los maestros artesanos",
+          "ubicacion": "Taller · 4 min",
+          "guion_es": "Detrás de cada carroza hay meses de trabajo de los maestros artesanos de Pasto. Modelan en arcilla, sacan moldes y arman las figuras con capas de papel encolado. Muchos también trabajan el barniz de Pasto, una técnica con resina de mopa-mopa que la UNESCO reconoce como patrimonio que necesita salvaguardia urgente. Si quieres verlos trabajar, pregunta por los talleres abiertos de la ciudad.",
+          "guion_en": "Behind every float are months of work by Pasto's master artisans. They model in clay, make moulds and build the figures from layers of glued paper. Many also practise Barniz de Pasto, a technique using mopa-mopa resin that UNESCO lists as heritage in need of urgent safeguarding. If you would like to see them at work, ask about the city's open workshops.",
+          "archivo_es": "audio/pasto-02.mp3",
+          "archivo_en": "audio/pasto-02-en.mp3"
+        }
+      ]
+    }
+  ]
+}

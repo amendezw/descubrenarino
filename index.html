@@ -7,594 +7,206 @@
 </head>
 <body>
 <x-dc>
-<helmet data-dc-atomics>
-<meta name="design_doc_mode" content="canvas">
+<helmet>
+<title>Descubre Nariño · Plataforma de turismo inteligente</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,300..600,0..1,0&display=block" rel="stylesheet">
-<style>body{margin:0;background:#E9ECEE;font-family:'Public Sans',system-ui,sans-serif;color:#141A21;-webkit-font-smoothing:antialiased}a{color:oklch(0.5 0.19 35)}a:hover{color:oklch(0.42 0.17 35)}.dv-turn{padding:48px 56px 40px;border-bottom:1px solid rgba(0,0,0,.08);scroll-margin-top:16px}.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 24px}.dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#141A21;color:#fff;border-radius:4px;text-decoration:none}.dv-tname{font:600 13px/1.2 'Public Sans',sans-serif;color:#141A21}.dv-opts{display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start}.dv-opt{flex:none;display:flex;flex-direction:column;gap:12px;scroll-margin-top:16px}.dv-oid{font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#141A21;border-radius:5px;text-decoration:none}.dv-olabel{display:flex;align-items:baseline;gap:8px;font:600 13px/1.3 'Public Sans',sans-serif;color:#141A21}.dv-opt:target .dv-oid{background:oklch(0.56 0.19 35);color:#fff}.dv-next{margin:28px 0 0;font:13px/1.5 'Public Sans',sans-serif;color:rgba(0,0,0,.55)}</style>
+<style>body{margin:0;background:#F4F6F7;font-family:'Public Sans',system-ui,sans-serif;color:#141A21;-webkit-font-smoothing:antialiased}*{box-sizing:border-box}button{font:inherit;color:inherit}a{color:oklch(0.5 0.19 35)}a:hover{color:oklch(0.42 0.17 35)}</style>
 </helmet>
-<section class="dv-turn" id="t1" data-screen-label="MVP turista">
-<div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">MVP · Descubre Nariño — flujo del turista y gestor de contenidos</span></div>
+<div style="min-height:100vh;display:flex;flex-direction:column">
+<div style="background:#1B232B"><sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+<div style="flex:none;display:flex;align-items:center;flex-wrap:wrap;gap:10px 20px;padding:12px 24px;color:#fff;border-bottom:1px solid rgba(255,255,255,.08)">
+<a href="index.html" style="text-decoration:none;color:#fff;font:400 24px/1 'Instrument Serif',serif;white-space:nowrap" style-hover="color:#fff">Descubre <span style="font-style:italic">Nariño</span></a>
+<nav style="display:flex;flex-wrap:nowrap;gap:4px;padding:4px;border-radius:22px;background:rgba(255,255,255,.08);max-width:100%;overflow-x:auto;scrollbar-width:none">
+<a href="index.html" aria-current="page" style="display:flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:18px;font-size:13.5px;font-weight:600;text-decoration:none;white-space:nowrap;background:#fff;color:#141A21" style-hover="color:#141A21"><span style="font:400 18px/1 'Material Symbols Rounded'">hub</span>Plataforma</a>
+<a href="app.html" style="display:flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:18px;font-size:13.5px;font-weight:600;text-decoration:none;white-space:nowrap;color:#fff" style-hover="color:#fff;background:rgba(255,255,255,.1)"><span style="font:400 18px/1 'Material Symbols Rounded'">smartphone</span>App turista</a>
+<a href="prestador.html" style="display:flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:18px;font-size:13.5px;font-weight:600;text-decoration:none;white-space:nowrap;color:#fff" style-hover="color:#fff;background:rgba(255,255,255,.1)"><span style="font:400 18px/1 'Material Symbols Rounded'">storefront</span>Prestador</a>
+<a href="gobierno.html" style="display:flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:18px;font-size:13.5px;font-weight:600;text-decoration:none;white-space:nowrap;color:#fff" style-hover="color:#fff;background:rgba(255,255,255,.1)"><span style="font:400 18px/1 'Material Symbols Rounded'">account_balance</span>Gobernación</a>
+</nav>
+<div style="flex:1"></div>
+<div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+<a href="https://wigilabs.com" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:rgba(255,255,255,.72);font-size:12px;white-space:nowrap" style-hover="color:#fff"><span>Una propuesta de</span><img src="img/brand/wigilabs-wordmark-white.png" alt="Wigilabs" style="height:12px;width:auto;display:block"></img></a>
+<a href="https://meetings.hubspot.com/andresm/reuniones-andres-mendez" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:18px;background:oklch(0.56 0.19 35);color:#fff;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap" style-hover="color:#fff;background:oklch(0.5 0.19 35)"><span style="font:400 18px/1 'Material Symbols Rounded'">event</span>Agendar reunión</a>
+</div>
+</div>
+</sc-if></div>
 
-<div style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr);gap:40px;max-width:1360px;margin:0 0 48px;padding:32px 36px;background:#FFFFFF;border-radius:16px">
+<section style="background:#1B232B;color:#fff;padding:56px 32px 64px">
+<div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:40px;align-items:end">
 <div>
-<div style="font:400 44px/1 'Instrument Serif',serif;letter-spacing:-.01em">Descubre <span style="font-style:italic">Nariño</span></div>
-<p style="font-size:15px;line-height:1.55;color:#4B5560;margin:14px 0 0;text-wrap:pretty">Mockups del MVP: asistente bilingüe, catálogo con sello RNT y precio sugerido, creador de itinerario, mapa con rutas, agenda básica, transversales de seguridad y el gestor de contenidos para la Gobernación. Pase digital, cupones, portal del prestador y reservas quedan fuera, como dice el alcance.</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:10px;font-size:13px;line-height:1.5;color:#4B5560">
-<div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#141A21">Sistema visual</div>
-<div>Instrument Serif para titulares del destino, Public Sans para interfaz (legible, institucional, AA).</div>
-<div style="display:flex;gap:8px;align-items:center"><span style="flex:none;width:22px;height:22px;border-radius:6px;background:oklch(0.56 0.19 35)"></span>Bermellón, del barniz de Pasto y las lanchas de La Cocha. Solo para acciones.</div>
-<div style="display:flex;gap:8px;align-items:center"><span style="flex:none;width:22px;height:22px;border-radius:6px;background:oklch(0.45 0.11 160)"></span>Verde de verificación RNT.</div>
-<div style="display:flex;gap:8px;align-items:center"><span style="flex:none;width:22px;height:22px;border-radius:6px;background:oklch(0.24 0.03 250)"></span>Noche andina para superficies oscuras.</div>
-</div>
-<div style="display:flex;flex-direction:column;gap:10px;font-size:13px;line-height:1.5;color:#4B5560">
-<div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#141A21">Supuestos</div>
-<div>Precios, RNT, prestadores y algunas fechas son datos de ejemplo.</div>
-<div>Conversión por contacto directo (WhatsApp / llamada); sin reservas ni pagos.</div>
-<div>Navegación como invitado; el plan se comparte por enlace o PDF.</div>
-<div>El mapa es ilustrado con coordenadas reales; las líneas de ruta conectan paradas, no trazan vías.</div>
-</div>
-</div>
-
-<div style="font:400 30px/1 'Instrument Serif',serif;margin:0 0 20px">Conversar → descubrir → planear</div>
-<div class="dv-opts" style="margin-bottom:56px">
-
-<div class="dv-opt" id="1a" data-screen-label="1a Inicio">
-<div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>Inicio con asistente</div>
-<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
-<div style="height:100%;display:flex;flex-direction:column;background:#F4F6F7;font-family:'Public Sans',sans-serif;color:#141A21">
-<div style="flex:1;overflow:hidden;display:flex;flex-direction:column">
-<div style="position:relative;height:360px;flex:none;background:#2A3540">
-<img src="img/las-lajas.jpg" alt="Santuario de Las Lajas" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></img>
-<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,20,26,.55) 0%,rgba(15,20,26,0) 30%,rgba(15,20,26,0) 45%,rgba(15,20,26,.78) 100%)"></div>
-<div style="position:absolute;top:58px;left:20px;right:20px;display:flex;align-items:center;justify-content:space-between">
-<div style="font:400 24px/1 'Instrument Serif',serif;color:#fff">Descubre <span style="font-style:italic">Nariño</span></div>
-<div style="display:flex;gap:8px">
-<div style="display:flex;align-items:center;height:36px;padding:0 4px;border-radius:18px;background:rgba(255,255,255,.18);backdrop-filter:blur(12px);font-size:12px;font-weight:700;color:#fff"><span style="padding:6px 9px;border-radius:14px;background:#fff;color:#141A21">ES</span><span style="padding:6px 9px">EN</span></div>
-<div style="width:44px;height:36px;border-radius:18px;background:oklch(0.56 0.19 35);display:flex;align-items:center;justify-content:center;color:#fff"><span style="font:400 22px/1 'Material Symbols Rounded'">sos</span></div>
-</div>
-</div>
-<div style="position:absolute;left:20px;right:20px;bottom:64px;color:#fff">
-<div style="font-size:12px;font-weight:600;letter-spacing:.04em;opacity:.9;display:flex;align-items:center;gap:6px"><span style="font:400 16px/1 'Material Symbols Rounded'">location_on</span>Santuario de Las Lajas, Ipiales</div>
-<div style="font:400 40px/1.02 'Instrument Serif',serif;margin-top:10px;letter-spacing:-.01em;text-wrap:pretty">¿Qué quieres vivir en <span style="font-style:italic">Nariño</span>?</div>
-</div>
-</div>
-<div style="flex:none;margin:-44px 16px 0;position:relative;background:#fff;border-radius:22px;box-shadow:0 12px 32px rgba(20,26,33,.14);padding:16px 16px 14px">
-<div style="display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:#141A21"><span style="width:22px;height:22px;border-radius:50%;background:oklch(0.24 0.03 250);color:#fff;display:flex;align-items:center;justify-content:center;font:400 italic 13px/1 'Instrument Serif',serif">g</span>Guía Nariño</div>
-<div style="font-size:16px;line-height:1.4;color:#6B747D;margin:10px 0 12px">Cuéntame cuántos días tienes, qué te gusta y por dónde llegas…</div>
-<div style="display:flex;align-items:center;justify-content:space-between">
-<div style="font-size:11.5px;color:#6B747D">Responde con fichas verificadas</div>
-<div style="width:44px;height:44px;border-radius:50%;background:oklch(0.56 0.19 35);display:flex;align-items:center;justify-content:center;color:#fff"><span style="font:400 22px/1 'Material Symbols Rounded'">arrow_upward</span></div>
-</div>
-</div>
-<div style="flex:none;display:flex;gap:8px;padding:14px 16px 0;overflow:hidden">
-<div style="flex:none;height:38px;display:flex;align-items:center;padding:0 14px;border-radius:19px;background:#fff;border:1px solid #E2E6E9;font-size:13.5px;font-weight:600">3 días desde Ipiales</div>
-<div style="flex:none;height:38px;display:flex;align-items:center;padding:0 14px;border-radius:19px;background:#fff;border:1px solid #E2E6E9;font-size:13.5px;font-weight:600">Vengo de Ecuador</div>
-<div style="flex:none;height:38px;display:flex;align-items:center;padding:0 14px;border-radius:19px;background:#fff;border:1px solid #E2E6E9;font-size:13.5px;font-weight:600">Lagunas y volcanes</div>
-</div>
-<div style="flex:none;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:16px 16px 0">
-<div style="display:flex;flex-direction:column;gap:10px;padding:14px 12px;border-radius:16px;background:#fff"><span style="font:400 24px/1 'Material Symbols Rounded'">travel_explore</span><span style="font-size:13px;font-weight:600">Catálogo</span></div>
-<div style="display:flex;flex-direction:column;gap:10px;padding:14px 12px;border-radius:16px;background:#fff"><span style="font:400 24px/1 'Material Symbols Rounded'">route</span><span style="font-size:13px;font-weight:600">Rutas</span></div>
-<div style="display:flex;flex-direction:column;gap:10px;padding:14px 12px;border-radius:16px;background:#fff"><span style="font:400 24px/1 'Material Symbols Rounded'">calendar_month</span><span style="font-size:13px;font-weight:600">Agenda</span></div>
-</div>
-<div style="flex:none;display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:20px 16px 10px"><div style="font:400 22px/1 'Instrument Serif',serif;white-space:nowrap">Fuera de la ruta de siempre</div><div style="font-size:13px;font-weight:600;color:oklch(0.5 0.19 35);white-space:nowrap">Ver todo</div></div>
-<div style="flex:none;display:flex;gap:10px;padding:0 16px">
-<div style="flex:none;width:200px;height:120px;border-radius:16px;overflow:hidden;position:relative"><img src="img/laguna-verde.jpg" alt="Laguna Verde" style="width:100%;height:100%;object-fit:cover"></img><div style="position:absolute;left:10px;bottom:10px;color:#fff;font-size:13px;font-weight:700;text-shadow:0 1px 6px rgba(0,0,0,.5)">Laguna Verde · Túquerres</div></div>
-<div style="flex:none;width:200px;height:120px;border-radius:16px;overflow:hidden;position:relative"><img src="img/paisaje-andino.jpeg" alt="Paisaje andino" style="width:100%;height:100%;object-fit:cover"></img><div style="position:absolute;left:10px;bottom:10px;color:#fff;font-size:13px;font-weight:700;text-shadow:0 1px 6px rgba(0,0,0,.5)">Ruta del Café · Buesaco</div></div>
-</div>
-</div>
-<div style="display:grid;grid-template-columns:repeat(4,1fr);padding:8px 8px 30px;background:#fff;border-top:1px solid #E2E6E9;flex:none">
-<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:46px;font-size:11px;font-weight:700;color:#141A21"><span style="font:400 24px/1 'Material Symbols Rounded';font-variation-settings:'FILL' 1">home</span>Inicio</div>
-<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:46px;font-size:11px;font-weight:600;color:#6B747D"><span style="font:400 24px/1 'Material Symbols Rounded'">search</span>Explorar</div>
-<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:46px;font-size:11px;font-weight:600;color:#6B747D"><span style="font:400 24px/1 'Material Symbols Rounded'">map</span>Mapa</div>
-<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:46px;font-size:11px;font-weight:600;color:#6B747D"><span style="font:400 24px/1 'Material Symbols Rounded'">event_note</span>Mi plan</div>
-</div>
-</div>
-</x-import>
-<sc-if value="{{ notas }}" hint-placeholder-val="{{ true }}"><p style="width:402px;margin:0;font-size:12.5px;line-height:1.5;color:#4B5560;text-wrap:pretty">El campo del asistente es lo primero después de la foto. Los chips arrancan conversaciones por perfil; «Fuera de la ruta de siempre» empuja municipios menos visitados. SOS siempre visible.</p></sc-if>
-</div>
-
-<div class="dv-opt" id="1b" data-screen-label="1b Conversación">
-<div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a>Conversación con tarjetas</div>
-<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
-<div style="height:100%;display:flex;flex-direction:column;background:#F4F6F7;font-family:'Public Sans',sans-serif;color:#141A21">
-<div style="padding:54px 12px 10px;display:flex;align-items:center;gap:6px;background:#F4F6F7;border-bottom:1px solid #E2E6E9;flex:none">
-<div style="width:44px;height:44px;display:flex;align-items:center;justify-content:center"><span style="font:400 24px/1 'Material Symbols Rounded'">arrow_back</span></div>
-<span style="width:36px;height:36px;border-radius:50%;background:oklch(0.24 0.03 250);color:#fff;display:flex;align-items:center;justify-content:center;font:400 italic 20px/1 'Instrument Serif',serif">g</span>
-<div style="flex:1;margin-left:4px"><div style="font-size:15px;font-weight:700">Guía Nariño</div><div style="font-size:12px;color:#6B747D">Responde con el catálogo oficial</div></div>
-<div style="height:32px;display:flex;align-items:center;padding:0 10px;border-radius:16px;border:1px solid #E2E6E9;font-size:12px;font-weight:700">ES</div>
-<div style="width:44px;height:44px;display:flex;align-items:center;justify-content:center;color:oklch(0.5 0.19 35)"><span style="font:400 24px/1 'Material Symbols Rounded'">sos</span></div>
-</div>
-<div style="flex:1;overflow:hidden;padding:16px 0 0;display:flex;flex-direction:column;gap:14px;min-height:0">
-<div style="align-self:flex-end;max-width:270px;margin-right:16px;padding:12px 14px;border-radius:18px 18px 4px 18px;background:oklch(0.24 0.03 250);color:#fff;font-size:15px;line-height:1.4">Tengo 3 días, me gusta la naturaleza y llego desde Ipiales</div>
-<div style="padding:0 16px;font-size:15px;line-height:1.5;text-wrap:pretty">¡Qué buen plan! Desde Ipiales te queda perfecto subir a la Laguna Verde, pasar por el Galeras y cerrar en La Cocha. Estas son las fichas que encontré:</div>
-<div style="display:flex;gap:10px;padding:0 16px;overflow:hidden">
-<div style="flex:none;width:208px;background:#fff;border-radius:16px;overflow:hidden">
-<img src="img/laguna-verde.jpg" alt="Laguna Verde" style="display:block;width:100%;height:96px;object-fit:cover"></img>
-<div style="padding:10px 12px 12px;display:flex;flex-direction:column;gap:6px">
-<div style="font-size:14.5px;font-weight:700">Laguna Verde, Azufral</div>
-<div style="font-size:12px;color:#6B747D">Túquerres · 78 km · con guía</div>
-<div style="display:flex;align-items:center;justify-content:space-between;margin-top:2px"><div><div style="font-size:10.5px;color:#6B747D">Precio sugerido</div><div style="font-size:15px;font-weight:700">$45.000</div></div><div style="display:flex;align-items:center;gap:3px;height:24px;padding:0 8px;border-radius:12px;background:oklch(0.95 0.035 160);color:oklch(0.42 0.11 160);font-size:11px;font-weight:700"><span style="font:400 15px/1 'Material Symbols Rounded';font-variation-settings:'FILL' 1">verified</span>RNT</div></div>
-</div>
-</div>
-<div style="flex:none;width:208px;background:#fff;border-radius:16px;overflow:hidden">
-<img src="img/cocha-botes.avif" alt="Laguna de La Cocha" style="display:block;width:100%;height:96px;object-fit:cover"></img>
-<div style="padding:10px 12px 12px;display:flex;flex-direction:column;gap:6px">
-<div style="font-size:14.5px;font-weight:700">Lancha a La Corota</div>
-<div style="font-size:12px;color:#6B747D">El Encano, Pasto · 168 km</div>
-<div style="display:flex;align-items:center;justify-content:space-between;margin-top:2px"><div><div style="font-size:10.5px;color:#6B747D">Precio sugerido</div><div style="font-size:15px;font-weight:700">$30.000</div></div><div style="display:flex;align-items:center;gap:3px;height:24px;padding:0 8px;border-radius:12px;background:oklch(0.95 0.035 160);color:oklch(0.42 0.11 160);font-size:11px;font-weight:700"><span style="font:400 15px/1 'Material Symbols Rounded';font-variation-settings:'FILL' 1">verified</span>RNT</div></div>
-</div>
-</div>
-</div>
-<div style="margin:0 16px;height:150px;border-radius:16px;overflow:hidden;position:relative;background:#E9ECEE">
-<iframe src="mapa-narino.html?mode=mini" title="Mapa de las paradas sugeridas" style="border:0;width:100%;height:100%;display:block"></iframe>
-</div>
-<div style="margin:0 16px;display:flex;align-items:center;gap:6px;font-size:11.5px;color:#6B747D"><span style="font:400 16px/1 'Material Symbols Rounded'">description</span>4 fichas del catálogo · actualizadas sep 2026</div>
-<div style="margin:0 16px;height:52px;border-radius:26px;background:oklch(0.56 0.19 35);color:#fff;display:flex;align-items:center;justify-content:center;gap:8px;font-size:15.5px;font-weight:700">Crear mi plan de 3 días<span style="font:400 20px/1 'Material Symbols Rounded'">arrow_forward</span></div>
-<div style="display:flex;gap:8px;padding:0 16px;overflow:hidden">
-<div style="flex:none;height:36px;display:flex;align-items:center;padding:0 13px;border-radius:18px;border:1px solid #D3D9DE;font-size:13px;font-weight:600">¿Y si llueve?</div>
-<div style="flex:none;height:36px;display:flex;align-items:center;padding:0 13px;border-radius:18px;border:1px solid #D3D9DE;font-size:13px;font-weight:600">Sumar Las Lajas</div>
-<div style="flex:none;height:36px;display:flex;align-items:center;padding:0 13px;border-radius:18px;border:1px solid #D3D9DE;font-size:13px;font-weight:600">Más económico</div>
-</div>
-</div>
-<div style="flex:none;padding:10px 12px 34px;display:flex;gap:8px;align-items:center;background:#F4F6F7">
-<div style="flex:1;height:48px;border-radius:24px;background:#fff;border:1px solid #E2E6E9;display:flex;align-items:center;padding:0 18px;font-size:15px;color:#6B747D">Escríbele al Guía…</div>
-<div style="width:48px;height:48px;border-radius:50%;background:#141A21;color:#fff;display:flex;align-items:center;justify-content:center"><span style="font:400 22px/1 'Material Symbols Rounded'">arrow_upward</span></div>
-</div>
-</div>
-</x-import>
-<sc-if value="{{ notas }}" hint-placeholder-val="{{ true }}"><p style="width:402px;margin:0;font-size:12.5px;line-height:1.5;color:#4B5560;text-wrap:pretty">Respuesta corta, tarjetas con precio sugerido y sello RNT, mini mapa de la ruta. La línea de fuentes deja ver de qué fichas salió la recomendación (regla de trazabilidad).</p></sc-if>
-</div>
-
-<div class="dv-opt" id="1c" data-screen-label="1c Mi plan">
-<div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a>Mi plan · itinerario editable</div>
-<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
-<div style="height:100%;display:flex;flex-direction:column;background:#F4F6F7;font-family:'Public Sans',sans-serif;color:#141A21">
-<div style="padding:54px 8px 0;display:flex;align-items:center;justify-content:space-between;flex:none">
-<div style="width:44px;height:44px;display:flex;align-items:center;justify-content:center"><span style="font:400 24px/1 'Material Symbols Rounded'">arrow_back</span></div>
-<div style="display:flex">
-<div style="width:44px;height:44px;display:flex;align-items:center;justify-content:center"><span style="font:400 23px/1 'Material Symbols Rounded'">ios_share</span></div>
-<div style="width:44px;height:44px;display:flex;align-items:center;justify-content:center"><span style="font:400 23px/1 'Material Symbols Rounded'">more_horiz</span></div>
-</div>
-</div>
-<div style="flex:1;overflow:hidden;display:flex;flex-direction:column">
-<div style="padding:4px 20px 0">
-<div style="font:400 36px/1 'Instrument Serif',serif;letter-spacing:-.01em">Nariño en <span style="font-style:italic">3 días</span></div>
-<div style="font-size:13px;color:#4B5560;margin-top:8px">21 – 23 oct · desde Ipiales · 4 municipios</div>
-</div>
-<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin:16px 16px 0;padding:4px;border-radius:14px;background:#E6EAED">
-<div style="padding:8px 4px;border-radius:10px;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.08);text-align:center"><div style="font-size:13px;font-weight:700">Día 1</div><div style="font-size:11px;color:#4B5560">Ipiales · Túquerres</div></div>
-<div style="padding:8px 4px;text-align:center"><div style="font-size:13px;font-weight:600;color:#4B5560">Día 2</div><div style="font-size:11px;color:#6B747D">Galeras · Pasto</div></div>
-<div style="padding:8px 4px;text-align:center"><div style="font-size:13px;font-weight:600;color:#4B5560">Día 3</div><div style="font-size:11px;color:#6B747D">La Cocha</div></div>
-</div>
-<div style="display:flex;align-items:center;gap:8px;padding:14px 20px 6px;font-size:12.5px;color:#4B5560"><span style="font:400 18px/1 'Material Symbols Rounded'">partly_cloudy_day</span>Ipiales 14 °C, nublado en la tarde · lleva chaqueta</div>
-<div style="padding:4px 16px 0;display:flex;flex-direction:column">
-<div style="display:grid;grid-template-columns:44px 1fr;gap:10px">
-<div style="font-size:12.5px;font-weight:700;padding-top:14px">8:00</div>
-<div style="display:flex;gap:12px;padding:10px;border-radius:16px;background:#fff;align-items:center">
-<img src="img/las-lajas.jpg" alt="Las Lajas" style="width:60px;height:60px;border-radius:12px;object-fit:cover;flex:none"></img>
-<div style="flex:1;min-width:0"><div style="font-size:14.5px;font-weight:700">Santuario de Las Lajas</div><div style="font-size:12px;color:#4B5560;margin-top:3px">Ipiales · 2 h · entrada libre</div></div>
-<span style="font:400 22px/1 'Material Symbols Rounded';color:#A3ABB2">drag_indicator</span>
-</div>
-</div>
-<div style="display:grid;grid-template-columns:44px 1fr;gap:10px"><div style="display:flex;justify-content:center"><div style="width:2px;height:38px;background:repeating-linear-gradient(#C3CAD0 0 4px,transparent 4px 8px)"></div></div><div style="display:flex;align-items:center;gap:6px;font-size:12px;color:#4B5560"><span style="font:400 17px/1 'Material Symbols Rounded'">directions_car</span>1 h 15 min · 75 km</div></div>
-<div style="display:grid;grid-template-columns:44px 1fr;gap:10px">
-<div style="font-size:12.5px;font-weight:700;padding-top:14px">11:30</div>
-<div style="display:flex;gap:12px;padding:10px;border-radius:16px;background:#fff;align-items:center">
-<div style="width:60px;height:60px;border-radius:12px;flex:none;background:repeating-linear-gradient(135deg,#E6E9EB 0 6px,#EFF1F3 6px 12px);display:flex;align-items:center;justify-content:center;font:500 9px/1.2 ui-monospace,monospace;color:#6B747D;text-align:center">foto<br>plato</div>
-<div style="flex:1;min-width:0"><div style="font-size:14.5px;font-weight:700">Almuerzo en Túquerres</div><div style="font-size:12px;color:#4B5560;margin-top:3px">Restaurante con RNT · $28.000</div></div>
-<span style="font:400 22px/1 'Material Symbols Rounded';color:#A3ABB2">drag_indicator</span>
-</div>
-</div>
-<div style="display:grid;grid-template-columns:44px 1fr;gap:10px"><div style="display:flex;justify-content:center"><div style="width:2px;height:38px;background:repeating-linear-gradient(#C3CAD0 0 4px,transparent 4px 8px)"></div></div><div style="display:flex;align-items:center;gap:6px;font-size:12px;color:#4B5560"><span style="font:400 17px/1 'Material Symbols Rounded'">directions_car</span>35 min · 18 km</div></div>
-<div style="display:grid;grid-template-columns:44px 1fr;gap:10px">
-<div style="font-size:12.5px;font-weight:700;padding-top:14px">13:00</div>
-<div style="display:flex;gap:12px;padding:10px;border-radius:16px;background:#fff;align-items:center;box-shadow:0 0 0 2px oklch(0.56 0.19 35)">
-<img src="img/laguna-verde.jpg" alt="Laguna Verde" style="width:60px;height:60px;border-radius:12px;object-fit:cover;flex:none"></img>
-<div style="flex:1;min-width:0"><div style="font-size:14.5px;font-weight:700">Laguna Verde, Azufral</div><div style="font-size:12px;color:#4B5560;margin-top:3px">4 h · guía obligatorio · $45.000</div></div>
-<span style="font:400 22px/1 'Material Symbols Rounded';color:#141A21">drag_indicator</span>
-</div>
-</div>
-<div style="display:grid;grid-template-columns:44px 1fr;gap:10px;margin-top:10px">
-<div></div>
-<div style="height:44px;border-radius:14px;border:1.5px dashed #C3CAD0;display:flex;align-items:center;justify-content:center;gap:6px;font-size:13.5px;font-weight:600;color:#4B5560"><span style="font:400 20px/1 'Material Symbols Rounded'">add</span>Agregar parada</div>
-</div>
-</div>
-</div>
-<div style="flex:none;background:#fff;border-radius:24px 24px 0 0;box-shadow:0 -6px 24px rgba(20,26,33,.08);padding:16px 20px 34px">
-<div style="display:flex;align-items:flex-end;justify-content:space-between">
-<div style="flex:1;min-width:0"><div style="font-size:12px;color:#4B5560;white-space:nowrap">Estimado por persona</div><div style="font:400 30px/1.1 'Instrument Serif',serif;margin-top:2px">$612.000</div></div>
-<div style="font-size:13px;font-weight:600;color:oklch(0.5 0.19 35);padding-bottom:6px">Ver desglose</div>
-</div>
-<div style="font-size:11.5px;color:#6B747D;margin-top:4px">Con precios sugeridos del catálogo · transporte, entradas, comida y 2 noches</div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px">
-<div style="height:48px;border-radius:24px;border:1.5px solid #141A21;display:flex;align-items:center;justify-content:center;gap:6px;font-size:14.5px;font-weight:700"><span style="font:400 20px/1 'Material Symbols Rounded'">link</span>Compartir</div>
-<div style="height:48px;border-radius:24px;background:oklch(0.56 0.19 35);color:#fff;display:flex;align-items:center;justify-content:center;gap:6px;font-size:14.5px;font-weight:700"><span style="font:400 20px/1 'Material Symbols Rounded'">download</span>Exportar PDF</div>
-</div>
-</div>
-</div>
-</x-import>
-<sc-if value="{{ notas }}" hint-placeholder-val="{{ true }}"><p style="width:402px;margin:0;font-size:12.5px;line-height:1.5;color:#4B5560;text-wrap:pretty">Días en segmentos con los municipios del día, paradas reordenables, traslados entre paradas y clima. El costo total queda fijo abajo con las dos salidas del MVP: enlace y PDF.</p></sc-if>
-</div>
-</div>
-
-<div style="font:400 30px/1 'Instrument Serif',serif;margin:0 0 20px">Entradas alternas</div>
-<div class="dv-opts" style="margin-bottom:56px">
-
-<div class="dv-opt" id="1d" data-screen-label="1d Catálogo">
-<div class="dv-olabel"><a class="dv-oid" href="#1d">1d</a>Catálogo y filtros</div>
-<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
-<div style="height:100%;display:flex;flex-direction:column;background:#F4F6F7;font-family:'Public Sans',sans-serif;color:#141A21;position:relative">
-<div style="flex:none;padding:58px 16px 12px;background:#F4F6F7">
-<div style="display:flex;align-items:center;justify-content:space-between"><div style="font:400 34px/1 'Instrument Serif',serif">Explorar</div><div style="height:32px;display:flex;align-items:center;padding:0 10px;border-radius:16px;border:1px solid #D3D9DE;font-size:12px;font-weight:700">ES</div></div>
-<div style="display:flex;gap:8px;margin-top:14px">
-<div style="flex:1;height:48px;border-radius:24px;background:#fff;border:1px solid #E2E6E9;display:flex;align-items:center;gap:8px;padding:0 16px;font-size:15px;color:#6B747D"><span style="font:400 22px/1 'Material Symbols Rounded';color:#141A21">search</span>Lugares, hoteles, guías…</div>
-<div style="width:48px;height:48px;border-radius:50%;background:#141A21;color:#fff;display:flex;align-items:center;justify-content:center;position:relative"><span style="font:400 22px/1 'Material Symbols Rounded'">tune</span><span style="position:absolute;top:6px;right:6px;width:16px;height:16px;border-radius:50%;background:oklch(0.56 0.19 35);font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center">2</span></div>
-</div>
-<div style="display:flex;gap:18px;margin-top:16px;overflow:hidden;font-size:14px;font-weight:600;color:#4B5560">
-<div style="flex:none;padding-bottom:8px;color:#141A21;border-bottom:2px solid #141A21">Todo</div>
-<div style="flex:none;padding-bottom:8px">Atractivos</div>
-<div style="flex:none;padding-bottom:8px">Alojamiento</div>
-<div style="flex:none;padding-bottom:8px">Gastronomía</div>
-<div style="flex:none;padding-bottom:8px">Experiencias</div>
-<div style="flex:none;padding-bottom:8px">Guías</div>
-<div style="flex:none;padding-bottom:8px">Artesanías</div>
-</div>
-<div style="display:flex;gap:8px;margin-top:12px;overflow:hidden">
-<div style="flex:none;height:36px;display:flex;align-items:center;gap:4px;padding:0 12px;border-radius:18px;background:oklch(0.95 0.035 160);color:oklch(0.38 0.1 160);font-size:13px;font-weight:700"><span style="font:400 17px/1 'Material Symbols Rounded';font-variation-settings:'FILL' 1">verified</span>RNT vigente</div>
-<div style="flex:none;height:36px;display:flex;align-items:center;gap:2px;padding:0 10px 0 12px;border-radius:18px;background:#141A21;color:#fff;font-size:13px;font-weight:600">Hasta $100.000<span style="font:400 18px/1 'Material Symbols Rounded'">close</span></div>
-<div style="flex:none;height:36px;display:flex;align-items:center;gap:2px;padding:0 8px 0 12px;border-radius:18px;border:1px solid #D3D9DE;font-size:13px;font-weight:600">Municipio<span style="font:400 18px/1 'Material Symbols Rounded'">expand_more</span></div>
-<div style="flex:none;height:36px;display:flex;align-items:center;gap:4px;padding:0 12px;border-radius:18px;border:1px solid #D3D9DE;font-size:13px;font-weight:600"><span style="font:400 17px/1 'Material Symbols Rounded'">accessible</span>Accesible</div>
-</div>
-</div>
-<div style="flex:1;overflow:hidden;padding:4px 16px 0;display:flex;flex-direction:column;gap:10px">
-<div style="font-size:12.5px;color:#4B5560;display:flex;justify-content:space-between"><span>214 resultados</span><span style="font-weight:600;color:#141A21;white-space:nowrap">Más cerca ▾</span></div>
-<div style="flex:none;display:flex;gap:12px;padding:10px;border-radius:18px;background:#fff">
-<img src="img/cocha-encano.jpg" alt="Lanchas en El Encano" style="width:96px;height:104px;border-radius:12px;object-fit:cover;flex:none"></img>
-<div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:4px;padding:2px 0">
-<div style="font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#6B747D">Experiencia</div>
-<div style="font-size:15px;font-weight:700;line-height:1.25">Paseo en lancha a La Corota</div>
-<div style="font-size:12.5px;color:#4B5560">El Encano, Pasto · 27 km</div>
-<div style="display:flex;align-items:center;justify-content:space-between;margin-top:auto"><div style="font-size:14px;font-weight:700">$30.000 <span style="font-size:11.5px;font-weight:500;color:#6B747D">sugerido</span></div><span style="font:400 18px/1 'Material Symbols Rounded';font-variation-settings:'FILL' 1;color:oklch(0.45 0.11 160)">verified</span></div>
-</div>
-</div>
-<div style="flex:none;display:flex;gap:12px;padding:10px;border-radius:18px;background:#fff">
-<img src="img/cocha-noche.jpg" alt="Hospedajes en El Encano" style="width:96px;height:104px;border-radius:12px;object-fit:cover;flex:none"></img>
-<div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:4px;padding:2px 0">
-<div style="font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#6B747D">Alojamiento</div>
-<div style="font-size:15px;font-weight:700;line-height:1.25">Hospedaje del muelle</div>
-<div style="font-size:12.5px;color:#4B5560">El Encano, Pasto · 27 km</div>
-<div style="display:flex;align-items:center;justify-content:space-between;margin-top:auto"><div style="font-size:14px;font-weight:700">$95.000 <span style="font-size:11.5px;font-weight:500;color:#6B747D">noche</span></div><div style="display:flex;gap:6px;color:oklch(0.45 0.11 160)"><span style="font:400 18px/1 'Material Symbols Rounded';color:#4B5560">accessible</span><span style="font:400 18px/1 'Material Symbols Rounded';font-variation-settings:'FILL' 1">verified</span></div></div>
-</div>
-</div>
-<div style="flex:none;display:flex;gap:12px;padding:10px;border-radius:18px;background:#fff">
-<img src="img/laguna-verde.jpg" alt="Laguna Verde" style="width:96px;height:104px;border-radius:12px;object-fit:cover;flex:none"></img>
-<div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:4px;padding:2px 0">
-<div style="font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#6B747D">Guía · <span style="color:oklch(0.5 0.19 35)">Poco visitado</span></div>
-<div style="font-size:15px;font-weight:700;line-height:1.25">Guía al Volcán Azufral</div>
-<div style="font-size:12.5px;color:#4B5560">Túquerres · 82 km</div>
-<div style="display:flex;align-items:center;justify-content:space-between;margin-top:auto"><div style="font-size:14px;font-weight:700">$80.000 <span style="font-size:11.5px;font-weight:500;color:#6B747D">grupo</span></div><span style="font:400 18px/1 'Material Symbols Rounded';font-variation-settings:'FILL' 1;color:oklch(0.45 0.11 160)">verified</span></div>
-</div>
-</div>
-<div style="flex:none;display:flex;gap:12px;padding:10px;border-radius:18px;background:#fff">
-<div style="width:96px;height:104px;border-radius:12px;flex:none;background:repeating-linear-gradient(135deg,#E6E9EB 0 6px,#EFF1F3 6px 12px);display:flex;align-items:center;justify-content:center;font:500 9.5px/1.3 ui-monospace,monospace;color:#6B747D;text-align:center">foto<br>taller iraca</div>
-<div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:4px;padding:2px 0">
-<div style="font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#6B747D">Artesanías</div>
-<div style="font-size:15px;font-weight:700;line-height:1.25">Taller de sombrero en iraca</div>
-<div style="font-size:12.5px;color:#4B5560">Sandoná · 48 km</div>
-<div style="display:flex;align-items:center;justify-content:space-between;margin-top:auto"><div style="font-size:14px;font-weight:700">$40.000 <span style="font-size:11.5px;font-weight:500;color:#6B747D">sugerido</span></div><span style="font:400 18px/1 'Material Symbols Rounded';font-variation-settings:'FILL' 1;color:oklch(0.45 0.11 160)">verified</span></div>
-</div>
-</div>
-</div>
-<div style="position:absolute;left:50%;bottom:104px;transform:translateX(-50%);height:44px;padding:0 18px;border-radius:22px;background:#141A21;color:#fff;display:flex;align-items:center;gap:6px;font-size:14px;font-weight:700;box-shadow:0 8px 20px rgba(20,26,33,.25)"><span style="font:400 20px/1 'Material Symbols Rounded'">map</span>Ver en mapa</div>
-<div style="display:grid;grid-template-columns:repeat(4,1fr);padding:8px 8px 30px;background:#fff;border-top:1px solid #E2E6E9;flex:none">
-<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:46px;font-size:11px;font-weight:600;color:#6B747D"><span style="font:400 24px/1 'Material Symbols Rounded'">home</span>Inicio</div>
-<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:46px;font-size:11px;font-weight:700;color:#141A21"><span style="font:600 24px/1 'Material Symbols Rounded'">search</span>Explorar</div>
-<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:46px;font-size:11px;font-weight:600;color:#6B747D"><span style="font:400 24px/1 'Material Symbols Rounded'">map</span>Mapa</div>
-<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:46px;font-size:11px;font-weight:600;color:#6B747D"><span style="font:400 24px/1 'Material Symbols Rounded'">event_note</span>Mi plan</div>
-</div>
-</div>
-</x-import>
-<sc-if value="{{ notas }}" hint-placeholder-val="{{ true }}"><p style="width:402px;margin:0;font-size:12.5px;line-height:1.5;color:#4B5560;text-wrap:pretty">Categorías como pestañas, filtros activos como chips removibles. Cada tarjeta lleva tipo, municipio, distancia, precio sugerido y sello. La etiqueta «Poco visitado» sube municipios fuera de Pasto e Ipiales.</p></sc-if>
-</div>
-
-<div class="dv-opt" id="1e" data-screen-label="1e Ficha">
-<div class="dv-olabel"><a class="dv-oid" href="#1e">1e</a>Ficha del lugar</div>
-<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
-<div style="height:100%;display:flex;flex-direction:column;background:#fff;font-family:'Public Sans',sans-serif;color:#141A21;position:relative">
-<div style="flex:1;overflow:hidden">
-<div style="position:relative;height:300px">
-<img src="img/cocha-encano.jpg" alt="Lanchas en El Encano, La Cocha" style="width:100%;height:100%;object-fit:cover"></img>
-<div style="position:absolute;top:56px;left:12px;right:12px;display:flex;justify-content:space-between">
-<div style="width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center"><span style="font:400 22px/1 'Material Symbols Rounded'">arrow_back</span></div>
-<div style="display:flex;gap:8px"><div style="width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center"><span style="font:400 22px/1 'Material Symbols Rounded'">ios_share</span></div><div style="width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center"><span style="font:400 22px/1 'Material Symbols Rounded'">bookmark</span></div></div>
-</div>
-<div style="position:absolute;right:12px;bottom:28px;height:26px;padding:0 10px;border-radius:13px;background:rgba(20,26,33,.7);color:#fff;font-size:11.5px;font-weight:600;display:flex;align-items:center">1 / 6</div>
-</div>
-<div style="margin-top:-18px;position:relative;background:#fff;border-radius:22px 22px 0 0;padding:20px 20px 0">
-<div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6B747D">Experiencia · El Encano, Pasto</div>
-<div style="font:400 32px/1.05 'Instrument Serif',serif;margin-top:8px;letter-spacing:-.01em">Paseo en lancha a la Isla La Corota</div>
-<div style="display:flex;align-items:center;gap:10px;margin-top:14px;padding:10px 12px;border-radius:14px;background:oklch(0.96 0.03 160)">
-<span style="font:400 26px/1 'Material Symbols Rounded';font-variation-settings:'FILL' 1;color:oklch(0.45 0.11 160)">verified</span>
-<div style="flex:1"><div style="font-size:13.5px;font-weight:700;color:oklch(0.35 0.09 160)">Verificado RNT · vigente 2026</div><div style="font-size:12px;color:oklch(0.38 0.06 160)">Asociación de Lancheros El Encano · N.º 48211</div></div>
-</div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:16px;background:#E2E6E9;border-radius:14px;overflow:hidden;border:1px solid #E2E6E9">
-<div style="background:#fff;padding:12px"><div style="font-size:11.5px;color:#6B747D">Precio sugerido</div><div style="font-size:18px;font-weight:700;margin-top:2px">$30.000</div><div style="font-size:11.5px;color:#4B5560">por persona</div></div>
-<div style="background:#fff;padding:12px"><div style="font-size:11.5px;color:#6B747D">Rango de referencia</div><div style="font-size:15px;font-weight:700;margin-top:4px">$25.000 – $35.000</div><div style="font-size:11.5px;color:#4B5560">Gobernación</div></div>
-<div style="background:#fff;padding:12px;display:flex;gap:8px"><span style="font:400 20px/1 'Material Symbols Rounded';color:#4B5560">schedule</span><div><div style="font-size:13px;font-weight:600">1 h 30 min</div><div style="font-size:11.5px;color:#4B5560">8:00 – 17:00 diario</div></div></div>
-<div style="background:#fff;padding:12px;display:flex;gap:8px"><span style="font:400 20px/1 'Material Symbols Rounded';color:#4B5560">accessible</span><div><div style="font-size:13px;font-weight:600">Con asistencia</div><div style="font-size:11.5px;color:#4B5560">en el muelle</div></div></div>
-</div>
-<div style="font-size:14px;font-weight:700;margin-top:18px">Cómo llegar</div>
-<div style="display:flex;flex-direction:column;margin-top:6px;font-size:13.5px">
-<div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #EEF0F2"><span>Desde Pasto</span><span style="color:#4B5560">45 min · 27 km</span></div>
-<div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #EEF0F2"><span>Desde Ipiales</span><span style="color:#4B5560">2 h 15 min · 110 km</span></div>
-<div style="display:flex;justify-content:space-between;padding:9px 0"><span>Desde Rumichaca</span><span style="color:#4B5560">2 h 25 min · 116 km</span></div>
-</div>
-<div style="font-size:11.5px;color:#6B747D;margin-top:8px">Ficha actualizada el 2 sep 2026 · Fuente: RNT y Alcaldía de Pasto · <span style="text-decoration:underline">Reportar un dato</span></div>
-</div>
-</div>
-<div style="flex:none;display:grid;grid-template-columns:52px 52px 1fr;gap:8px;padding:12px 16px 34px;border-top:1px solid #E2E6E9;background:#fff">
-<div style="height:52px;border-radius:50%;border:1.5px solid #141A21;display:flex;align-items:center;justify-content:center"><span style="font:400 22px/1 'Material Symbols Rounded'">chat</span></div>
-<div style="height:52px;border-radius:50%;border:1.5px solid #141A21;display:flex;align-items:center;justify-content:center"><span style="font:400 22px/1 'Material Symbols Rounded'">call</span></div>
-<div style="height:52px;border-radius:26px;background:oklch(0.56 0.19 35);color:#fff;display:flex;align-items:center;justify-content:center;gap:6px;font-size:15px;font-weight:700"><span style="font:400 20px/1 'Material Symbols Rounded'">add</span>Agregar a mi plan</div>
-</div>
-</div>
-</x-import>
-<sc-if value="{{ notas }}" hint-placeholder-val="{{ true }}"><p style="width:402px;margin:0;font-size:12.5px;line-height:1.5;color:#4B5560;text-wrap:pretty">El sello RNT y el precio sugerido con rango de referencia van antes que la descripción. Tiempos desde los tres puntos de llegada. Sin reservas en el MVP: contacto directo por WhatsApp o llamada.</p></sc-if>
-</div>
-
-<div class="dv-opt" id="1f" data-screen-label="1f Mapa y rutas">
-<div class="dv-olabel"><a class="dv-oid" href="#1f">1f</a>Mapa con rutas temáticas</div>
-<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
-<div style="height:100%;position:relative;background:#E9ECEE;font-family:'Public Sans',sans-serif;color:#141A21;overflow:hidden">
-<iframe src="mapa-narino.html?ruta=naturaleza&amp;pt=150&amp;pb=420" title="Mapa de Nariño con la Ruta de Naturaleza" style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe>
-<div style="position:absolute;top:56px;left:12px;right:12px;display:flex;flex-direction:column;gap:10px">
-<div style="display:flex;gap:8px">
-<div style="flex:1;height:48px;border-radius:24px;background:#fff;box-shadow:0 4px 14px rgba(20,26,33,.14);display:flex;align-items:center;gap:8px;padding:0 16px;font-size:15px;color:#6B747D"><span style="font:400 22px/1 'Material Symbols Rounded';color:#141A21">search</span>Buscar en el mapa</div>
-<div style="width:48px;height:48px;border-radius:50%;background:#fff;box-shadow:0 4px 14px rgba(20,26,33,.14);display:flex;align-items:center;justify-content:center"><span style="font:400 22px/1 'Material Symbols Rounded'">layers</span></div>
-</div>
-<div style="display:flex;gap:6px;overflow:hidden">
-<div style="flex:none;height:36px;display:flex;align-items:center;gap:6px;padding:0 12px;border-radius:18px;background:oklch(0.52 0.13 155);color:#fff;font-size:13px;font-weight:700;box-shadow:0 2px 8px rgba(20,26,33,.15)"><span style="width:8px;height:8px;border-radius:50%;background:#fff"></span>Naturaleza</div>
-<div style="flex:none;height:36px;display:flex;align-items:center;gap:6px;padding:0 12px;border-radius:18px;background:#fff;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(20,26,33,.12)"><span style="width:8px;height:8px;border-radius:50%;background:oklch(0.55 0.16 300)"></span>Religiosa</div>
-<div style="flex:none;height:36px;display:flex;align-items:center;gap:6px;padding:0 12px;border-radius:18px;background:#fff;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(20,26,33,.12)"><span style="width:8px;height:8px;border-radius:50%;background:oklch(0.55 0.12 95)"></span>Binacional</div>
-<div style="flex:none;height:36px;display:flex;align-items:center;gap:6px;padding:0 12px;border-radius:18px;background:#fff;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(20,26,33,.12)"><span style="width:8px;height:8px;border-radius:50%;background:oklch(0.52 0.12 60)"></span>Café</div>
-<div style="flex:none;height:36px;display:flex;align-items:center;gap:6px;padding:0 12px;border-radius:18px;background:#fff;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(20,26,33,.12)"><span style="width:8px;height:8px;border-radius:50%;background:oklch(0.56 0.19 30)"></span>Carnaval</div>
-<div style="flex:none;height:36px;display:flex;align-items:center;gap:6px;padding:0 12px;border-radius:18px;background:#fff;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(20,26,33,.12)"><span style="width:8px;height:8px;border-radius:50%;background:oklch(0.52 0.14 240)"></span>Pacífico</div>
-</div>
-</div>
-<div style="position:absolute;left:0;right:0;bottom:0;background:#fff;border-radius:24px 24px 0 0;box-shadow:0 -8px 28px rgba(20,26,33,.14);padding:10px 20px 34px">
-<div style="width:40px;height:5px;border-radius:3px;background:#D3D9DE;margin:0 auto 14px"></div>
-<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px">
-<div><div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:oklch(0.42 0.11 155)">Ruta temática</div><div style="font:400 30px/1.05 'Instrument Serif',serif;margin-top:6px">Ruta de Naturaleza</div><div style="font-size:13px;color:#4B5560;margin-top:6px">5 paradas · 2 a 3 días · lagunas, volcanes y páramo</div></div>
-<div style="width:44px;height:44px;border-radius:50%;border:1px solid #E2E6E9;display:flex;align-items:center;justify-content:center;flex:none"><span style="font:400 22px/1 'Material Symbols Rounded'">close</span></div>
-</div>
-<div style="display:flex;gap:8px;margin-top:14px;overflow:hidden">
-<div style="flex:none;width:118px"><img src="img/las-lajas.jpg" alt="Las Lajas" style="width:118px;height:78px;border-radius:12px;object-fit:cover;display:block"></img><div style="font-size:12.5px;font-weight:600;margin-top:6px">1 · Las Lajas</div></div>
-<div style="flex:none;width:118px"><img src="img/laguna-verde.jpg" alt="Laguna Verde" style="width:118px;height:78px;border-radius:12px;object-fit:cover;display:block"></img><div style="font-size:12.5px;font-weight:600;margin-top:6px">2 · Laguna Verde</div></div>
-<div style="flex:none;width:118px"><img src="img/cocha-botes.avif" alt="La Cocha" style="width:118px;height:78px;border-radius:12px;object-fit:cover;display:block"></img><div style="font-size:12.5px;font-weight:600;margin-top:6px">5 · La Cocha</div></div>
-</div>
-<div style="font-size:12.5px;font-weight:700;margin-top:16px">Cómo llegar desde</div>
-<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:8px;padding:4px;border-radius:14px;background:#EEF0F2;font-size:13px;font-weight:600;text-align:center">
-<div style="padding:9px 0;border-radius:10px;color:#4B5560">Pasto</div>
-<div style="padding:9px 0;border-radius:10px;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.08)">Ipiales</div>
-<div style="padding:9px 0;border-radius:10px;color:#4B5560">Rumichaca</div>
-</div>
-<div style="height:52px;border-radius:26px;background:oklch(0.56 0.19 35);color:#fff;display:flex;align-items:center;justify-content:center;gap:8px;font-size:15px;font-weight:700;margin-top:14px">Armar plan con esta ruta</div>
-</div>
-</div>
-</x-import>
-<sc-if value="{{ notas }}" hint-placeholder-val="{{ true }}"><p style="width:402px;margin:0;font-size:12.5px;line-height:1.5;color:#4B5560;text-wrap:pretty">Mapa ilustrado sobre coordenadas reales de municipios, lagunas y volcanes. Seis rutas como capas activables por chip; la activa en color, las demás tenues. El panel pasa la ruta al asistente.</p></sc-if>
-</div>
-
-<div class="dv-opt" id="1g" data-screen-label="1g Agenda">
-<div class="dv-olabel"><a class="dv-oid" href="#1g">1g</a>Agenda de eventos</div>
-<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
-<div style="height:100%;display:flex;flex-direction:column;background:#F4F6F7;font-family:'Public Sans',sans-serif;color:#141A21">
-<div style="flex:none;padding:54px 8px 0;display:flex;align-items:center"><div style="width:44px;height:44px;display:flex;align-items:center;justify-content:center"><span style="font:400 24px/1 'Material Symbols Rounded'">arrow_back</span></div></div>
-<div style="flex:1;overflow:hidden;display:flex;flex-direction:column">
-<div style="padding:0 20px"><div style="font:400 36px/1 'Instrument Serif',serif">Agenda</div><div style="font-size:13px;color:#4B5560;margin-top:8px">Fiestas, ferias y temporadas en los 64 municipios</div></div>
-<div style="display:flex;gap:8px;padding:16px 16px 0;overflow:hidden">
-<div style="flex:none;width:58px;height:58px;border-radius:14px;background:#141A21;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center"><div style="font-size:11px;font-weight:600;opacity:.8">2026</div><div style="font-size:15px;font-weight:700">Oct</div></div>
-<div style="flex:none;width:58px;height:58px;border-radius:14px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center"><div style="font-size:11px;color:#6B747D">2026</div><div style="font-size:15px;font-weight:700">Nov</div></div>
-<div style="flex:none;width:58px;height:58px;border-radius:14px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center"><div style="font-size:11px;color:#6B747D">2026</div><div style="font-size:15px;font-weight:700">Dic</div></div>
-<div style="flex:none;width:58px;height:58px;border-radius:14px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative"><div style="font-size:11px;color:#6B747D">2027</div><div style="font-size:15px;font-weight:700">Ene</div><span style="position:absolute;top:7px;right:8px;width:7px;height:7px;border-radius:50%;background:oklch(0.56 0.19 35)"></span></div>
-<div style="flex:none;width:58px;height:58px;border-radius:14px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center"><div style="font-size:11px;color:#6B747D">2027</div><div style="font-size:15px;font-weight:700">Feb</div></div>
-<div style="flex:none;width:58px;height:58px;border-radius:14px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center"><div style="font-size:11px;color:#6B747D">2027</div><div style="font-size:15px;font-weight:700">Mar</div></div>
-</div>
-<div style="margin:16px 16px 0;padding:16px;border-radius:18px;background:oklch(0.24 0.03 250);color:#fff;display:flex;gap:14px;align-items:center">
-<img src="img/cocha-noche.jpg" alt="La Cocha al atardecer" style="width:72px;height:72px;border-radius:12px;object-fit:cover;flex:none"></img>
-<div><div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:oklch(0.85 0.08 35)">Temporada tranquila</div><div style="font-size:15px;font-weight:700;margin-top:4px;line-height:1.3">Octubre y noviembre: menos gente y tarifas más bajas en La Cocha</div></div>
-</div>
-<div style="padding:20px 20px 8px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6B747D">Próximos</div>
-<div style="display:flex;flex-direction:column;gap:8px;padding:0 16px">
-<div style="display:grid;grid-template-columns:52px 1fr auto;gap:12px;align-items:center;padding:12px;border-radius:16px;background:#fff">
-<div style="text-align:center"><div style="font:400 26px/1 'Instrument Serif',serif">24</div><div style="font-size:11px;font-weight:600;color:#6B747D">oct</div></div>
-<div><div style="font-size:14.5px;font-weight:700">Feria artesanal de la iraca</div><div style="font-size:12px;color:#4B5560;margin-top:2px">Sandoná · 24 – 26 oct</div></div>
-<span style="font:400 22px/1 'Material Symbols Rounded';color:#4B5560">add_circle</span>
-</div>
-<div style="display:grid;grid-template-columns:52px 1fr auto;gap:12px;align-items:center;padding:12px;border-radius:16px;background:#fff">
-<div style="text-align:center"><div style="font:400 26px/1 'Instrument Serif',serif">7</div><div style="font-size:11px;font-weight:600;color:#6B747D">dic</div></div>
-<div><div style="font-size:14.5px;font-weight:700">Noche de velitas en el muelle</div><div style="font-size:12px;color:#4B5560;margin-top:2px">El Encano, Pasto</div></div>
-<span style="font:400 22px/1 'Material Symbols Rounded';color:#4B5560">add_circle</span>
-</div>
-<div style="display:grid;grid-template-columns:52px 1fr auto;gap:12px;align-items:center;padding:12px;border-radius:16px;background:#fff">
-<div style="text-align:center"><div style="font:400 26px/1 'Instrument Serif',serif;color:oklch(0.5 0.19 35)">2</div><div style="font-size:11px;font-weight:600;color:#6B747D">ene</div></div>
-<div><div style="font-size:14.5px;font-weight:700">Carnaval de Negros y Blancos</div><div style="font-size:12px;color:#4B5560;margin-top:2px">Pasto · 2 – 7 ene 2027 · Patrimonio UNESCO</div></div>
-<span style="font:400 22px/1 'Material Symbols Rounded';color:#4B5560">add_circle</span>
-</div>
-<div style="display:grid;grid-template-columns:52px 1fr auto;gap:12px;align-items:center;padding:12px;border-radius:16px;background:#fff">
-<div style="text-align:center"><div style="font:400 26px/1 'Instrument Serif',serif">21</div><div style="font-size:11px;font-weight:600;color:#6B747D">mar</div></div>
-<div><div style="font-size:14.5px;font-weight:700">Semana Santa en Las Lajas</div><div style="font-size:12px;color:#4B5560;margin-top:2px">Ipiales · 21 – 28 mar 2027</div></div>
-<span style="font:400 22px/1 'Material Symbols Rounded';color:#4B5560">add_circle</span>
-</div>
-</div>
-</div>
-<div style="display:grid;grid-template-columns:repeat(4,1fr);padding:8px 8px 30px;background:#fff;border-top:1px solid #E2E6E9;flex:none">
-<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:46px;font-size:11px;font-weight:700;color:#141A21"><span style="font:400 24px/1 'Material Symbols Rounded';font-variation-settings:'FILL' 1">home</span>Inicio</div>
-<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:46px;font-size:11px;font-weight:600;color:#6B747D"><span style="font:400 24px/1 'Material Symbols Rounded'">search</span>Explorar</div>
-<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:46px;font-size:11px;font-weight:600;color:#6B747D"><span style="font:400 24px/1 'Material Symbols Rounded'">map</span>Mapa</div>
-<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:46px;font-size:11px;font-weight:600;color:#6B747D"><span style="font:400 24px/1 'Material Symbols Rounded'">event_note</span>Mi plan</div>
-</div>
-</div>
-</x-import>
-<sc-if value="{{ notas }}" hint-placeholder-val="{{ true }}"><p style="width:402px;margin:0;font-size:12.5px;line-height:1.5;color:#4B5560;text-wrap:pretty">Versión básica: meses y lista. La temporada de baja ocupación encabeza la agenda, antes que el Carnaval. Fechas de Sandoná y El Encano son ejemplos.</p></sc-if>
-</div>
-</div>
-
-<div style="display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start">
-<div>
-<div style="font:400 30px/1 'Instrument Serif',serif;margin:0 0 20px">Transversal</div>
-<div class="dv-opt" id="1h" data-screen-label="1h Emergencia">
-<div class="dv-olabel"><a class="dv-oid" href="#1h">1h</a>Emergencia y seguridad</div>
-<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
-<div style="height:100%;position:relative;font-family:'Public Sans',sans-serif;color:#141A21;overflow:hidden;background:#141A21">
-<img src="img/las-lajas.jpg" alt="" style="position:absolute;inset:0;width:100%;height:46%;object-fit:cover;opacity:.45"></img>
-<div style="position:absolute;left:0;right:0;bottom:0;top:120px;background:#fff;border-radius:28px 28px 0 0;padding:12px 20px 34px;display:flex;flex-direction:column">
-<div style="width:40px;height:5px;border-radius:3px;background:#D3D9DE;margin:0 auto 14px"></div>
-<div style="display:flex;justify-content:space-between;align-items:flex-start"><div style="font:400 32px/1 'Instrument Serif',serif">Ayuda y seguridad</div><div style="width:44px;height:44px;border-radius:50%;background:#EEF0F2;display:flex;align-items:center;justify-content:center;flex:none"><span style="font:400 22px/1 'Material Symbols Rounded'">close</span></div></div>
-<div style="display:flex;align-items:center;gap:6px;font-size:12.5px;color:#4B5560;margin-top:6px"><span style="font:400 16px/1 'Material Symbols Rounded'">my_location</span>Estás cerca de Ipiales</div>
-<div style="flex:none;display:flex;align-items:center;gap:14px;margin-top:18px;padding:16px;border-radius:20px;background:oklch(0.56 0.19 35);color:#fff">
-<div style="font:700 34px/1 'Public Sans',sans-serif;letter-spacing:-.02em">123</div>
-<div style="flex:1"><div style="font-size:15px;font-weight:700">Línea de emergencias</div><div style="font-size:12.5px;opacity:.92">Policía, ambulancia y bomberos</div></div>
-<div style="width:48px;height:48px;border-radius:50%;background:#fff;color:oklch(0.5 0.19 35);display:flex;align-items:center;justify-content:center"><span style="font:400 24px/1 'Material Symbols Rounded';font-variation-settings:'FILL' 1">call</span></div>
-</div>
-<div style="flex:none;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px">
-<div style="padding:14px;border-radius:18px;background:#F4F6F7;display:flex;flex-direction:column;gap:6px;min-height:92px"><div style="font:700 22px/1 'Public Sans',sans-serif">122</div><div style="font-size:12.5px;color:#4B5560">Atención y denuncias</div></div>
-<div style="padding:14px;border-radius:18px;background:#F4F6F7;display:flex;flex-direction:column;gap:6px;min-height:92px"><span style="font:400 24px/1 'Material Symbols Rounded'">local_police</span><div style="font-size:12.5px;color:#4B5560">Policía de Turismo</div></div>
-</div>
-<div style="flex:none;margin-top:8px;height:52px;border-radius:26px;border:1.5px solid #141A21;display:flex;align-items:center;justify-content:center;gap:8px;font-size:14.5px;font-weight:700"><span style="font:400 20px/1 'Material Symbols Rounded'">share_location</span>Compartir mi ubicación</div>
-<div style="padding:20px 0 8px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6B747D">Estado de vías y frontera</div>
-<div style="flex:none;display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #EEF0F2">
-<span style="font:400 22px/1 'Material Symbols Rounded';font-variation-settings:'FILL' 1;color:oklch(0.6 0.15 75)">warning</span>
-<div><div style="font-size:14px;font-weight:700">Vía Ipiales – Pasto · paso a un carril</div><div style="font-size:12px;color:#4B5560;margin-top:2px">Obras en el km 34 · hace 40 min</div></div>
-</div>
-<div style="flex:none;display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #EEF0F2">
-<span style="font:400 22px/1 'Material Symbols Rounded';font-variation-settings:'FILL' 1;color:oklch(0.45 0.11 160)">check_circle</span>
-<div><div style="font-size:14px;font-weight:700">Puente de Rumichaca · abierto</div><div style="font-size:12px;color:#4B5560;margin-top:2px">Documentos para cruzar desde Ecuador</div></div>
-</div>
-<div style="flex:none;display:flex;gap:12px;padding:12px 0">
-<span style="font:400 22px/1 'Material Symbols Rounded';color:#4B5560">flag</span>
-<div><div style="font-size:14px;font-weight:700">Consulado del Ecuador en Ipiales</div><div style="font-size:12px;color:#4B5560;margin-top:2px">Dirección y horario</div></div>
-</div>
-<div style="margin-top:auto;font-size:11.5px;color:#6B747D;display:flex;align-items:center;gap:6px"><span style="font:400 16px/1 'Material Symbols Rounded'">download_done</span>Disponible sin conexión</div>
-</div>
-</div>
-</x-import>
-<sc-if value="{{ notas }}" hint-placeholder-val="{{ true }}"><p style="width:402px;margin:0;font-size:12.5px;line-height:1.5;color:#4B5560;text-wrap:pretty">Se abre desde el botón SOS de cualquier pantalla. 123 a un toque, alertas de vía y estado de la frontera para el visitante ecuatoriano.</p></sc-if>
-</div>
-</div>
-
-<div>
-<div style="font:400 30px/1 'Instrument Serif',serif;margin:0 0 20px">Gestor de contenidos · Gobernación y alcaldías</div>
-<div class="dv-opt" id="1i" data-screen-label="1i Gestor de contenidos">
-<div class="dv-olabel"><a class="dv-oid" href="#1i">1i</a>Fichas del catálogo · escritorio</div>
-<div style="width:1280px;height:874px;border-radius:14px;overflow:hidden;background:#F4F6F7;box-shadow:0 40px 80px rgba(0,0,0,0.14),0 0 0 1px rgba(0,0,0,0.1);display:grid;grid-template-columns:232px 1fr;font-family:'Public Sans',sans-serif;color:#141A21">
-<div style="background:oklch(0.24 0.03 250);color:#fff;padding:24px 14px;display:flex;flex-direction:column;gap:4px">
-<div style="font:400 22px/1 'Instrument Serif',serif;padding:0 10px">Descubre <span style="font-style:italic">Nariño</span></div>
-<div style="font-size:11px;opacity:.7;padding:6px 10px 20px">Gestor de contenidos</div>
-<div style="display:flex;align-items:center;gap:10px;height:40px;padding:0 10px;border-radius:10px;background:rgba(255,255,255,.12);font-size:13.5px;font-weight:600"><span style="font:400 20px/1 'Material Symbols Rounded'">inventory_2</span>Fichas</div>
-<div style="display:flex;align-items:center;gap:10px;height:40px;padding:0 10px;font-size:13.5px;opacity:.85"><span style="font:400 20px/1 'Material Symbols Rounded'">calendar_month</span>Eventos</div>
-<div style="display:flex;align-items:center;gap:10px;height:40px;padding:0 10px;font-size:13.5px;opacity:.85"><span style="font:400 20px/1 'Material Symbols Rounded'">route</span>Rutas temáticas</div>
-<div style="display:flex;align-items:center;gap:10px;height:40px;padding:0 10px;font-size:13.5px;opacity:.85"><span style="font:400 20px/1 'Material Symbols Rounded'">warning</span>Alertas de vía</div>
-<div style="display:flex;align-items:center;gap:10px;height:40px;padding:0 10px;font-size:13.5px;opacity:.85"><span style="font:400 20px/1 'Material Symbols Rounded'">help</span><span style="flex:1">Consultas sin respuesta</span><span style="font-size:11px;font-weight:700;padding:2px 7px;border-radius:9px;background:oklch(0.56 0.19 35)">37</span></div>
-<div style="display:flex;align-items:center;gap:10px;height:40px;padding:0 10px;font-size:13.5px;opacity:.85"><span style="font:400 20px/1 'Material Symbols Rounded'">location_city</span>Municipios</div>
-<div style="display:flex;align-items:center;gap:10px;height:40px;padding:0 10px;font-size:13.5px;opacity:.85"><span style="font:400 20px/1 'Material Symbols Rounded'">group</span>Editores</div>
-<div style="margin-top:auto;display:flex;align-items:center;gap:10px;padding:10px;border-top:1px solid rgba(255,255,255,.12)"><span style="width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700">LM</span><div><div style="font-size:13px;font-weight:600">Laura Muñoz</div><div style="font-size:11px;opacity:.7">Editora · Gobernación</div></div></div>
-</div>
-<div style="padding:28px 32px;display:flex;flex-direction:column;gap:20px;overflow:hidden">
-<div style="display:flex;align-items:flex-end;justify-content:space-between">
-<div><div style="font:400 34px/1 'Instrument Serif',serif">Fichas del catálogo</div><div style="font-size:13px;color:#4B5560;margin-top:6px">Atractivos, prestadores y experiencias que el asistente puede recomendar</div></div>
-<div style="display:flex;gap:8px">
-<div style="height:42px;padding:0 16px;border-radius:21px;border:1.5px solid #141A21;display:flex;align-items:center;gap:6px;font-size:13.5px;font-weight:700"><span style="font:400 20px/1 'Material Symbols Rounded'">sync</span>Cruzar con RNT</div>
-<div style="height:42px;padding:0 18px;border-radius:21px;background:oklch(0.56 0.19 35);color:#fff;display:flex;align-items:center;gap:6px;font-size:13.5px;font-weight:700"><span style="font:400 20px/1 'Material Symbols Rounded'">add</span>Nueva ficha</div>
-</div>
-</div>
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
-<div style="background:#fff;border-radius:14px;padding:16px"><div style="font-size:12px;color:#4B5560">Fichas publicadas</div><div style="font:400 32px/1.1 'Instrument Serif',serif;margin-top:4px">1.284</div></div>
-<div style="background:#fff;border-radius:14px;padding:16px"><div style="font-size:12px;color:#4B5560">Municipios con oferta</div><div style="font:400 32px/1.1 'Instrument Serif',serif;margin-top:4px">38 <span style="font-size:18px;color:#6B747D">de 64</span></div></div>
-<div style="background:#fff;border-radius:14px;padding:16px"><div style="font-size:12px;color:#4B5560">Sin actualizar en 90 días</div><div style="font:400 32px/1.1 'Instrument Serif',serif;margin-top:4px;color:oklch(0.5 0.19 35)">112</div></div>
-<div style="background:#fff;border-radius:14px;padding:16px"><div style="font-size:12px;color:#4B5560">RNT por vencer este mes</div><div style="font:400 32px/1.1 'Instrument Serif',serif;margin-top:4px">24</div></div>
-</div>
-<div style="display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:16px;flex:1;min-height:0">
-<div style="background:#fff;border-radius:14px;overflow:hidden;display:flex;flex-direction:column">
-<div style="display:flex;gap:8px;padding:14px 16px;border-bottom:1px solid #EEF0F2">
-<div style="flex:1;height:38px;border-radius:19px;background:#F4F6F7;display:flex;align-items:center;gap:8px;padding:0 14px;font-size:13px;color:#6B747D"><span style="font:400 19px/1 'Material Symbols Rounded';color:#141A21">search</span>Buscar por nombre o N.º RNT</div>
-<div style="height:38px;padding:0 12px;border-radius:19px;border:1px solid #D3D9DE;display:flex;align-items:center;gap:2px;font-size:13px;font-weight:600">Municipio: Todos<span style="font:400 18px/1 'Material Symbols Rounded'">expand_more</span></div>
-<div style="height:38px;padding:0 12px;border-radius:19px;border:1px solid #D3D9DE;display:flex;align-items:center;gap:2px;font-size:13px;font-weight:600">Estado<span style="font:400 18px/1 'Material Symbols Rounded'">expand_more</span></div>
-</div>
-<div style="display:grid;grid-template-columns:2.2fr 1fr 1fr 1.1fr 1fr .9fr;padding:10px 16px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#6B747D;border-bottom:1px solid #EEF0F2"><div>Nombre</div><div>Tipo</div><div>Municipio</div><div>RNT</div><div>Actualizada</div><div>Estado</div></div>
-<sc-for list="{{ fichas }}" as="f" hint-placeholder-count="8">
-<div style="display:grid;grid-template-columns:2.2fr 1fr 1fr 1.1fr 1fr .9fr;padding:0 16px;height:50px;align-items:center;font-size:13.5px;border-bottom:1px solid #F1F3F4">
-<div style="font-weight:600">{{ f.nombre }}</div>
-<div style="color:#4B5560">{{ f.tipo }}</div>
-<div style="color:#4B5560">{{ f.municipio }}</div>
-<div><span style="display:inline-flex;align-items:center;gap:5px;font-size:12.5px;font-weight:600;color:{{ f.rntColor }}"><span style="width:7px;height:7px;border-radius:50%;background:{{ f.rntColor }}"></span>{{ f.rnt }}</span></div>
-<div style="color:{{ f.fechaColor }}">{{ f.fecha }}</div>
-<div><span style="font-size:12px;font-weight:700;padding:4px 9px;border-radius:10px;background:{{ f.estadoBg }};color:{{ f.estadoFg }}">{{ f.estado }}</span></div>
+<div style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:oklch(0.85 0.08 35)">Plataforma de turismo inteligente · Nariño</div>
+<h1 style="margin:16px 0 0;font:400 72px/0.98 'Instrument Serif',serif;letter-spacing:-.01em">Descubre <span style="font-style:italic">Nariño</span></h1>
+<p style="margin:20px 0 0;font-size:17px;line-height:1.6;color:rgba(255,255,255,.82);max-width:620px;text-wrap:pretty">Un catálogo único de la oferta turística del departamento, verificado contra el Registro Nacional de Turismo. Encima, un asistente de IA que recomienda y arma itinerarios, recorridos narrados en cada punto de interés, un portal para los prestadores y un tablero para la Gobernación y los gremios.</p>
+<div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:28px">
+<a href="app.html" style="display:flex;align-items:center;gap:8px;height:50px;padding:0 22px;border-radius:25px;background:#fff;color:#141A21;text-decoration:none;font-size:15px;font-weight:700" style-hover="color:#141A21;background:#EEF0F2"><span style="font:400 20px/1 'Material Symbols Rounded'">smartphone</span>Probar la app del turista</a>
+<a href="https://meetings.hubspot.com/andresm/reuniones-andres-mendez" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;height:50px;padding:0 22px;border-radius:25px;background:oklch(0.56 0.19 35);color:#fff;text-decoration:none;font-size:15px;font-weight:700" style-hover="color:#fff;background:oklch(0.5 0.19 35)"><span style="font:400 20px/1 'Material Symbols Rounded'">event</span>Agendar una reunión</a>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px">
+<sc-for list="{{ cifras }}" as="c" hint-placeholder-count="4">
+<div style="padding:18px;border-radius:16px;background:rgba(255,255,255,.06);display:flex;flex-direction:column;gap:8px">
+<div style="font:400 44px/1 'Instrument Serif',serif;color:#fff">{{ c.v }}</div>
+<div style="font-size:13px;line-height:1.45;color:rgba(255,255,255,.75)">{{ c.k }}</div>
 </div>
 </sc-for>
 </div>
-<div style="background:#fff;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:2px">
-<div style="display:flex;align-items:center;justify-content:space-between"><div style="font-size:14px;font-weight:700">Lo que el Guía no supo responder</div><span style="font-size:11px;font-weight:700;padding:2px 7px;border-radius:9px;background:oklch(0.95 0.03 35);color:oklch(0.45 0.17 35)">37</span></div>
-<div style="font-size:12px;color:#4B5560;margin:4px 0 8px">Últimos 7 días · agrupadas por tema</div>
-<sc-for list="{{ consultas }}" as="c" hint-placeholder-count="5">
-<div style="padding:10px 0;border-top:1px solid #EEF0F2">
-<div style="font-size:13px;line-height:1.35">{{ c.q }}</div>
-<div style="display:flex;justify-content:space-between;margin-top:5px;font-size:11.5px;color:#6B747D"><span>{{ c.mun }}</span><span style="font-weight:700;color:#141A21">×{{ c.n }}</span></div>
 </div>
-</sc-for>
-<div style="margin-top:auto;height:40px;border-radius:20px;border:1.5px solid #141A21;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700">Crear ficha desde consulta</div>
-</div>
-</div>
-</div>
-</div>
-<sc-if value="{{ notas }}" hint-placeholder-val="{{ true }}"><p style="width:640px;margin:0;font-size:12.5px;line-height:1.5;color:#4B5560;text-wrap:pretty">El catálogo es el activo: el gestor muestra frescura de las fichas y vigencia del RNT antes que nada. El panel derecho convierte los vacíos del asistente en tareas de contenido.</p></sc-if>
-</div>
-</div>
-</div>
-
-<p class="dv-next">Siguiente: «versión en inglés de <a class="dv-oid" href="#1a">1a</a> y <a class="dv-oid" href="#1b">1b</a>» · «modo alto contraste» · «prototipo clicable de <a class="dv-oid" href="#1a">1a</a> → <a class="dv-oid" href="#1c">1c</a>»</p>
 </section>
+
+<section style="padding:56px 32px 24px">
+<div style="max-width:1200px;margin:0 auto">
+<div style="font:400 40px/1.05 'Instrument Serif',serif">Tres interfaces sobre los mismos datos</div>
+<p style="margin:12px 0 0;font-size:15px;line-height:1.55;color:#4B5560;max-width:760px;text-wrap:pretty">Cambia la interfaz, no la fuente. Lo que publica la Gobernación o un prestador aparece en la app del turista, y lo que el turista no encuentra vuelve a la Gobernación como pendiente de contenido. Abre cada vista en una pestaña distinta para ver los cambios en vivo.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;margin-top:28px">
+<sc-for list="{{ portals }}" as="p" hint-placeholder-count="3">
+<div style="background:#fff;border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;align-items:center;gap:12px"><span style="width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex:none;background:{{ p.tint }};color:{{ p.ink }}"><span style="font:400 24px/1 'Material Symbols Rounded'">{{ p.icon }}</span></span><div><div style="font:400 28px/1 'Instrument Serif',serif">{{ p.n }}</div><div style="font-size:12.5px;color:#4B5560;margin-top:4px">{{ p.who }}</div></div></div>
+<p style="margin:0;font-size:14px;line-height:1.55;color:#2F3740;text-wrap:pretty">{{ p.desc }}</p>
+<div style="display:flex;flex-direction:column;border-top:1px solid #EEF0F2">
+<sc-for list="{{ p.items }}" as="it">
+<div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;padding:10px 0;border-bottom:1px solid #EEF0F2;align-items:start">
+<div><div style="font-size:13.5px;font-weight:700">{{ it.t }}</div><div style="font-size:12.5px;line-height:1.45;color:#4B5560;margin-top:2px">{{ it.d }}</div></div>
+<span style="font-size:10.5px;font-weight:700;padding:3px 7px;border-radius:6px;white-space:nowrap;background:{{ it.bg }};color:{{ it.fg }}">{{ it.ph }}</span>
+</div>
+</sc-for>
+</div>
+<a href="{{ p.href }}" style="margin-top:auto;display:flex;align-items:center;justify-content:center;gap:6px;height:46px;border-radius:23px;background:#141A21;color:#fff;text-decoration:none;font-size:14px;font-weight:700" style-hover="color:#fff;background:#2A3540">Abrir {{ p.n }}<span style="font:400 18px/1 'Material Symbols Rounded'">arrow_forward</span></a>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section style="padding:40px 32px 24px">
+<div style="max-width:1200px;margin:0 auto">
+<div style="font:400 40px/1.05 'Instrument Serif',serif">Recorrido sugerido para presentar</div>
+<p style="margin:12px 0 0;font-size:15px;line-height:1.55;color:#4B5560;max-width:760px">Ocho pasos que cruzan las tres vistas. Ábrelas en pestañas distintas del mismo navegador para ver cómo lo que hace uno aparece en el otro.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:24px">
+<sc-for list="{{ steps }}" as="st" hint-placeholder-count="8">
+<a href="{{ st.href }}" style="background:#fff;border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:8px;text-decoration:none;color:#141A21" style-hover="color:#141A21;box-shadow:0 0 0 2px oklch(0.56 0.19 35)">
+<div style="display:flex;align-items:center;gap:10px"><span style="font:400 34px/1 'Instrument Serif',serif;color:oklch(0.5 0.19 35)">{{ st.n }}</span><span style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6B747D">{{ st.where }}</span></div>
+<div style="font-size:14.5px;font-weight:700;line-height:1.35">{{ st.t }}</div>
+<div style="font-size:13px;line-height:1.5;color:#4B5560">{{ st.d }}</div>
+</a>
+</sc-for>
+</div>
+<button onClick="{{ resetDemo }}" style="margin-top:16px;cursor:pointer;background:transparent;height:40px;padding:0 16px;border-radius:20px;border:1.5px solid #141A21;font-size:13px;font-weight:700;display:flex;align-items:center;gap:6px"><span style="font:400 18px/1 'Material Symbols Rounded'">restart_alt</span>{{ resetLabel }}</button>
+</div>
+</section>
+
+<section style="padding:40px 32px 24px">
+<div style="max-width:1200px;margin:0 auto">
+<div style="font:400 40px/1.05 'Instrument Serif',serif">Funcionalidades y fases</div>
+<p style="margin:12px 0 0;font-size:15px;line-height:1.55;color:#4B5560;max-width:760px">Las funcionalidades que concentran el valor, los transversales y los recorridos narrados, que forman parte del MVP.</p>
+<div style="background:#fff;border-radius:16px;overflow-x:auto;margin-top:24px">
+<div style="min-width:720px;display:grid;grid-template-columns:1.1fr 2fr 1fr .7fr;gap:16px;padding:12px 20px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#6B747D;border-bottom:1px solid #EEF0F2"><div>Funcionalidad</div><div>Qué hace</div><div>Dónde verla</div><div>Fase</div></div>
+<sc-for list="{{ feats }}" as="f" hint-placeholder-count="11">
+<div style="min-width:720px;display:grid;grid-template-columns:1.1fr 2fr 1fr .7fr;gap:16px;padding:14px 20px;border-bottom:1px solid #F1F3F4;align-items:start;font-size:13.5px">
+<div style="font-weight:700">{{ f.n }}</div><div style="color:#2F3740;line-height:1.5">{{ f.d }}</div><div style="color:#4B5560">{{ f.w }}</div>
+<div><span style="font-size:11px;font-weight:700;padding:3px 8px;border-radius:6px;background:{{ f.bg }};color:{{ f.fg }}">{{ f.ph }}</span></div>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section style="padding:40px 32px 72px">
+<div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:24px;align-items:start">
+<div>
+<div style="font:400 40px/1.05 'Instrument Serif',serif">El catálogo es la fuente de verdad</div>
+<p style="margin:12px 0 0;font-size:15px;line-height:1.55;color:#4B5560;text-wrap:pretty">El asistente no genera información sobre el destino: recupera fichas del catálogo verificado y redacta con ellas. Si algo no está, lo dice y registra la pregunta.</p>
+<div style="display:flex;flex-direction:column;gap:8px;margin-top:20px">
+<sc-for list="{{ capas }}" as="c" hint-placeholder-count="4">
+<div style="background:#fff;border-radius:14px;padding:16px;display:grid;grid-template-columns:34px 1fr;gap:12px"><span style="font:400 28px/1 'Instrument Serif',serif;color:oklch(0.5 0.19 35)">{{ c.n }}</span><div><div style="font-size:14px;font-weight:700">{{ c.t }}</div><div style="font-size:13px;line-height:1.5;color:#4B5560;margin-top:3px">{{ c.d }}</div></div></div>
+</sc-for>
+</div>
+</div>
+<div style="background:oklch(0.24 0.03 250);color:#fff;border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:14px">
+<div style="font:400 30px/1.05 'Instrument Serif',serif">Cómo se sostiene en el tiempo</div>
+<p style="margin:0;font-size:14px;line-height:1.55;color:rgba(255,255,255,.8)">La plataforma, el catálogo y los datos son del departamento. El modelo pasa de inversión pública a ingresos propios a medida que crece el uso.</p>
+<sc-for list="{{ sostener }}" as="pz" hint-placeholder-count="3">
+<div style="display:grid;grid-template-columns:64px minmax(0,1fr);gap:12px;padding:12px 0;border-top:1px solid rgba(255,255,255,.1)"><span style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:oklch(0.85 0.08 35);padding-top:2px">{{ pz.f }}</span><span><span style="display:block;font-size:14.5px;font-weight:700">{{ pz.k }}</span><span style="display:block;font-size:13px;line-height:1.5;color:rgba(255,255,255,.78);margin-top:3px">{{ pz.v }}</span></span></div>
+</sc-for>
+</div>
+</div>
+</section>
+<section style="padding:0 32px 64px">
+<div style="max-width:1200px;margin:0 auto;border-radius:24px;background:oklch(0.56 0.19 35);color:#fff;padding:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px;align-items:center">
+<div>
+<div style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.85)">Siguiente paso</div>
+<div style="font:400 44px/1.02 'Instrument Serif',serif;margin-top:12px">Conversemos sobre Descubre Nariño</div>
+<p style="margin:14px 0 0;font-size:15.5px;line-height:1.55;color:#fff;max-width:520px;text-wrap:pretty">Agenda 30 minutos con Andrés Méndez, de Wigilabs, para recorrer la plataforma, revisar el alcance del MVP y resolver tus preguntas.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<a href="https://meetings.hubspot.com/andresm/reuniones-andres-mendez" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;min-height:60px;padding:0 22px;border-radius:30px;background:#fff;color:#141A21;text-decoration:none;font-size:16px;font-weight:700" style-hover="color:#141A21;background:#F4F6F7"><span style="font:400 24px/1 'Material Symbols Rounded'">event</span><span style="flex:1">Agendar una reunión</span><span style="font:400 20px/1 'Material Symbols Rounded'">arrow_outward</span></a>
+<a href="https://wa.me/573132622845" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;min-height:56px;padding:0 22px;border-radius:28px;background:rgba(0,0,0,.18);color:#fff;text-decoration:none;font-size:15px;font-weight:700" style-hover="color:#fff;background:rgba(0,0,0,.28)"><span style="font:400 22px/1 'Material Symbols Rounded'">chat</span><span style="flex:1">WhatsApp · +57 313 262 2845</span><span style="font:400 20px/1 'Material Symbols Rounded'">arrow_outward</span></a>
+<a href="mailto:amendez@wigilabs.com?subject=Descubre%20Nari%C3%B1o%20%C2%B7%20reuni%C3%B3n" style="display:flex;align-items:center;gap:12px;min-height:56px;padding:0 22px;border-radius:28px;background:rgba(0,0,0,.18);color:#fff;text-decoration:none;font-size:15px;font-weight:700" style-hover="color:#fff;background:rgba(0,0,0,.28)"><span style="font:400 22px/1 'Material Symbols Rounded'">mail</span><span style="flex:1">amendez@wigilabs.com</span><span style="font:400 20px/1 'Material Symbols Rounded'">arrow_outward</span></a>
+</div>
+</div>
+</section>
+<footer style="background:#1B232B;color:#fff;padding:32px">
+<div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px">
+<img src="img/brand/wigilabs-wordmark-white.png" alt="Wigilabs" style="height:18px;width:auto;display:block"></img>
+<span style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6)">Strategic Tech Evolution Partner</span>
+<div style="flex:1"></div>
+<span style="font-size:12.5px;line-height:1.5;color:rgba(255,255,255,.6);max-width:520px">Prototipo de demostración preparado para la Gobernación de Nariño, la Cámara de Comercio de Pasto y los gremios del sector. Precios, prestadores y cifras son datos de ejemplo.</span>
+</div>
+</footer>
+</div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;mostrarNotas&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Presentación&quot;}}">
+<script type="text/x-dc" data-dc-script>
+const PH = { MVP: ['#EEF0F2', '#4B5560'], 'Fase 2': ['oklch(0.95 0.05 80)', 'oklch(0.42 0.1 70)'], 'Fase 3': ['oklch(0.94 0.03 250)', 'oklch(0.4 0.08 250)'], Nuevo: ['oklch(0.95 0.04 35)', 'oklch(0.45 0.17 35)'] };
+const it = (t, d, ph) => ({ t, d, ph, bg: PH[ph][0], fg: PH[ph][1] });
 class Component extends DCLogic {
+  state = { chat: 'detect', model: '', tts: 'detect', reset: false };
+  componentDidMount() {
+    fetch('api/chat').then(r => r.ok && (r.headers.get('content-type') || '').indexOf('json') >= 0 ? r.json() : null).then(j => this.setState({ chat: j && j.ok ? 'api' : (window.claude && window.claude.complete ? 'claude' : 'demo'), model: j && j.model || '' })).catch(() => this.setState({ chat: window.claude && window.claude.complete ? 'claude' : 'demo' }));
+    fetch('api/tts').then(r => r.ok && (r.headers.get('content-type') || '').indexOf('json') >= 0 ? r.json() : null).then(j => this.setState({ tts: j && j.ok ? 'api' : 'browser' })).catch(() => this.setState({ tts: 'browser' }));
+  }
   renderVals() {
-    const fotos = {
-      'Las Lajas': ['img/las-lajas.jpg', 'Santuario de Las Lajas, Ipiales'],
-      'Laguna Verde': ['img/laguna-verde.jpg', 'Laguna Verde, Túquerres'],
-      'La Cocha': ['img/cocha-botes.avif', 'El Encano, Laguna de La Cocha']
-    };
-    const f = fotos[this.props.fotoInicio] || fotos['Las Lajas'];
-    const ok = 'oklch(0.45 0.11 160)', warn = 'oklch(0.5 0.15 60)', bad = 'oklch(0.5 0.19 30)', mute = '#4B5560';
-    const est = {
-      Publicada: ['oklch(0.95 0.035 160)', 'oklch(0.38 0.1 160)'],
-      'En revisión': ['oklch(0.95 0.05 80)', 'oklch(0.42 0.1 70)'],
-      Borrador: ['#EEF0F2', '#4B5560']
-    };
-    const rows = [
-      ['Paseo en lancha a La Corota', 'Experiencia', 'Pasto', 'Vigente', ok, '2 sep 2026', mute, 'Publicada'],
-      ['Santuario de Las Lajas', 'Atractivo', 'Ipiales', 'No aplica', mute, '28 ago 2026', mute, 'Publicada'],
-      ['Hospedaje del muelle', 'Alojamiento', 'Pasto', 'Vence 30 oct', warn, '14 jun 2026', bad, 'Publicada'],
-      ['Guía al Volcán Azufral', 'Guía', 'Túquerres', 'Vigente', ok, '19 sep 2026', mute, 'En revisión'],
-      ['Taller de sombrero en iraca', 'Artesanías', 'Sandoná', 'Vigente', ok, '5 sep 2026', mute, 'Publicada'],
-      ['Transporte Ipiales – Cumbal', 'Transporte', 'Cumbal', 'Sin registro', bad, '—', mute, 'Borrador'],
-      ['Mirador de Rumichaca', 'Atractivo', 'Ipiales', 'No aplica', mute, '1 may 2026', bad, 'Publicada'],
-      ['Restaurante de trucha', 'Gastronomía', 'Pasto', 'Vigente', ok, '22 sep 2026', mute, 'En revisión']
-    ];
+    const s = this.state;
+    const chatV = { api: 'Claude en vivo' + (s.model ? ' (' + s.model + ')' : '') + ', con respuestas ancladas al catálogo.', claude: 'Claude disponible en este entorno de diseño. En Vercel se conecta por /api/chat con tu clave.', demo: 'Respuestas de demostración. Configura ANTHROPIC_API_KEY en Vercel para activar Claude.', detect: 'Detectando…' }[s.chat];
+    const ttsV = { api: 'ElevenLabs en vivo vía /api/tts. Los MP3 en /audio se usan primero.', browser: 'Voz del navegador para la demo. Sube los MP3 de ElevenLabs a /audio o configura ELEVENLABS_API_KEY.', detect: 'Detectando…' }[s.tts];
+    const good = 'oklch(0.75 0.15 155)', warn = 'oklch(0.8 0.12 80)';
     return {
-      heroSrc: f[0],
-      heroLugar: f[1],
-      notas: this.props.mostrarNotas ?? true,
-      fichas: rows.map(r => ({ nombre: r[0], tipo: r[1], municipio: r[2], rnt: r[3], rntColor: r[4], fecha: r[5], fechaColor: r[6], estado: r[7], estadoBg: est[r[7]][0], estadoFg: est[r[7]][1] })),
-      consultas: [
-        { q: '¿Hay buses de Ipiales a Cumbal el domingo?', mun: 'Cumbal', n: 14 },
-        { q: '¿Se puede acampar en la Laguna Verde?', mun: 'Túquerres', n: 9 },
-        { q: 'Horario del museo del Carnaval en enero', mun: 'Pasto', n: 6 },
-        { q: '¿Qué documentos piden en Rumichaca para menores?', mun: 'Ipiales', n: 5 },
-        { q: 'Hoteles en Tumaco con parqueadero', mun: 'Tumaco', n: 3 }
-      ]
+      desktop: true, aiDot: s.chat === 'api' || s.chat === 'claude' ? good : warn, aiLabel: 'Prototipo navegable · octubre 2026',
+      cifras: [{ v: '+750.000', k: 'visitantes al año en el Santuario de Las Lajas' }, { v: '64', k: 'municipios en el departamento; hoy el flujo llega a unos pocos' }, { v: '56', k: 'funcionalidades mapeadas en 9 módulos; 8 concentran el valor' }, { v: '4 meses', k: 'para tener el MVP en producción' }],
+      sostener: [{ f: 'Fase 1', k: 'Inversión pública', v: 'La plataforma funciona como infraestructura de promoción del destino, como una campaña o un punto de información.' }, { f: 'Fase 2', k: 'Pase y cupones', v: 'El pase digital y los acuerdos con prestadores generan ingreso propio y datos de gasto inducido.' }, { f: 'Fase 3', k: 'Comisión y patrocinio', v: 'La comisión sobre reservas y los patrocinios sectoriales cubren la operación sin depender del presupuesto anual.' }],
+      engines: [{ k: 'Asistente Guía Nariño', v: chatV, dot: s.chat === 'api' || s.chat === 'claude' ? good : warn }, { k: 'Voces de las audioguías', v: ttsV, dot: s.tts === 'api' ? good : warn }],
+      portals: [
+        { n: 'App turista', who: 'Turista nacional, ecuatoriano y extranjero · móvil', icon: 'smartphone', tint: 'oklch(0.95 0.04 35)', ink: 'oklch(0.45 0.17 35)', href: 'Descubre Narino App Turista.dc.html', desc: 'Conversar, descubrir, planear y escuchar. El asistente es la portada; todo lo demás sale del mismo catálogo. A los lados de la pantalla hay una guía que explica cada vista mientras navegas.', items: [it('Asistente Guía Nariño', 'Recomienda con fichas reales y crea el plan', 'MVP'), it('Mi plan', 'Itinerario día por día con costo y ahorro', 'MVP'), it('Catálogo, ficha, mapa y agenda', 'Buscador con sello RNT, seis rutas y temporadas', 'MVP'), it('Recorridos narrados', 'Audio en el lugar desde mapa, ficha o QR', 'MVP'), it('Pase y cupones', 'Billetera con pase de 1, 3 o 5 días', 'Fase 2'), it('Reservas', 'Solicitud directa al prestador', 'Fase 2')] },
+        { n: 'Portal del prestador', who: 'Hoteles, restaurantes, guías y operadores con RNT · escritorio', icon: 'storefront', tint: 'oklch(0.95 0.035 160)', ink: 'oklch(0.38 0.1 160)', href: 'Descubre Narino Prestador.dc.html', desc: 'El prestador es usuario, no proveedor de contenido. Ve cuántos turistas lo encuentran, publica cupones, valida canjes y responde reservas y reseñas.', items: [it('Resumen', 'Visitas, recomendaciones del Guía y origen', 'Fase 2'), it('Mi ficha', 'Edición con precio de referencia y revisión', 'Fase 2'), it('Cupones y validación', 'Publica y valida códigos del Pase', 'Fase 2'), it('Reservas y reseñas', 'Responde solicitudes y opiniones', 'Fase 2'), it('Registro RNT', 'Vigencia cruzada con el registro oficial', 'MVP')] },
+        { n: 'Gobernación', who: 'Gobernación, alcaldías, Cámara de Comercio y gremios · escritorio', icon: 'account_balance', tint: 'oklch(0.94 0.03 250)', ink: 'oklch(0.35 0.08 250)', href: 'Descubre Narino Gobernacion.dc.html', desc: 'El dueño del catálogo. Publica y revisa fichas, gestiona prestadores y RNT, produce las audioguías con sus carteles QR y mide la dispersión territorial y la demanda fuera de enero.', items: [it('Tablero de inteligencia', 'Demanda, municipios, origen e indicadores', 'Fase 2'), it('Fichas y prestadores', 'Catálogo, RNT y cambios en revisión', 'MVP'), it('Audioguías y QR', 'Guion, voz ElevenLabs y cartel imprimible', 'MVP'), it('Eventos, rutas y alertas', 'Lo que ve el turista en agenda, mapa y SOS', 'MVP'), it('Consultas sin respuesta', 'Vacíos del asistente convertidos en fichas', 'MVP')] }
+      ],
+      steps: [
+        { n: '1', where: 'App turista', t: 'Pide un plan al Guía', d: 'Toca «3 días desde Ipiales». Aparecen tarjetas con sello RNT, mini mapa y «Crear mi plan».', href: 'Descubre Narino App Turista.dc.html' },
+        { n: '2', where: 'App turista', t: 'Pregunta algo que no está', d: 'Escribe «¿hay surf en Tumaco?». El Guía lo admite y registra la consulta.', href: 'Descubre Narino App Turista.dc.html' },
+        { n: '3', where: 'Gobernación', t: 'Convierte la consulta en ficha', d: 'En Consultas sin respuesta aparece como «Nueva». Toca «Crear ficha».', href: 'Descubre Narino Gobernacion.dc.html' },
+        { n: '4', where: 'App turista', t: 'Escucha una audioguía', d: 'Escanea LAJ-01, o abre el mapa, toca los audífonos y luego un pin.', href: 'Descubre Narino App Turista.dc.html' },
+        { n: '5', where: 'Portal prestador', t: 'Publica un cupón', d: 'En Cupones crea uno nuevo. Aparece de inmediato en el Pase del turista.', href: 'Descubre Narino Prestador.dc.html' },
+        { n: '6', where: 'App turista', t: 'Usa el cupón', d: 'En Pase toca «Usar». Se genera un código DN-0000 con su QR.', href: 'Descubre Narino App Turista.dc.html' },
+        { n: '7', where: 'Portal prestador', t: 'Valida el canje', d: 'En Validar cupón escribe el código. El ahorro aparece en Mi plan del turista.', href: 'Descubre Narino Prestador.dc.html' },
+        { n: '8', where: 'App + prestador', t: 'Reserva y confirma', d: 'En la ficha de la lancha a La Corota envía una solicitud y confírmala en Reservas.', href: 'Descubre Narino App Turista.dc.html' }
+      ],
+      resetLabel: s.reset ? 'Datos de la demo reiniciados' : 'Reiniciar datos de la demo',
+      resetDemo: () => { ['dn_consultas', 'dn_cupones', 'dn_canjes', 'dn_reservas', 'dn_alertas', 'dn_revisiones', 'dn_pase'].forEach(k => { try { localStorage.removeItem(k); } catch (e) {} }); this.setState({ reset: true }); },
+      feats: [
+        ['Asistente Guía Nariño', 'Chat en la portada. Recomienda por intereses, días, presupuesto y punto de llegada, solo con fichas del catálogo.', 'App › Inicio y Conversación', 'MVP'],
+        ['Creador de itinerario', 'Plan día por día con paradas, traslados, clima, costo estimado y ahorro con cupones. Se comparte o se descarga.', 'App › Mi plan', 'MVP'],
+        ['Catálogo unificado', 'Buscador con filtros por municipio, tipo, precio, accesibilidad y RNT. Ficha con precio sugerido y sello.', 'App › Explorar y Ficha', 'MVP'],
+        ['Mapa y rutas temáticas', 'Seis rutas como capas, cómo llegar desde Pasto, Ipiales y Rumichaca, y capa de audioguías.', 'App › Mapa', 'MVP'],
+        ['Recorridos narrados', 'Narración por punto de interés con voces de ElevenLabs, transcripción, ES/EN y descarga sin conexión. Se activa desde el mapa, la ficha o el QR del lugar.', 'App › Audioguías · Gobernación › Audioguías', 'MVP'],
+        ['Pase digital y cupones', 'Pase de 1, 3 o 5 días y cupones QR publicados por prestadores con RNT, con ahorro acumulado.', 'App › Pase · Prestador › Cupones', 'Fase 2'],
+        ['Agenda de eventos', 'Fiestas, ferias y temporadas; la temporada baja va primero.', 'App › Agenda · Gobernación › Eventos', 'MVP'],
+        ['Portal del prestador', 'Ficha propia, estadísticas, cupones, validación de canjes, reservas, reseñas y estado del RNT.', 'Portal prestador', 'Fase 2'],
+        ['Tablero de inteligencia turística', 'Demanda mensual, municipios, origen, uso del asistente, cupones e indicadores.', 'Gobernación › Tablero', 'Fase 2'],
+        ['Gestor de contenidos', 'Fichas, prestadores, eventos, rutas, alertas y consultas sin respuesta.', 'Gobernación', 'MVP'],
+        ['Transversales', 'Español e inglés, botón de emergencia con 123, 122 y Policía de Turismo, alertas de vía, modo sin conexión y accesibilidad AA.', 'Todas las pantallas', 'MVP'],
+        ['Pagos, OTAs y fidelidad', 'Pagos en línea y comisiones, integración con OTAs, programa de fidelidad y realidad aumentada en patrimonio.', 'Fuera de este prototipo', 'Fase 3']
+      ].map(([n, d, w, ph]) => ({ n, d, w, ph, bg: PH[ph][0], fg: PH[ph][1] })),
+      capas: [{ n: '1', t: 'Fuentes', d: 'RNT, contenido de la Gobernación y alcaldías, agenda de Corpocarnaval y ferias, estadísticas de SITUR y CITUR.' }, { n: '2', t: 'Catálogo único', d: 'Una ficha normalizada por atractivo, prestador y experiencia, con geolocalización, precio sugerido y estado RNT.' }, { n: '3', t: 'Recuperación y generación', d: 'Claude recibe solo las fichas relevantes y responde con trazabilidad a cada una. Lo que no encuentra se registra.' }, { n: '4', t: 'Experiencias', d: 'App turista, portal del prestador y tablero de la Gobernación sobre los mismos datos.' }],
+      piezas: [{ k: 'api/chat.js', v: 'Función de Vercel que llama a la API de Claude con el catálogo como contexto y devuelve tarjetas, acciones y consultas sin respuesta.' }, { k: 'api/tts.js', v: 'Función de Vercel que genera la narración con ElevenLabs y devuelve el MP3.' }, { k: 'data/catalogo.json', v: 'Fichas, rutas, eventos y cupones de la demo, con el esquema de la ficha normalizada.' }, { k: 'data/audioguias.json', v: 'Recorridos, puntos, códigos QR y guiones en español e inglés.' }, { k: 'audio/', v: 'Carpeta para los MP3 de ElevenLabs, nombrados por punto (lajas-01.mp3, lajas-01-en.mp3).' }, { k: 'CLAUDE.md y docs/', v: 'Instrucciones para Claude Code, arquitectura recomendada, especificación de pantallas y plan de trabajo por fases.' }]
     };
   }
 }

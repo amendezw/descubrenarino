@@ -1,0 +1,546 @@
+{
+  "version": "2026-10-09",
+  "nota": "Datos de ejemplo para la demo. En producción este archivo se reemplaza por la base de datos del catálogo.",
+  "fichas": [
+    {
+      "id": "corota",
+      "nombre": "Paseo en lancha a la Isla La Corota",
+      "tipo": "Experiencia",
+      "categoria": "Experiencias",
+      "municipio": "El Encano, Pasto",
+      "distancia_desde_pasto": "27 km",
+      "precio_sugerido": 30000,
+      "unidad": "por persona",
+      "rango_referencia": "$25.000 – $35.000",
+      "horario": "8:00 – 17:00 diario",
+      "duracion": "1 h 30 min",
+      "rnt": "48211",
+      "prestador": "Asociación de Lancheros El Encano",
+      "accesible": true,
+      "poco_visitado": false,
+      "reservable": true,
+      "descripcion": "Recorrido en lancha por la Laguna de La Cocha hasta el santuario de flora Isla La Corota, con un sendero corto entre bosque andino.",
+      "como_llegar": [
+        {
+          "desde": "Desde Pasto",
+          "tiempo": "45 min · 27 km"
+        },
+        {
+          "desde": "Desde Ipiales",
+          "tiempo": "2 h 15 min · 110 km"
+        },
+        {
+          "desde": "Desde Rumichaca",
+          "tiempo": "2 h 25 min · 116 km"
+        }
+      ],
+      "actualizada": "2 sep 2026",
+      "imagen": "img/cocha-encano.jpg",
+      "audioguia": "cocha"
+    },
+    {
+      "id": "lajas",
+      "nombre": "Santuario de Las Lajas",
+      "tipo": "Atractivo",
+      "categoria": "Atractivos",
+      "municipio": "Ipiales",
+      "distancia_desde_pasto": "7 km",
+      "precio_sugerido": 0,
+      "unidad": "entrada libre",
+      "rango_referencia": "Sin costo",
+      "horario": "6:00 – 18:00 diario",
+      "duracion": "2 h",
+      "rnt": null,
+      "prestador": null,
+      "accesible": true,
+      "poco_visitado": false,
+      "reservable": false,
+      "descripcion": "Basílica neogótica construida sobre el cañón del río Guáitara. Se llega por carretera o en teleférico desde Ipiales.",
+      "como_llegar": [
+        {
+          "desde": "Desde Ipiales",
+          "tiempo": "15 min · 7 km"
+        },
+        {
+          "desde": "Desde Rumichaca",
+          "tiempo": "20 min · 10 km"
+        },
+        {
+          "desde": "Desde Pasto",
+          "tiempo": "1 h 50 min · 85 km"
+        }
+      ],
+      "actualizada": "28 ago 2026",
+      "imagen": "img/las-lajas.jpg",
+      "audioguia": "lajas"
+    },
+    {
+      "id": "verde",
+      "nombre": "Laguna Verde, Volcán Azufral",
+      "tipo": "Guía",
+      "categoria": "Guías",
+      "municipio": "Túquerres",
+      "distancia_desde_pasto": "78 km",
+      "precio_sugerido": 45000,
+      "unidad": "por persona",
+      "rango_referencia": "$40.000 – $60.000",
+      "horario": "Salidas 7:00 y 9:00",
+      "duracion": "4 h",
+      "rnt": "52307",
+      "prestador": "Guías del Azufral",
+      "accesible": false,
+      "poco_visitado": true,
+      "reservable": false,
+      "descripcion": "Caminata de 4 km hasta el cráter del Azufral y su laguna color esmeralda, a 3.900 m. El ingreso es solo con guía registrado.",
+      "como_llegar": [
+        {
+          "desde": "Desde Túquerres",
+          "tiempo": "30 min · 18 km"
+        },
+        {
+          "desde": "Desde Ipiales",
+          "tiempo": "1 h 30 min · 75 km"
+        },
+        {
+          "desde": "Desde Pasto",
+          "tiempo": "2 h · 95 km"
+        }
+      ],
+      "actualizada": "19 sep 2026",
+      "imagen": "img/laguna-verde.jpg",
+      "audioguia": "verde"
+    },
+    {
+      "id": "muelle",
+      "nombre": "Hospedaje del muelle",
+      "tipo": "Alojamiento",
+      "categoria": "Alojamiento",
+      "municipio": "El Encano, Pasto",
+      "distancia_desde_pasto": "27 km",
+      "precio_sugerido": 95000,
+      "unidad": "por noche",
+      "rango_referencia": "$70.000 – $120.000",
+      "horario": "Recepción 24 h",
+      "duracion": "Check-in 14:00",
+      "rnt": "39120",
+      "prestador": "Hospedaje del Muelle SAS",
+      "accesible": true,
+      "poco_visitado": false,
+      "reservable": true,
+      "descripcion": "Cabañas de madera a la orilla de La Cocha, con desayuno incluido y lancha a la isla bajo reserva.",
+      "como_llegar": [
+        {
+          "desde": "Desde Pasto",
+          "tiempo": "45 min · 27 km"
+        },
+        {
+          "desde": "Desde Ipiales",
+          "tiempo": "2 h 15 min · 110 km"
+        }
+      ],
+      "actualizada": "14 jun 2026",
+      "imagen": "img/cocha-noche.jpg",
+      "audioguia": null
+    },
+    {
+      "id": "iraca",
+      "nombre": "Taller de sombrero en iraca",
+      "tipo": "Artesanías",
+      "categoria": "Artesanías",
+      "municipio": "Sandoná",
+      "distancia_desde_pasto": "48 km",
+      "precio_sugerido": 40000,
+      "unidad": "por persona",
+      "rango_referencia": "$30.000 – $50.000",
+      "horario": "Lun a sáb, 9:00 – 16:00",
+      "duracion": "2 h",
+      "rnt": "61842",
+      "prestador": "Taller Tejedoras de Sandoná",
+      "accesible": true,
+      "poco_visitado": true,
+      "reservable": false,
+      "descripcion": "Taller bajo techo con tejedoras de Sandoná: el proceso de la paja toquilla y una pieza pequeña para llevar.",
+      "como_llegar": [
+        {
+          "desde": "Desde Pasto",
+          "tiempo": "1 h 10 min · 48 km"
+        },
+        {
+          "desde": "Desde Ipiales",
+          "tiempo": "2 h 30 min · 120 km"
+        }
+      ],
+      "actualizada": "5 sep 2026",
+      "imagen": "img/iraca.jpg",
+      "audioguia": null
+    },
+    {
+      "id": "tulpa",
+      "nombre": "Restaurante La Tulpa",
+      "tipo": "Gastronomía",
+      "categoria": "Gastronomía",
+      "municipio": "Túquerres",
+      "distancia_desde_pasto": "75 km",
+      "precio_sugerido": 28000,
+      "unidad": "por plato",
+      "rango_referencia": "$20.000 – $35.000",
+      "horario": "11:30 – 16:00",
+      "duracion": "1 h",
+      "rnt": "57014",
+      "prestador": "La Tulpa Cocina Andina",
+      "accesible": true,
+      "poco_visitado": true,
+      "reservable": false,
+      "descripcion": "Cocina de la sabana de Túquerres: sopa de quinua, cuy asado y papa amarilla.",
+      "como_llegar": [
+        {
+          "desde": "Desde Ipiales",
+          "tiempo": "1 h 15 min · 75 km"
+        },
+        {
+          "desde": "Desde Pasto",
+          "tiempo": "1 h 50 min · 80 km"
+        }
+      ],
+      "actualizada": "22 sep 2026",
+      "imagen": "img/tulpa.jpg",
+      "audioguia": null
+    },
+    {
+      "id": "trucha",
+      "nombre": "Restaurante de trucha",
+      "tipo": "Gastronomía",
+      "categoria": "Gastronomía",
+      "municipio": "El Encano, Pasto",
+      "distancia_desde_pasto": "27 km",
+      "precio_sugerido": 28000,
+      "unidad": "por plato",
+      "rango_referencia": "$22.000 – $35.000",
+      "horario": "10:00 – 18:00",
+      "duracion": "1 h",
+      "rnt": "44590",
+      "prestador": "Asadero La Orilla",
+      "accesible": false,
+      "poco_visitado": false,
+      "reservable": false,
+      "descripcion": "Trucha arcoíris de la laguna, frita o al ajillo, frente al muelle.",
+      "como_llegar": [
+        {
+          "desde": "Desde Pasto",
+          "tiempo": "45 min · 27 km"
+        }
+      ],
+      "actualizada": "22 sep 2026",
+      "imagen": "img/cocha-botes.avif",
+      "audioguia": null
+    },
+    {
+      "id": "cafe",
+      "nombre": "Recorrido de café de altura",
+      "tipo": "Experiencia",
+      "categoria": "Experiencias",
+      "municipio": "Buesaco",
+      "distancia_desde_pasto": "38 km",
+      "precio_sugerido": 55000,
+      "unidad": "por persona",
+      "rango_referencia": "$45.000 – $70.000",
+      "horario": "Mar a dom, 8:00 y 14:00",
+      "duracion": "3 h",
+      "rnt": "58830",
+      "prestador": "Finca El Mirador",
+      "accesible": false,
+      "poco_visitado": true,
+      "reservable": false,
+      "descripcion": "Visita a finca cafetera de montaña, del cultivo a la taza, con catación al final.",
+      "como_llegar": [
+        {
+          "desde": "Desde Pasto",
+          "tiempo": "1 h · 38 km"
+        }
+      ],
+      "actualizada": "10 sep 2026",
+      "imagen": "img/paisaje-andino.jpeg",
+      "audioguia": null
+    },
+    {
+      "id": "galeras",
+      "nombre": "Mirador del Volcán Galeras",
+      "tipo": "Atractivo",
+      "categoria": "Atractivos",
+      "municipio": "Pasto",
+      "distancia_desde_pasto": "9 km",
+      "precio_sugerido": 0,
+      "unidad": "entrada libre",
+      "rango_referencia": "Sin costo",
+      "horario": "Según alerta volcánica",
+      "duracion": "1 h 30 min",
+      "rnt": null,
+      "prestador": null,
+      "accesible": false,
+      "poco_visitado": false,
+      "reservable": false,
+      "descripcion": "Mirador autorizado sobre el volcán. El acceso al cráter está cerrado; el estado se actualiza con el boletín del Servicio Geológico.",
+      "como_llegar": [
+        {
+          "desde": "Desde Pasto",
+          "tiempo": "30 min · 9 km"
+        },
+        {
+          "desde": "Desde Ipiales",
+          "tiempo": "1 h 55 min · 90 km"
+        }
+      ],
+      "actualizada": "30 sep 2026",
+      "imagen": "img/galeras.jpg",
+      "audioguia": null
+    },
+    {
+      "id": "museo",
+      "nombre": "Museo del Carnaval",
+      "tipo": "Atractivo",
+      "categoria": "Atractivos",
+      "municipio": "Pasto",
+      "distancia_desde_pasto": "2 km",
+      "precio_sugerido": 10000,
+      "unidad": "entrada",
+      "rango_referencia": "$5.000 – $10.000",
+      "horario": "Mar a dom, 9:00 – 17:00",
+      "duracion": "1 h",
+      "rnt": null,
+      "prestador": null,
+      "accesible": true,
+      "poco_visitado": false,
+      "reservable": false,
+      "descripcion": "Carrozas, máscaras y la historia del Carnaval de Negros y Blancos, abierto todo el año.",
+      "como_llegar": [
+        {
+          "desde": "Desde el centro de Pasto",
+          "tiempo": "10 min · 2 km"
+        }
+      ],
+      "actualizada": "1 sep 2026",
+      "imagen": "img/museo-carnaval.jpeg",
+      "audioguia": "pasto"
+    }
+  ],
+  "rutas": [
+    {
+      "id": "naturaleza",
+      "nombre": "Ruta de Naturaleza",
+      "descripcion": "5 paradas · 2 a 3 días · lagunas, volcanes y páramo",
+      "color": "oklch(0.52 0.13 155)",
+      "paradas": [
+        {
+          "etiqueta": "1 · Las Lajas",
+          "ficha": "lajas"
+        },
+        {
+          "etiqueta": "2 · Laguna Verde",
+          "ficha": "verde"
+        },
+        {
+          "etiqueta": "4 · Galeras",
+          "ficha": "galeras"
+        },
+        {
+          "etiqueta": "5 · La Cocha",
+          "ficha": "corota"
+        }
+      ],
+      "como_llegar": {
+        "Pasto": "Primera parada a 1 h 50 min · 85 km",
+        "Ipiales": "Primera parada a 15 min · 7 km",
+        "Rumichaca": "Primera parada a 20 min · 10 km"
+      }
+    },
+    {
+      "id": "religiosa",
+      "nombre": "Ruta Religiosa",
+      "descripcion": "4 paradas · 2 días · santuarios e iglesias coloniales",
+      "color": "oklch(0.55 0.16 300)",
+      "paradas": [
+        {
+          "etiqueta": "1 · Pasto",
+          "ficha": "museo"
+        },
+        {
+          "etiqueta": "4 · Las Lajas",
+          "ficha": "lajas"
+        }
+      ],
+      "como_llegar": {
+        "Pasto": "Arranca en Pasto",
+        "Ipiales": "Haz la ruta en sentido inverso · 15 min a Las Lajas",
+        "Rumichaca": "Sentido inverso · 20 min a Las Lajas"
+      }
+    },
+    {
+      "id": "binacional",
+      "nombre": "Ruta Binacional",
+      "descripcion": "5 paradas · 2 días · Rumichaca, Ipiales, Cumbal y Túquerres",
+      "color": "oklch(0.55 0.12 95)",
+      "paradas": [
+        {
+          "etiqueta": "3 · Las Lajas",
+          "ficha": "lajas"
+        },
+        {
+          "etiqueta": "5 · Laguna Verde",
+          "ficha": "verde"
+        }
+      ],
+      "como_llegar": {
+        "Pasto": "Primera parada a 2 h · 92 km",
+        "Ipiales": "Primera parada a 10 min · 3 km",
+        "Rumichaca": "Arranca en el puente"
+      }
+    },
+    {
+      "id": "cafe",
+      "nombre": "Ruta del Café",
+      "descripcion": "4 paradas · 2 días · cafés de altura del norte",
+      "color": "oklch(0.52 0.12 60)",
+      "paradas": [
+        {
+          "etiqueta": "2 · Buesaco",
+          "ficha": "cafe"
+        },
+        {
+          "etiqueta": "4 · Sandoná",
+          "ficha": "iraca"
+        }
+      ],
+      "como_llegar": {
+        "Pasto": "Arranca en Pasto",
+        "Ipiales": "Primera parada a 1 h 50 min · 85 km",
+        "Rumichaca": "Primera parada a 2 h · 92 km"
+      }
+    },
+    {
+      "id": "carnaval",
+      "nombre": "Ruta del Carnaval",
+      "descripcion": "2 paradas · 1 día · museo, talleres y maestros artesanos",
+      "color": "oklch(0.56 0.19 30)",
+      "paradas": [
+        {
+          "etiqueta": "1 · Museo",
+          "ficha": "museo"
+        },
+        {
+          "etiqueta": "2 · Sandoná",
+          "ficha": "iraca"
+        }
+      ],
+      "como_llegar": {
+        "Pasto": "Arranca en Pasto",
+        "Ipiales": "Primera parada a 1 h 50 min · 85 km",
+        "Rumichaca": "Primera parada a 2 h · 92 km"
+      }
+    },
+    {
+      "id": "pacifico",
+      "nombre": "Ruta del Pacífico",
+      "descripcion": "Pasto – Tumaco · 2 a 3 días · playa, manglar y marimba",
+      "color": "oklch(0.52 0.14 240)",
+      "paradas": [
+        {
+          "etiqueta": "1 · Pasto",
+          "ficha": "museo"
+        }
+      ],
+      "como_llegar": {
+        "Pasto": "Tumaco a 5 h 30 min · 284 km",
+        "Ipiales": "Tumaco a 6 h · 300 km",
+        "Rumichaca": "Tumaco a 6 h 10 min · 305 km"
+      }
+    }
+  ],
+  "eventos": [
+    {
+      "id": "e1",
+      "nombre": "Feria artesanal de la iraca",
+      "mes": "oct",
+      "dia": "24",
+      "lugar": "Sandoná",
+      "fecha": "24 – 26 oct 2026"
+    },
+    {
+      "id": "e2",
+      "nombre": "Encuentro de música andina",
+      "mes": "nov",
+      "dia": "14",
+      "lugar": "Pasto",
+      "fecha": "14 – 15 nov 2026"
+    },
+    {
+      "id": "e3",
+      "nombre": "Noche de velitas en el muelle",
+      "mes": "dic",
+      "dia": "7",
+      "lugar": "El Encano",
+      "fecha": "7 dic 2026"
+    },
+    {
+      "id": "e4",
+      "nombre": "Desfile del Año Viejo",
+      "mes": "dic",
+      "dia": "28",
+      "lugar": "Pasto",
+      "fecha": "28 – 31 dic 2026"
+    },
+    {
+      "id": "e5",
+      "nombre": "Carnaval de Negros y Blancos",
+      "mes": "ene",
+      "dia": "2",
+      "lugar": "Pasto",
+      "fecha": "2 – 7 ene 2027"
+    },
+    {
+      "id": "e6",
+      "nombre": "Semana Santa en Las Lajas",
+      "mes": "mar",
+      "dia": "21",
+      "lugar": "Ipiales",
+      "fecha": "21 – 28 mar 2027"
+    }
+  ],
+  "cupones": [
+    {
+      "id": "c1",
+      "t": "15% en el paseo a La Corota",
+      "prest": "Lancheros El Encano",
+      "mun": "El Encano",
+      "big": "15%",
+      "small": "DCTO",
+      "ahorro": 4500
+    },
+    {
+      "id": "c2",
+      "t": "Postre de la casa con el almuerzo",
+      "prest": "La Tulpa Cocina Andina",
+      "mun": "Túquerres",
+      "big": "1",
+      "small": "GRATIS",
+      "ahorro": 9000
+    },
+    {
+      "id": "c3",
+      "t": "10% en el taller de iraca",
+      "prest": "Tejedoras de Sandoná",
+      "mun": "Sandoná",
+      "big": "10%",
+      "small": "DCTO",
+      "ahorro": 4000
+    },
+    {
+      "id": "c4",
+      "t": "2x1 en la catación de café",
+      "prest": "Finca El Mirador",
+      "mun": "Buesaco",
+      "big": "2x1",
+      "small": "CAFÉ",
+      "ahorro": 27500
+    }
+  ]
+}

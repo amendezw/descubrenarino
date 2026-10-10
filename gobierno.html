@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Descubre Nariño · Gobernación</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,300..600,0..1,0&display=block" rel="stylesheet">
+<style>body{margin:0;background:#F4F6F7;font-family:'Public Sans',system-ui,sans-serif;color:#141A21;-webkit-font-smoothing:antialiased}*{box-sizing:border-box}button{font:inherit;color:inherit}input,select,textarea{font:inherit;color:#141A21;background-color:#fff}a{color:oklch(0.5 0.19 35)}a:hover{color:oklch(0.42 0.17 35)}</style>
+</helmet>
+<div style="min-height:100vh;display:flex;flex-direction:column">
+<div style="background:#1B232B"><sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+<div style="flex:none;display:flex;align-items:center;flex-wrap:wrap;gap:10px 20px;padding:12px 24px;color:#fff;border-bottom:1px solid rgba(255,255,255,.08)">
+<a href="index.html" style="text-decoration:none;color:#fff;font:400 24px/1 'Instrument Serif',serif;white-space:nowrap" style-hover="color:#fff">Descubre <span style="font-style:italic">Nariño</span></a>
+<nav style="display:flex;flex-wrap:nowrap;gap:4px;padding:4px;border-radius:22px;background:rgba(255,255,255,.08);max-width:100%;overflow-x:auto;scrollbar-width:none">
+<a href="index.html" style="display:flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:18px;font-size:13.5px;font-weight:600;text-decoration:none;white-space:nowrap;color:#fff" style-hover="color:#fff;background:rgba(255,255,255,.1)"><span style="font:400 18px/1 'Material Symbols Rounded'">hub</span>Plataforma</a>
+<a href="app.html" style="display:flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:18px;font-size:13.5px;font-weight:600;text-decoration:none;white-space:nowrap;color:#fff" style-hover="color:#fff;background:rgba(255,255,255,.1)"><span style="font:400 18px/1 'Material Symbols Rounded'">smartphone</span>App turista</a>
+<a href="prestador.html" style="display:flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:18px;font-size:13.5px;font-weight:600;text-decoration:none;white-space:nowrap;color:#fff" style-hover="color:#fff;background:rgba(255,255,255,.1)"><span style="font:400 18px/1 'Material Symbols Rounded'">storefront</span>Prestador</a>
+<a href="gobierno.html" aria-current="page" style="display:flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:18px;font-size:13.5px;font-weight:600;text-decoration:none;white-space:nowrap;background:#fff;color:#141A21" style-hover="color:#141A21"><span style="font:400 18px/1 'Material Symbols Rounded'">account_balance</span>Gobernación</a>
+</nav>
+<div style="flex:1"></div>
+<div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+<a href="https://wigilabs.com" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:rgba(255,255,255,.72);font-size:12px;white-space:nowrap" style-hover="color:#fff"><span>Una propuesta de</span><img src="img/brand/wigilabs-wordmark-white.png" alt="Wigilabs" style="height:12px;width:auto;display:block"></img></a>
+<a href="https://meetings.hubspot.com/andresm/reuniones-andres-mendez" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:18px;background:oklch(0.56 0.19 35);color:#fff;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap" style-hover="color:#fff;background:oklch(0.5 0.19 35)"><span style="font:400 18px/1 'Material Symbols Rounded'">event</span>Agendar reunión</a>
+</div>
+</div>
+</sc-if></div>
+<div style="flex:1;display:grid;grid-template-columns:{{ cols }};min-height:0">
+
+<aside style="background:oklch(0.24 0.03 250);color:#fff;padding:20px 14px;display:flex;flex-direction:column;gap:4px">
+<div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55);padding:4px 10px 10px">Gobernación de Nariño</div>
+<sc-for list="{{ nav }}" as="n" hint-placeholder-count="8">
+<button onClick="{{ n.go }}" style="border:0;cursor:pointer;text-align:left;display:flex;align-items:center;gap:10px;min-height:42px;padding:0 10px;border-radius:10px;font-size:13.5px;font-weight:600;color:#fff;background:{{ n.bg }}"><span style="font:400 20px/1 'Material Symbols Rounded'">{{ n.icon }}</span><span style="flex:1">{{ n.label }}</span><sc-if value="{{ n.hasBadge }}"><span style="font-size:11px;font-weight:700;padding:2px 7px;border-radius:9px;background:oklch(0.56 0.19 35)">{{ n.badge }}</span></sc-if></button>
+</sc-for>
+<div style="margin-top:auto;display:flex;align-items:center;gap:10px;padding:12px 10px 0;border-top:1px solid rgba(255,255,255,.12)"><span style="width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700">LM</span><div><div style="font-size:13px;font-weight:600">Laura Muñoz</div><div style="font-size:11px;opacity:.7">Editora de contenido</div></div></div>
+</aside>
+
+<main style="padding:28px 32px 48px;display:flex;flex-direction:column;gap:20px;min-width:0">
+<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap">
+<div style="flex:1 1 420px;max-width:760px;min-width:0"><div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><div style="font:400 36px/1.1 'Instrument Serif',serif;min-width:0">{{ head.title }}</div><span style="flex:none;white-space:nowrap;font-size:11px;font-weight:700;padding:3px 8px;border-radius:6px;background:{{ head.phaseBg }};color:{{ head.phaseFg }}">{{ head.phase }}</span></div><p style="margin:10px 0 0;font-size:14px;line-height:1.55;color:#4B5560;text-wrap:pretty">{{ head.desc }}</p></div>
+<sc-if value="{{ head.hasAction }}"><button onClick="{{ head.action }}" style="border:0;cursor:pointer;height:42px;padding:0 18px;border-radius:21px;background:oklch(0.56 0.19 35);color:#fff;display:flex;align-items:center;gap:6px;font-size:13.5px;font-weight:700;white-space:nowrap"><span style="font:400 20px/1 'Material Symbols Rounded'">add</span>{{ head.actionLabel }}</button></sc-if>
+</div>
+
+<sc-if value="{{ sec.tablero }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;gap:6px;flex-wrap:wrap">
+<sc-for list="{{ periodos }}" as="pe" hint-placeholder-count="3"><button onClick="{{ pe.go }}" style="cursor:pointer;height:34px;padding:0 14px;border-radius:17px;font-size:13px;font-weight:600;background:{{ pe.bg }};color:{{ pe.fg }};border:1px solid {{ pe.bd }}">{{ pe.l }}</button></sc-for>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px">
+<sc-for list="{{ kpis }}" as="k" hint-placeholder-count="6">
+<div style="background:#fff;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:4px"><div style="font-size:12px;color:#4B5560">{{ k.k }}</div><div style="font:400 34px/1.1 'Instrument Serif',serif;color:{{ k.c }}">{{ k.v }}</div><div style="font-size:11.5px;color:#6B747D;line-height:1.4">{{ k.how }}</div></div>
+</sc-for>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:16px">
+<div style="background:#fff;border-radius:14px;padding:18px">
+<div style="font-size:14px;font-weight:700">Distribución mensual de la demanda</div><div style="font-size:12px;color:#4B5560;margin-top:4px">Consultas e itinerarios por mes · la meta es bajar la dependencia de enero</div>
+<div style="display:flex;align-items:flex-end;gap:6px;height:190px;margin-top:16px">
+<sc-for list="{{ demanda }}" as="b" hint-placeholder-count="12"><div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end"><div style="font-size:10.5px;font-weight:600;color:#4B5560">{{ b.v }}</div><div style="width:100%;border-radius:5px 5px 2px 2px;height:{{ b.h }};background:{{ b.c }}"></div><div style="font-size:10.5px;color:#6B747D">{{ b.m }}</div></div></sc-for>
+</div>
+</div>
+<div style="background:#fff;border-radius:14px;padding:18px">
+<div style="font-size:14px;font-weight:700">Municipios en los planes</div><div style="font-size:12px;color:#4B5560;margin-top:4px">Participación en los itinerarios creados</div>
+<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;margin-top:14px">
+<div><div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6B747D;margin-bottom:8px">Más visitados</div><sc-for list="{{ munTop }}" as="mt" hint-placeholder-count="5"><div style="display:flex;flex-direction:column;gap:4px;margin-bottom:10px;font-size:13px"><div style="display:flex;justify-content:space-between"><span>{{ mt.k }}</span><strong>{{ mt.v }}</strong></div><div style="height:6px;border-radius:3px;background:#EEF0F2"><div style="height:100%;width:{{ mt.w }};border-radius:3px;background:oklch(0.45 0.06 250)"></div></div></div></sc-for></div>
+<div><div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6B747D;margin-bottom:8px">Menos visitados con oferta</div><sc-for list="{{ munLow }}" as="ml" hint-placeholder-count="5"><div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;font-size:13px"><span>{{ ml.k }} <span style="color:#6B747D">{{ ml.v }}</span></span><button onClick="{{ ml.go }}" style="cursor:pointer;background:{{ ml.bg }};color:{{ ml.fg }};border:1px solid {{ ml.bd }};height:28px;padding:0 10px;border-radius:14px;font-size:11.5px;font-weight:700;white-space:nowrap">{{ ml.l }}</button></div></sc-for></div>
+</div>
+</div>
+<div style="background:#fff;border-radius:14px;padding:18px">
+<div style="font-size:14px;font-weight:700">Origen del visitante</div><div style="font-size:12px;color:#4B5560;margin-top:4px">Por idioma y punto de llegada declarado</div>
+<div style="display:flex;height:14px;border-radius:7px;overflow:hidden;margin-top:18px"><sc-for list="{{ origen }}" as="o" hint-placeholder-count="4"><div style="height:100%;width:{{ o.w }};background:{{ o.c }}"></div></sc-for></div>
+<div style="display:flex;flex-direction:column;gap:8px;margin-top:14px"><sc-for list="{{ origen }}" as="o" hint-placeholder-count="4"><div style="display:flex;align-items:center;gap:8px;font-size:13px"><span style="width:10px;height:10px;border-radius:3px;background:{{ o.c }}"></span><span style="flex:1">{{ o.k }}</span><strong>{{ o.v }}</strong></div></sc-for></div>
+</div>
+<div style="background:#fff;border-radius:14px;padding:18px">
+<div style="font-size:14px;font-weight:700">Uso del asistente</div><div style="font-size:12px;color:#4B5560;margin-top:4px">Temas más consultados al Guía Nariño</div>
+<div style="display:flex;flex-direction:column;gap:12px;margin-top:16px"><sc-for list="{{ temas }}" as="te" hint-placeholder-count="5"><div style="display:grid;grid-template-columns:170px 1fr 40px;gap:10px;align-items:center;font-size:13px"><span>{{ te.k }}</span><div style="height:10px;border-radius:5px;background:#EEF0F2"><div style="height:100%;width:{{ te.w }};border-radius:5px;background:oklch(0.56 0.19 35)"></div></div><strong style="text-align:right">{{ te.v }}</strong></div></sc-for></div>
+</div>
+</div>
+<div style="background:#fff;border-radius:14px;overflow-x:auto">
+<div style="padding:16px 18px;font-size:14px;font-weight:700;border-bottom:1px solid #EEF0F2">Indicadores de éxito</div>
+<div style="display:grid;grid-template-columns:1.2fr 2fr .6fr;gap:12px;padding:10px 18px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#6B747D;border-bottom:1px solid #EEF0F2"><div>Indicador</div><div>Cómo se mide</div><div>Desde</div></div>
+<sc-for list="{{ indicadores }}" as="ind" hint-placeholder-count="9"><div style="display:grid;grid-template-columns:1.2fr 2fr .6fr;gap:12px;padding:11px 18px;font-size:13px;border-bottom:1px solid #F1F3F4;align-items:center"><span style="font-weight:600">{{ ind.k }}</span><span style="color:#4B5560;line-height:1.4">{{ ind.how }}</span><span><span style="font-size:11px;font-weight:700;padding:3px 8px;border-radius:6px;background:{{ ind.bg }};color:{{ ind.fg }}">{{ ind.d }}</span></span></div></sc-for>
+</div>
+<div style="font-size:12px;color:#6B747D">Cifras de ejemplo. El primer entregable real del tablero es la línea base; ocupación y estancia llegan con la integración a SITUR Nariño y CITUR (Fase 2).</div>
+</sc-if>
+
+<sc-if value="{{ sec.fichas }}" hint-placeholder-val="{{ false }}">
+<div style="background:#fff;border-radius:14px;overflow-x:auto">
+<div style="display:flex;gap:8px;padding:14px 16px;border-bottom:1px solid #EEF0F2;flex-wrap:wrap">
+<div style="flex:1;min-width:200px;height:38px;border-radius:19px;background:#F4F6F7;display:flex;align-items:center;gap:8px;padding:0 14px"><span style="font:400 19px/1 'Material Symbols Rounded'">search</span><input value="{{ q }}" onChange="{{ onQ }}" placeholder="Buscar por nombre, municipio o N.º RNT" style="flex:1;min-width:0;border:0;outline:0;background:transparent;font-size:13px"></input></div>
+<div style="display:flex;gap:4px;padding:3px;border-radius:19px;background:#F4F6F7"><sc-for list="{{ estados }}" as="ge" hint-placeholder-count="4"><button onClick="{{ ge.go }}" style="border:0;cursor:pointer;height:32px;padding:0 12px;border-radius:16px;font-size:12.5px;font-weight:600;background:{{ ge.bg }};color:{{ ge.fg }}">{{ ge.k }}</button></sc-for></div>
+</div>
+<div style="min-width:720px;display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr 1fr .9fr;gap:8px;padding:10px 16px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#6B747D;border-bottom:1px solid #EEF0F2"><div>Nombre</div><div>Tipo</div><div>Municipio</div><div>RNT</div><div>Actualizada</div><div>Estado</div></div>
+<sc-for list="{{ fichas }}" as="f" hint-placeholder-count="8">
+<button onClick="{{ f.open }}" style="border:0;background:#fff;cursor:pointer;text-align:left;width:100%;display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr 1fr .9fr;gap:8px;padding:0 16px;min-height:50px;align-items:center;font-size:13.5px;border-bottom:1px solid #F1F3F4" style-hover="background:#F8F9FA">
+<span style="font-weight:600">{{ f.nombre }}</span><span style="color:#4B5560">{{ f.tipo }}</span><span style="color:#4B5560">{{ f.municipio }}</span>
+<span style="display:inline-flex;align-items:center;gap:5px;font-size:12.5px;font-weight:600;color:{{ f.rntC }}"><span style="width:7px;height:7px;border-radius:50%;background:{{ f.rntC }}"></span>{{ f.rntTxt }}</span>
+<span style="color:{{ f.fechaC }}">{{ f.fecha }}</span>
+<span><span style="font-size:12px;font-weight:700;padding:4px 9px;border-radius:10px;background:{{ f.eBg }};color:{{ f.eFg }}">{{ f.estado }}</span></span>
+</button>
+</sc-for>
+</div>
+</sc-if>
+
+<sc-if value="{{ sec.prestadores }}" hint-placeholder-val="{{ false }}">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px">
+<sc-for list="{{ prestKpis }}" as="pk" hint-placeholder-count="4"><div style="background:#fff;border-radius:14px;padding:16px"><div style="font-size:12px;color:#4B5560">{{ pk.k }}</div><div style="font:400 32px/1.1 'Instrument Serif',serif;margin-top:4px;color:{{ pk.c }}">{{ pk.v }}</div></div></sc-for>
+</div>
+<sc-if value="{{ hasRevisiones }}">
+<div style="background:#fff;border-radius:14px;overflow-x:auto">
+<div style="padding:14px 18px;font-size:14px;font-weight:700;border-bottom:1px solid #EEF0F2">Cambios enviados por prestadores</div>
+<sc-for list="{{ revisiones }}" as="rv"><div style="display:flex;align-items:center;gap:12px;padding:12px 18px;border-bottom:1px solid #F1F3F4;flex-wrap:wrap"><div style="flex:1;min-width:220px"><div style="font-size:13.5px;font-weight:600">{{ rv.prest }} · {{ rv.ficha }}</div><div style="font-size:12px;color:#4B5560;margin-top:2px">{{ rv.cambios }} · {{ rv.precio }}</div></div><button onClick="{{ rv.ok }}" style="border:0;cursor:pointer;height:34px;padding:0 14px;border-radius:17px;background:#141A21;color:#fff;font-size:12.5px;font-weight:700">Aprobar y publicar</button></div></sc-for>
+</div>
+</sc-if>
+<div style="background:#fff;border-radius:14px;overflow-x:auto">
+<div style="min-width:720px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr 1.1fr;gap:8px;padding:10px 18px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#6B747D;border-bottom:1px solid #EEF0F2"><div>Prestador</div><div>Municipio</div><div>RNT</div><div>Portal</div><div>Cupones</div><div></div></div>
+<sc-for list="{{ prestadores }}" as="p" hint-placeholder-count="7">
+<div style="min-width:720px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr 1.1fr;gap:8px;padding:0 18px;min-height:52px;align-items:center;font-size:13.5px;border-bottom:1px solid #F1F3F4">
+<span><span style="display:block;font-weight:600">{{ p.n }}</span><span style="display:block;font-size:12px;color:#6B747D">{{ p.tipo }}</span></span><span style="color:#4B5560">{{ p.mun }}</span>
+<span style="display:inline-flex;align-items:center;gap:5px;font-size:12.5px;font-weight:600;color:{{ p.c }}"><span style="width:7px;height:7px;border-radius:50%;background:{{ p.c }}"></span>{{ p.rnt }}</span>
+<span style="color:#4B5560">{{ p.portal }}</span><span style="color:#4B5560">{{ p.cup }}</span>
+<span style="display:flex;justify-content:flex-end"><sc-if value="{{ p.needs }}"><button onClick="{{ p.notify }}" style="cursor:pointer;background:transparent;height:32px;padding:0 12px;border-radius:16px;border:1.5px solid #141A21;font-size:12px;font-weight:700;white-space:nowrap">{{ p.notifyLabel }}</button></sc-if></span>
+</div>
+</sc-for>
+</div>
+<div style="font-size:12px;color:#6B747D">El cruce con el Registro Nacional de Turismo corre cada noche. Un RNT vencido oculta la ficha del catálogo y pausa los cupones del prestador.</div>
+</sc-if>
+
+<sc-if value="{{ sec.audioguias }}" hint-placeholder-val="{{ false }}">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px">
+<sc-for list="{{ audKpis }}" as="ak" hint-placeholder-count="4"><div style="background:#fff;border-radius:14px;padding:16px"><div style="font-size:12px;color:#4B5560">{{ ak.k }}</div><div style="font:400 32px/1.1 'Instrument Serif',serif;margin-top:4px">{{ ak.v }}</div></div></sc-for>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:16px;align-items:start">
+<div style="background:#fff;border-radius:14px;overflow-x:auto">
+<sc-for list="{{ recorridos }}" as="rc" hint-placeholder-count="4">
+<div style="padding:14px 18px 6px;display:flex;align-items:center;gap:12px;border-top:1px solid #EEF0F2"><span style="width:40px;height:40px;border-radius:10px;flex:none;background-color:#E6E9EB;background-size:cover;background-position:center;background-image:{{ rc.bg }}"></span><div style="flex:1"><div style="font-size:14.5px;font-weight:700">{{ rc.n }}</div><div style="font-size:12px;color:#4B5560">{{ rc.meta }}</div></div></div>
+<sc-for list="{{ rc.puntos }}" as="pt">
+<button onClick="{{ pt.sel }}" style="border:0;cursor:pointer;width:100%;text-align:left;display:grid;grid-template-columns:76px minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 18px;font-size:13.5px;background:{{ pt.bg }}">
+<span style="font:700 12.5px/1 ui-monospace,Menlo,monospace;letter-spacing:.06em">{{ pt.code }}</span>
+<span style="min-width:0"><span style="display:block;font-weight:600">{{ pt.t }}</span><span style="display:block;font-size:12px;color:#6B747D">{{ pt.loc }}</span></span>
+<span style="font-size:11.5px;font-weight:700;padding:3px 8px;border-radius:8px;background:{{ pt.stBg }};color:{{ pt.stFg }};white-space:nowrap">{{ pt.st }}</span>
+</button>
+</sc-for>
+</sc-for>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="background:#fff;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px"><div><div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6B747D">{{ sel.code }} · {{ sel.rec }}</div><div style="font:400 26px/1.1 'Instrument Serif',serif;margin-top:4px">{{ sel.t }}</div></div></div>
+<div style="display:flex;gap:4px;padding:3px;border-radius:19px;background:#F4F6F7;align-self:flex-start"><sc-for list="{{ langTabs }}" as="lt" hint-placeholder-count="2"><button onClick="{{ lt.go }}" style="border:0;cursor:pointer;height:30px;padding:0 12px;border-radius:15px;font-size:12.5px;font-weight:600;background:{{ lt.bg }};color:{{ lt.fg }}">{{ lt.l }}</button></sc-for></div>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600">Guion de la narración<textarea value="{{ sel.txt }}" onChange="{{ onTxt }}" rows="8" style="border-radius:10px;border:1px solid #D3D9DE;padding:10px 12px;font-size:13.5px;font-weight:400;line-height:1.5;resize:vertical;outline:0"></textarea></label>
+<div style="display:flex;justify-content:space-between;font-size:12px;color:#6B747D"><span>{{ sel.chars }}</span><span>{{ sel.dur }}</span></div>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600">Voz (ElevenLabs)<select value="{{ voz }}" onChange="{{ onVoz }}" style="height:40px;border-radius:10px;border:1px solid #D3D9DE;padding:0 10px;font-size:13.5px;font-weight:400"><option>Narradora andina · es-CO</option><option>Narrador pastuso · es-CO</option><option>Narrator · en-US</option></select></label>
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+<button onClick="{{ generar }}" style="border:0;cursor:pointer;height:42px;padding:0 16px;border-radius:21px;background:oklch(0.56 0.19 35);color:#fff;font-size:13.5px;font-weight:700;white-space:nowrap;display:flex;align-items:center;gap:6px"><span style="font:400 19px/1 'Material Symbols Rounded'">graphic_eq</span>{{ genLabel }}</button>
+<button onClick="{{ escuchar }}" style="cursor:pointer;background:transparent;height:42px;padding:0 16px;border-radius:21px;border:1.5px solid #141A21;font-size:13.5px;font-weight:700;display:flex;align-items:center;gap:6px"><span style="font:400 19px/1 'Material Symbols Rounded'">play_arrow</span>Escuchar</button>
+</div>
+<div style="font-size:12px;color:#6B747D;line-height:1.45">{{ genNote }}</div>
+</div>
+<div style="background:#fff;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:12px">
+<div style="font-size:14px;font-weight:700">Cartel QR para el punto</div>
+<div style="align-self:center;width:250px;border-radius:18px;background:oklch(0.24 0.03 250);color:#fff;padding:20px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center">
+<div style="font:400 20px/1 'Instrument Serif',serif">Descubre <span style="font-style:italic">Nariño</span></div>
+<div style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700"><span style="font:400 20px/1 'Material Symbols Rounded'">headphones</span>Escucha este lugar</div>
+{{ qr }}
+<div style="font:700 18px/1 ui-monospace,Menlo,monospace;letter-spacing:.14em">{{ sel.code }}</div>
+<div style="font-size:11px;opacity:.75">{{ sel.t }} · ES / EN</div>
+</div>
+<button onClick="{{ descargarQr }}" style="cursor:pointer;background:transparent;height:40px;border-radius:20px;border:1.5px solid #141A21;font-size:13px;font-weight:700">Descargar cartel para imprimir</button>
+</div>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ sec.eventos }}" hint-placeholder-val="{{ false }}">
+<div style="background:#fff;border-radius:14px;overflow-x:auto">
+<div style="min-width:720px;display:grid;grid-template-columns:2fr 1.2fr 1.2fr .8fr;gap:8px;padding:10px 16px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#6B747D;border-bottom:1px solid #EEF0F2"><div>Evento</div><div>Lugar</div><div>Fecha</div><div>Estado</div></div>
+<sc-for list="{{ eventos }}" as="e" hint-placeholder-count="6"><div style="min-width:720px;display:grid;grid-template-columns:2fr 1.2fr 1.2fr .8fr;gap:8px;padding:0 16px;min-height:50px;align-items:center;font-size:13.5px;border-bottom:1px solid #F1F3F4"><span style="font-weight:600">{{ e.n }}</span><span style="color:#4B5560">{{ e.lugar }}</span><span style="color:#4B5560">{{ e.fecha }}</span><span><span style="font-size:12px;font-weight:700;padding:4px 9px;border-radius:10px;background:oklch(0.95 0.035 160);color:oklch(0.38 0.1 160)">Publicado</span></span></div></sc-for>
+</div>
+</sc-if>
+
+<sc-if value="{{ sec.rutas }}" hint-placeholder-val="{{ false }}">
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px">
+<sc-for list="{{ rutas }}" as="r" hint-placeholder-count="6"><div style="background:#fff;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px"><div style="display:flex;align-items:center;gap:8px"><span style="width:12px;height:12px;border-radius:50%;background:{{ r.color }}"></span><span style="font-size:15px;font-weight:700">{{ r.nombre }}</span></div><div style="font-size:13px;color:#4B5560;line-height:1.45">{{ r.descripcion }}</div><div style="font-size:12.5px;color:#4B5560">{{ r.paradasTxt }}</div></div></sc-for>
+</div>
+</sc-if>
+
+<sc-if value="{{ sec.alertas }}" hint-placeholder-val="{{ false }}">
+<div style="background:#fff;border-radius:14px;overflow-x:auto">
+<sc-for list="{{ alertas }}" as="a" hint-placeholder-count="4">
+<div style="display:flex;align-items:center;gap:14px;padding:16px;border-bottom:1px solid #F1F3F4">
+<span style="font:400 22px/1 'Material Symbols Rounded';font-variation-settings:'FILL' 1;color:{{ a.color }}">{{ a.icon }}</span>
+<div style="flex:1"><div style="font-size:14px;font-weight:700">{{ a.t }}</div><div style="font-size:12.5px;color:#4B5560;margin-top:2px">{{ a.s }}</div></div>
+<span style="font-size:12.5px;color:#4B5560">{{ a.estado }}</span>
+<button onClick="{{ a.toggle }}" aria-label="Activar o desactivar" style="border:0;cursor:pointer;width:46px;height:28px;border-radius:14px;padding:3px;display:flex;background:{{ a.track }};justify-content:{{ a.justify }}"><span style="width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.2)"></span></button>
+</div>
+</sc-for>
+</div>
+<div style="font-size:12px;color:#6B747D">Las alertas activas aparecen al instante en «Ayuda y seguridad» de la App turista.</div>
+</sc-if>
+
+<sc-if value="{{ sec.consultas }}" hint-placeholder-val="{{ false }}">
+<div style="background:#fff;border-radius:14px;overflow-x:auto">
+<sc-for list="{{ consultas }}" as="c" hint-placeholder-count="6">
+<div style="display:flex;align-items:center;gap:14px;padding:14px 16px;border-bottom:1px solid #F1F3F4">
+<div style="flex:1;min-width:0"><div style="font-size:14px">{{ c.q }}</div><div style="font-size:12px;color:#6B747D;margin-top:3px">{{ c.mun }} · ×{{ c.n }}<sc-if value="{{ c.nueva }}"> · <span style="font-weight:700;color:oklch(0.5 0.19 35)">Nueva, desde la App turista</span></sc-if></div></div>
+<button onClick="{{ c.crear }}" style="cursor:pointer;background:transparent;height:36px;padding:0 14px;border-radius:18px;border:1.5px solid #141A21;font-size:12.5px;font-weight:700;white-space:nowrap">Crear ficha</button>
+</div>
+</sc-for>
+</div>
+</sc-if>
+</main>
+</div>
+
+<sc-if value="{{ hasDrawer }}">
+<div style="position:fixed;inset:0;z-index:30;background:rgba(11,15,19,.35);display:flex;justify-content:flex-end">
+<button onClick="{{ closeDrawer }}" aria-label="Cerrar" style="flex:1;border:0;background:transparent;cursor:pointer"></button>
+<div style="width:440px;max-width:92%;height:100%;background:#fff;display:flex;flex-direction:column;box-shadow:-12px 0 32px rgba(0,0,0,.12)">
+<div style="padding:22px 24px 16px;border-bottom:1px solid #EEF0F2;display:flex;align-items:flex-start;justify-content:space-between;gap:12px"><div><div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6B747D">{{ dr.kicker }}</div><div style="font:400 28px/1.1 'Instrument Serif',serif;margin-top:6px">{{ dr.title }}</div></div><button onClick="{{ closeDrawer }}" aria-label="Cerrar" style="border:0;cursor:pointer;width:40px;height:40px;border-radius:50%;background:#EEF0F2;display:flex;align-items:center;justify-content:center;flex:none"><span style="font:400 20px/1 'Material Symbols Rounded'">close</span></button></div>
+<div style="flex:1;overflow-y:auto;padding:18px 24px;display:flex;flex-direction:column;gap:14px">
+<sc-if value="{{ dr.hasNota }}"><div style="padding:10px 12px;border-radius:10px;background:oklch(0.96 0.03 35);font-size:12.5px;line-height:1.45;color:oklch(0.38 0.12 35)">Consulta de origen: «{{ dr.nota }}»</div></sc-if>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600">Nombre<input value="{{ dr.nombre }}" onChange="{{ drOn.nombre }}" style="width:100%;height:42px;border-radius:10px;border:1px solid #D3D9DE;padding:0 12px;font-size:14px;font-weight:400;outline:0"></input></label>
+<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px">
+<label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600">Tipo<select value="{{ dr.tipo }}" onChange="{{ drOn.tipo }}" style="width:100%;height:42px;border-radius:10px;border:1px solid #D3D9DE;padding:0 10px;font-size:14px;font-weight:400"><option>Atractivo</option><option>Alojamiento</option><option>Gastronomía</option><option>Experiencia</option><option>Guía</option><option>Transporte</option><option>Artesanías</option></select></label>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600">Municipio<input value="{{ dr.municipio }}" onChange="{{ drOn.municipio }}" style="width:100%;min-width:0;height:42px;border-radius:10px;border:1px solid #D3D9DE;padding:0 12px;font-size:14px;font-weight:400;outline:0"></input></label>
+</div>
+<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px">
+<label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600">N.º RNT<input value="{{ dr.rnt }}" onChange="{{ drOn.rnt }}" placeholder="Opcional en atractivos" style="width:100%;min-width:0;height:42px;border-radius:10px;border:1px solid #D3D9DE;padding:0 12px;font-size:14px;font-weight:400;outline:0"></input></label>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600">Precio sugerido<input value="{{ dr.precio }}" onChange="{{ drOn.precio }}" placeholder="$" style="width:100%;min-width:0;height:42px;border-radius:10px;border:1px solid #D3D9DE;padding:0 12px;font-size:14px;font-weight:400;outline:0"></input></label>
+</div>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600">Descripción<textarea value="{{ dr.desc }}" onChange="{{ drOn.desc }}" rows="5" style="border-radius:10px;border:1px solid #D3D9DE;padding:10px 12px;font-size:14px;font-weight:400;line-height:1.45;resize:vertical;outline:0"></textarea></label>
+<div style="font-size:12px;color:#6B747D;line-height:1.45">El asistente solo recomienda fichas publicadas. Si hay RNT se valida contra el registro antes de publicar.</div>
+</div>
+<div style="padding:14px 24px;border-top:1px solid #EEF0F2;display:flex;gap:8px;justify-content:flex-end">
+<button onClick="{{ saveBorrador }}" style="cursor:pointer;background:transparent;height:42px;padding:0 16px;border-radius:21px;border:1.5px solid #141A21;font-size:13.5px;font-weight:700">Guardar borrador</button>
+<button onClick="{{ savePublicar }}" style="border:0;cursor:pointer;height:42px;padding:0 18px;border-radius:21px;background:oklch(0.56 0.19 35);color:#fff;font-size:13.5px;font-weight:700">Publicar</button>
+</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ hasToast }}"><div style="position:fixed;left:50%;bottom:28px;transform:translateX(-50%);z-index:40;background:#141A21;color:#fff;padding:12px 18px;border-radius:14px;font-size:13.5px;font-weight:600;box-shadow:0 10px 30px rgba(0,0,0,.25);max-width:440px;text-align:center">{{ toast }}</div></sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const INK = '#141A21', MUT = '#4B5560', ACC = 'oklch(0.56 0.19 35)', OK = 'oklch(0.45 0.11 160)', BAD = 'oklch(0.5 0.19 30)', WARN = 'oklch(0.5 0.15 60)';
+const getLS = (k, d) => { try { const v = JSON.parse(localStorage.getItem(k)); return v == null ? d : v; } catch (e) { return d; } };
+const setLS = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} };
+const PH = { MVP: ['#EEF0F2', MUT], 'Fase 2': ['oklch(0.95 0.05 80)', 'oklch(0.42 0.1 70)'], Nuevo: ['oklch(0.95 0.04 35)', 'oklch(0.45 0.17 35)'] };
+const SECS = [
+  ['tablero', 'Tablero de inteligencia', 'monitoring', 'Fase 2', 'Vista para la Gobernación, la Cámara de Comercio y los gremios: demanda por mes, municipios más y menos visitados, origen del visitante, uso del asistente, cupones redimidos y audioguías escuchadas. El MVP entrega la línea base; ocupación y estancia llegan con SITUR y CITUR.'],
+  ['fichas', 'Fichas del catálogo', 'inventory_2', 'MVP', 'El activo del departamento: una ficha normalizada por atractivo, prestador y experiencia. Es la única fuente que usa el asistente, así que aquí se ve qué tan fresca está cada una y su estado de RNT.'],
+  ['prestadores', 'Prestadores y RNT', 'storefront', 'MVP', 'Prestadores registrados, estado de su Registro Nacional de Turismo, uso del portal y cupones activos. También llegan aquí los cambios de ficha que envían los prestadores para revisión.'],
+  ['audioguias', 'Audioguías y QR', 'headphones', 'MVP', 'Recorridos narrados por punto de interés: edita el guion, elige la voz de ElevenLabs, genera el audio en español e inglés y descarga el cartel QR que se instala en el lugar.'],
+  ['eventos', 'Eventos', 'calendar_month', 'MVP', 'Lo que aparece en la agenda de la app: fiestas, ferias y temporadas de los 64 municipios, con prioridad para la temporada baja.'],
+  ['rutas', 'Rutas temáticas', 'route', 'MVP', 'Las seis rutas del departamento que se activan como capas en el mapa y que el asistente usa para armar itinerarios.'],
+  ['alertas', 'Alertas de vía y frontera', 'warning', 'MVP', 'Avisos de seguridad que ve el turista en el botón de emergencia: estado de vías, frontera de Rumichaca y consulado. Se activan y desactivan al instante.'],
+  ['consultas', 'Consultas sin respuesta', 'help', 'MVP', 'Preguntas que el Guía no pudo responder con el catálogo. Cada una es un pendiente de contenido: conviértela en ficha y el asistente ya puede responderla.']
+];
+const FICHAS = [
+  ['Paseo en lancha a La Corota', 'Experiencia', 'Pasto', 'Vigente', '2 sep 2026', 'Publicada'], ['Santuario de Las Lajas', 'Atractivo', 'Ipiales', 'No aplica', '28 ago 2026', 'Publicada'], ['Hospedaje del muelle', 'Alojamiento', 'Pasto', 'Vence 30 oct', '14 jun 2026', 'Publicada', 1], ['Guía al Volcán Azufral', 'Guía', 'Túquerres', 'Vigente', '19 sep 2026', 'En revisión'], ['Taller de sombrero en iraca', 'Artesanías', 'Sandoná', 'Vigente', '5 sep 2026', 'Publicada'], ['Transporte Ipiales – Cumbal', 'Transporte', 'Cumbal', 'Sin registro', '—', 'Borrador'], ['Mirador de Rumichaca', 'Atractivo', 'Ipiales', 'No aplica', '1 may 2026', 'Publicada', 1], ['Restaurante La Tulpa', 'Gastronomía', 'Túquerres', 'Vigente', '22 sep 2026', 'En revisión'], ['Recorrido de café de altura', 'Experiencia', 'Buesaco', 'Vigente', '10 sep 2026', 'Publicada']
+].map(r => ({ nombre: r[0], tipo: r[1], municipio: r[2], rntTxt: r[3], fecha: r[4], estado: r[5], viejo: !!r[6] }));
+const PREST = [
+  ['Lancheros El Encano', 'Experiencias', 'El Encano', 'Vigente', 'Hoy', '2 activos'], ['Hospedaje del Muelle SAS', 'Alojamiento', 'El Encano', 'Vence 30 oct', 'Hace 3 meses', '—'], ['Guías del Azufral', 'Guías', 'Túquerres', 'Vigente', 'Hace 2 días', '—'], ['La Tulpa Cocina Andina', 'Gastronomía', 'Túquerres', 'Vigente', 'Hace 1 semana', '1 activo'], ['Tejedoras de Sandoná', 'Artesanías', 'Sandoná', 'Vigente', 'Hace 5 días', '1 activo'], ['Transportes del Sur', 'Transporte', 'Cumbal', 'Sin registro', 'Nunca', '—'], ['Finca El Mirador', 'Experiencias', 'Buesaco', 'Vencido', 'Hace 6 meses', 'Pausado']
+];
+const EVENTOS = [['Feria artesanal de la iraca', 'Sandoná', '24 – 26 oct 2026'], ['Encuentro de música andina', 'Pasto', '14 – 15 nov 2026'], ['Noche de velitas en el muelle', 'El Encano', '7 dic 2026'], ['Desfile del Año Viejo', 'Pasto', '28 – 31 dic 2026'], ['Carnaval de Negros y Blancos', 'Pasto', '2 – 7 ene 2027'], ['Semana Santa en Las Lajas', 'Ipiales', '21 – 28 mar 2027']];
+const CONSULTAS = [['¿Hay buses de Ipiales a Cumbal el domingo?', 'Cumbal', 14], ['¿Se puede acampar en la Laguna Verde?', 'Túquerres', 9], ['Horario del museo del Carnaval en enero', 'Pasto', 6], ['¿Qué documentos piden en Rumichaca para menores?', 'Ipiales', 5], ['Hoteles en Tumaco con parqueadero', 'Tumaco', 3]];
+const ALERTAS0 = [
+  { t: 'Vía Ipiales – Pasto · paso a un carril', s: 'Obras en el km 34 · hace 40 min', nivel: 'warn', on: true },
+  { t: 'Puente de Rumichaca · abierto', s: 'Cédula o pasaporte para cruzar desde Ecuador', nivel: 'ok', on: true },
+  { t: 'Consulado del Ecuador en Ipiales', s: 'Lun a vie, 8:00 – 16:00', nivel: 'info', on: true },
+  { t: 'Vía al Azufral · cierre por lluvias', s: 'Sector Túquerres – laguna', nivel: 'warn', on: false }
+];
+function qrEl(seed, px, dark, light) {
+  const N = 21; let h = 7; String(seed).split('').forEach(ch => { h = (h * 31 + ch.charCodeAt(0)) >>> 0; }); h = h || 1;
+  const rnd = () => { h ^= h << 13; h >>>= 0; h ^= h >>> 17; h ^= h << 5; h >>>= 0; return h / 4294967296; };
+  const finder = (r, c) => { const F3 = [[0, 0], [0, N - 7], [N - 7, 0]]; for (let i = 0; i < 3; i++) { const y = r - F3[i][0], x = c - F3[i][1]; if (y >= 0 && y < 7 && x >= 0 && x < 7) return (y === 0 || y === 6 || x === 0 || x === 6 || (y >= 2 && y <= 4 && x >= 2 && x <= 4)) ? 1 : 0; if (y >= -1 && y <= 7 && x >= -1 && x <= 7) return 0; } return -1; };
+  const cells = [];
+  for (let r = 0; r < N; r++) for (let c = 0; c < N; c++) { const f = finder(r, c); if (f === -1 ? rnd() > 0.5 : f === 1) cells.push(React.createElement('rect', { key: r + '-' + c, x: c, y: r, width: 1.02, height: 1.02 })); }
+  return React.createElement('svg', { viewBox: '-1.5 -1.5 24 24', width: px, height: px, role: 'img', 'aria-label': 'Código QR', style: { display: 'block', background: light, borderRadius: 10 } }, React.createElement('g', { fill: dark }, cells));
+}
+
+class Component extends DCLogic {
+  state = { sec: 'tablero', w: typeof window !== 'undefined' ? window.innerWidth : 1400, periodo: 0, q: '', estado: 'Todas', fichas: FICHAS, drawer: null, consultasLS: [], revisiones: [], alertas: ALERTAS0, notified: {}, promo: {}, aud: null, selRec: 0, selIdx: 0, selLang: 'es', edits: {}, voz: 'Narradora andina · es-CO', gen: {}, toast: null };
+  componentDidMount() {
+    this.sync();
+    this.onS = e => { if (e.key && e.key.indexOf('dn_') === 0) this.sync(); };
+    this.onR = () => this.setState({ w: window.innerWidth });
+    window.addEventListener('storage', this.onS); window.addEventListener('resize', this.onR);
+    fetch('data/audioguias.json').then(r => r.ok ? r.json() : null).then(j => { if (j) this.setState({ aud: j }); }).catch(() => {});
+  }
+  componentWillUnmount() { window.removeEventListener('storage', this.onS); window.removeEventListener('resize', this.onR); clearTimeout(this.tt); if (this.player) this.player.pause(); if (window.speechSynthesis) window.speechSynthesis.cancel(); }
+  sync() { this.setState(s => ({ consultasLS: getLS('dn_consultas', []), revisiones: getLS('dn_revisiones', []), alertas: getLS('dn_alertas', null) || s.alertas })); }
+  toast(t) { clearTimeout(this.tt); this.setState({ toast: t }); this.tt = setTimeout(() => this.setState({ toast: null }), 2800); }
+  curPunto() { const a = this.state.aud; if (!a) return null; const r = a.recorridos[this.state.selRec]; return r ? { r, p: r.puntos[this.state.selIdx] } : null; }
+  curTxt() { const c = this.curPunto(); if (!c) return ''; const key = c.p.id + ':' + this.state.selLang; if (this.state.edits[key] != null) return this.state.edits[key]; return (this.state.selLang === 'en' ? c.p.guion_en : c.p.guion_es) || ''; }
+  async generar() {
+    const c = this.curPunto(); if (!c) return;
+    const txt = this.curTxt(); if (!txt.trim()) { this.toast('Escribe el guion primero'); return; }
+    const key = c.p.id + ':' + this.state.selLang;
+    this.setState(s => ({ gen: Object.assign({}, s.gen, { [key]: 'gen' }) }));
+    try {
+      const r = await fetch('api/tts', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text: txt, lang: this.state.selLang, id: c.p.id }) });
+      if (r.ok && (r.headers.get('content-type') || '').indexOf('audio') >= 0) { this.blobUrl = URL.createObjectURL(await r.blob()); this.setState(s => ({ gen: Object.assign({}, s.gen, { [key]: 'ok' }) })); this.toast('Audio generado con ElevenLabs'); this.play(); return; }
+    } catch (e) {}
+    this.setState(s => ({ gen: Object.assign({}, s.gen, { [key]: 'nokey' }) }));
+    this.toast('Vista previa con voz de demostración. La voz final se genera al conectar ElevenLabs.');
+    this.speak(txt);
+  }
+  speak(txt) { const ss = window.speechSynthesis; if (!ss) return; ss.cancel(); const u = new SpeechSynthesisUtterance(txt); u.lang = this.state.selLang === 'en' ? 'en-US' : 'es-CO'; ss.speak(u); }
+  play() {
+    const c = this.curPunto(); if (!c) return;
+    if (this.player) this.player.pause();
+    const src = this.blobUrl || ((this.state.selLang === 'en' ? c.p.archivo_en : c.p.archivo_es) || '');
+    if (!src) { this.speak(this.curTxt()); return; }
+    const a = new Audio(src); this.player = a;
+    a.onerror = () => { this.toast('Vista previa con voz de demostración.'); this.speak(this.curTxt()); };
+    a.play().catch(() => {});
+  }
+  renderVals() {
+    const s = this.state;
+    const sec = {}; SECS.forEach(x => { sec[x[0]] = s.sec === x[0]; });
+    const cur = SECS.find(x => x[0] === s.sec);
+    const allCons = s.consultasLS.map(c => ({ q: c.q, mun: c.mun, n: c.n, nueva: true })).concat(CONSULTAS.map(c => ({ q: c[0], mun: c[1], n: c[2], nueva: false })));
+    const nCons = 37 + s.consultasLS.length;
+    const venc = PREST.filter(p => p[3] !== 'Vigente').length;
+    const nav = SECS.map(([k, label, icon]) => { const badge = k === 'consultas' ? nCons : k === 'prestadores' ? s.revisiones.length : 0; return { label, icon, hasBadge: badge > 0, badge, bg: s.sec === k ? 'rgba(255,255,255,.12)' : 'transparent', go: () => this.setState({ sec: k, drawer: null }) }; });
+    const openNew = nota => this.setState({ drawer: { mode: 'new', nombre: '', tipo: 'Atractivo', municipio: '', rnt: '', precio: '', desc: '', nota: nota || '' } });
+    const canjes = getLS('dn_canjes', []);
+    const mult = [1, 3, 12][s.periodo];
+    const kpis = [
+      { k: 'Itinerarios creados', v: (1604 * mult).toLocaleString('es-CO'), how: 'Planes generados desde el asistente', c: INK },
+      { k: 'Dispersión territorial', v: '38%', how: 'Planes con municipios distintos de Pasto e Ipiales', c: INK },
+      { k: 'Prestadores con ficha activa', v: '412', how: 'Fichas actualizadas en los últimos 90 días', c: INK },
+      { k: 'Consultas sin respuesta', v: String(nCons), how: 'Preguntas que el catálogo no resolvió', c: ACC },
+      { k: 'Cupones redimidos', v: (401 * mult + canjes.filter(c => c.estado === 'Canjeado').length).toLocaleString('es-CO'), how: 'Canjes validados por el prestador', c: INK },
+      { k: 'Audioguías escuchadas', v: (977 * mult).toLocaleString('es-CO'), how: 'Reproducciones desde mapa, ficha y QR', c: INK }
+    ];
+    const DEM = [['Nov', 3.1], ['Dic', 5.8], ['Ene', 14.2], ['Feb', 4.0], ['Mar', 6.9], ['Abr', 4.4], ['May', 4.1], ['Jun', 5.2], ['Jul', 6.0], ['Ago', 5.6], ['Sep', 5.9], ['Oct', 7.3]];
+    const MLOW = [['Cumbal', '0,8%'], ['Tumaco', '1,1%'], ['La Unión', '1,2%'], ['Buesaco', '1,6%'], ['Funes', '0,3%']];
+    const ests = { Publicada: ['oklch(0.95 0.035 160)', 'oklch(0.38 0.1 160)'], 'En revisión': ['oklch(0.95 0.05 80)', 'oklch(0.42 0.1 70)'], Borrador: ['#EEF0F2', MUT] };
+    const qn = s.q.toLowerCase();
+    const fichas = s.fichas.map((f, i) => ({ f, i })).filter(({ f }) => (s.estado === 'Todas' || f.estado === s.estado) && (!qn || (f.nombre + ' ' + f.municipio).toLowerCase().indexOf(qn) >= 0)).map(({ f, i }) => ({ nombre: f.nombre, tipo: f.tipo, municipio: f.municipio, rntTxt: f.rntTxt, fecha: f.fecha, estado: f.estado, rntC: f.rntTxt === 'Vigente' ? OK : f.rntTxt.indexOf('Vence') === 0 ? WARN : f.rntTxt === 'Sin registro' ? BAD : MUT, fechaC: f.viejo ? BAD : MUT, eBg: ests[f.estado][0], eFg: ests[f.estado][1], open: () => this.setState({ drawer: { mode: 'edit', idx: i, nombre: f.nombre, tipo: f.tipo, municipio: f.municipio, rnt: '', precio: '', desc: '', nota: '' } }) }));
+    const dr = s.drawer || {};
+    const setDr = k => e => { const v = e.target.value; this.setState(st => ({ drawer: Object.assign({}, st.drawer, { [k]: v }) })); };
+    const save = estado => {
+      const d = s.drawer; if (!d.nombre.trim()) { this.toast('Ponle un nombre a la ficha'); return; }
+      const row = { nombre: d.nombre, tipo: d.tipo, municipio: d.municipio || '—', rntTxt: d.rnt ? 'Vigente' : (d.tipo === 'Atractivo' ? 'No aplica' : 'Sin registro'), fecha: '9 oct 2026', estado };
+      this.setState(st => ({ drawer: null, sec: 'fichas', estado: 'Todas', q: '', fichas: d.mode === 'new' ? [row].concat(st.fichas) : st.fichas.map((f, i) => i === d.idx ? row : f) }));
+      this.toast(estado === 'Publicada' ? 'Ficha publicada · el Guía ya puede recomendarla' : 'Borrador guardado');
+    };
+    const A = s.aud; const cp = this.curPunto(); const txt = this.curTxt(); const gkey = cp ? cp.p.id + ':' + s.selLang : '';
+    const recorridos = A ? A.recorridos.map((r, ri) => ({ n: r.nombre, meta: r.puntos.length + ' puntos · ' + r.minutos + ' min · ' + (r.puntos.some(p => p.guion_en) ? 'ES / EN' : 'ES'), bg: r.imagen ? 'url("' + r.imagen + '")' : 'none', puntos: r.puntos.map((p, pi) => { const g = s.gen[p.id + ':es']; const st = g === 'ok' ? 'Audio regenerado' : 'Audio listo · ES / EN'; const ok = true; return { code: p.qr, t: p.titulo, loc: p.ubicacion, st, stBg: ok ? 'oklch(0.95 0.035 160)' : 'oklch(0.95 0.05 80)', stFg: ok ? 'oklch(0.38 0.1 160)' : 'oklch(0.42 0.1 70)', bg: ri === s.selRec && pi === s.selIdx ? '#F1F3F4' : '#fff', sel: () => this.setState({ selRec: ri, selIdx: pi, selLang: 'es' }) }; }) })) : [];
+    const words = txt.trim() ? txt.trim().split(/\s+/).length : 0;
+    const alertView = a => ({ icon: a.nivel === 'warn' ? 'warning' : a.nivel === 'ok' ? 'check_circle' : 'flag', color: a.nivel === 'warn' ? 'oklch(0.6 0.15 75)' : a.nivel === 'ok' ? OK : MUT });
+    return {
+      cols: s.w < 900 ? '1fr' : '248px minmax(0,1fr)', desktop: s.w >= 520,
+      aiDot: 'oklch(0.75 0.15 155)', aiLabel: 'Sesión: Gobernación de Nariño · editora',
+      nav, sec,
+      head: { title: cur[1], desc: cur[4], phase: cur[3], phaseBg: PH[cur[3]][0], phaseFg: PH[cur[3]][1], hasAction: ['fichas', 'eventos', 'consultas'].indexOf(s.sec) >= 0, actionLabel: s.sec === 'eventos' ? 'Nuevo evento' : 'Nueva ficha', action: () => s.sec === 'eventos' ? this.toast('El formulario de eventos sigue el mismo patrón de las fichas') : openNew('') },
+      periodos: ['Últimos 30 días', 'Trimestre', 'Año'].map((l, i) => ({ l, bg: s.periodo === i ? INK : '#fff', fg: s.periodo === i ? '#fff' : INK, bd: s.periodo === i ? INK : '#D3D9DE', go: () => this.setState({ periodo: i }) })),
+      kpis,
+      demanda: DEM.map(([m, v]) => ({ m, v: v.toLocaleString('es-CO') + 'k', h: Math.round(100 * v / 14.2) + '%', c: m === 'Ene' ? 'oklch(0.45 0.06 250)' : m === 'Oct' ? ACC : 'oklch(0.85 0.03 250)' })),
+      munTop: [['Ipiales', 31], ['Pasto', 27], ['El Encano', 11], ['Túquerres', 6], ['Sandoná', 5]].map(([k, v]) => ({ k, v: v + '%', w: (v * 3) + '%' })),
+      munLow: MLOW.map(([k, v]) => { const on = !!s.promo[k]; return { k, v, l: on ? 'En promoción' : 'Promover', bg: on ? 'oklch(0.95 0.035 160)' : '#fff', fg: on ? 'oklch(0.38 0.1 160)' : INK, bd: on ? 'transparent' : '#D3D9DE', go: () => { this.setState(st => ({ promo: Object.assign({}, st.promo, { [k]: !st.promo[k] }) })); if (!on) this.toast(k + ' recibe la etiqueta «Poco visitado» y el Guía lo sugiere primero'); } }; }),
+      origen: [['Nariño', 29, 'oklch(0.45 0.06 250)'], ['Ecuador', 33, ACC], ['Resto de Colombia', 31, 'oklch(0.6 0.12 160)'], ['Otros países', 7, 'oklch(0.75 0.1 80)']].map(([k, v, c]) => ({ k, v: v + '%', w: v + '%', c })),
+      temas: [['Cómo llegar', 22], ['Planes de varios días', 19], ['Frontera y documentos', 14], ['Precios', 12], ['Clima', 9]].map(([k, v]) => ({ k, v: v + '%', w: (v * 4) + '%' })),
+      indicadores: [['Prestadores con ficha activa', 'Fichas publicadas y actualizadas en los últimos 90 días', 'MVP'], ['Municipios con oferta publicada', 'Municipios con al menos una experiencia o prestador verificado', 'MVP'], ['Itinerarios creados y descargados', 'Planes generados desde el asistente, con días y municipios', 'MVP'], ['Dispersión territorial del plan', 'Itinerarios con municipios distintos de Pasto e Ipiales', 'MVP'], ['Distribución mensual de la demanda', 'Consultas e itinerarios por mes frente a enero', 'MVP'], ['Consultas sin respuesta', 'Preguntas sin resolver, por tema y municipio', 'MVP'], ['Origen del visitante', 'Colombia por departamento, Ecuador y otros países', 'MVP'], ['Cupones redimidos y gasto inducido', 'Canjes validados por el prestador, con valor por municipio', 'Fase 2'], ['Ocupación y estancia promedio', 'Integración con SITUR Nariño y CITUR', 'Fase 2']].map(([k, how, d]) => ({ k, how, d, bg: PH[d][0], fg: PH[d][1] })),
+      q: s.q, onQ: e => this.setState({ q: e.target.value }),
+      estados: ['Todas', 'Publicada', 'En revisión', 'Borrador'].map(k => ({ k, bg: s.estado === k ? '#fff' : 'transparent', fg: s.estado === k ? INK : MUT, go: () => this.setState({ estado: k }) })),
+      fichas,
+      prestKpis: [{ k: 'Prestadores en el catálogo', v: '412', c: INK }, { k: 'Con RNT vigente', v: '377', c: OK }, { k: 'Vencen este mes', v: '24', c: WARN }, { k: 'Usan el portal', v: '61%', c: INK }],
+      hasRevisiones: s.revisiones.length > 0,
+      revisiones: s.revisiones.map((r, i) => ({ prest: r.prest, ficha: r.ficha, cambios: r.cambios, precio: r.precio ? 'Precio $' + Number(r.precio).toLocaleString('es-CO') : '', ok: () => { const L0 = s.revisiones.filter((_, j) => j !== i); setLS('dn_revisiones', L0); this.setState({ revisiones: L0 }); this.toast('Cambios publicados en la ficha de ' + r.prest); } })),
+      prestadores: PREST.map(p => { const needs = p[3] !== 'Vigente'; const sent = !!s.notified[p[0]]; return { n: p[0], tipo: p[1], mun: p[2], rnt: p[3], portal: p[4], cup: p[5], c: p[3] === 'Vigente' ? OK : p[3] === 'Sin registro' || p[3] === 'Vencido' ? BAD : WARN, needs, notifyLabel: sent ? 'Aviso enviado' : (p[3] === 'Sin registro' ? 'Invitar a formalizarse' : 'Recordar renovación'), notify: () => { this.setState(st => ({ notified: Object.assign({}, st.notified, { [p[0]]: true }) })); this.toast('Aviso enviado a ' + p[0] + ' por correo y WhatsApp'); } }; }),
+      audKpis: [{ k: 'Recorridos publicados', v: A ? String(A.recorridos.length) : '—' }, { k: 'Puntos con QR', v: A ? String(A.recorridos.reduce((a, r) => a + r.puntos.length, 0)) : '—' }, { k: 'Escuchas este mes', v: '2.930' }, { k: 'Inicios por QR', v: '41%' }],
+      recorridos,
+      sel: cp ? { code: cp.p.qr, rec: cp.r.nombre, t: cp.p.titulo, txt, chars: words + ' palabras · ' + txt.length + ' caracteres', dur: 'Duración estimada ' + Math.max(1, Math.round(words / 140 * 60)) + ' s' } : { code: '', rec: '', t: 'Cargando…', txt: '', chars: '', dur: '' },
+      langTabs: [['es', 'Español'], ['en', 'English']].map(([k, l]) => ({ l, bg: s.selLang === k ? '#fff' : 'transparent', fg: s.selLang === k ? INK : MUT, go: () => this.setState({ selLang: k }) })),
+      onTxt: e => { const v = e.target.value; if (!cp) return; this.setState(st => ({ edits: Object.assign({}, st.edits, { [cp.p.id + ':' + st.selLang]: v }) })); },
+      voz: s.voz, onVoz: e => this.setState({ voz: e.target.value }),
+      genLabel: s.gen[gkey] === 'gen' ? 'Generando…' : s.gen[gkey] === 'ok' ? 'Regenerar voz' : 'Generar voz',
+      genNote: s.gen[gkey] === 'nokey' ? 'Vista previa con voz de demostración. Al conectar la cuenta de ElevenLabs, este botón produce el MP3 final.' : 'Genera el MP3 con ElevenLabs a partir del guion. El archivo se guarda como ' + (cp ? (s.selLang === 'en' ? 'audio/' + cp.p.id + '-en.mp3' : cp.p.archivo_es) : '') + ' y la app lo usa sin conexión.',
+      generar: () => this.generar(), escuchar: () => this.play(),
+      qr: qrEl(cp ? cp.p.qr : 'x', 150, INK, '#fff'),
+      descargarQr: () => this.toast('Cartel ' + (cp ? cp.p.qr : '') + ' listo para imprimir · 20 × 20 cm'),
+      eventos: EVENTOS.map(([n, lugar, fecha]) => ({ n, lugar, fecha })),
+      rutas: [['Ruta de Naturaleza', 'oklch(0.52 0.13 155)', 'Lagunas, volcanes y páramo · 2 a 3 días', 'Las Lajas · Laguna Verde · Túquerres · Galeras · La Cocha'], ['Ruta Religiosa', 'oklch(0.55 0.16 300)', 'Santuarios e iglesias coloniales · 2 días', 'Pasto · Túquerres · Ipiales · Las Lajas'], ['Ruta Binacional', 'oklch(0.55 0.12 95)', 'Rumichaca, Ipiales, Cumbal y Túquerres · 2 días', 'Rumichaca · Ipiales · Las Lajas · Cumbal · Túquerres'], ['Ruta del Café', 'oklch(0.52 0.12 60)', 'Cafés de altura del norte · 2 días', 'Pasto · Buesaco · La Unión · Sandoná'], ['Ruta del Carnaval', 'oklch(0.56 0.19 30)', 'Museo, talleres y maestros artesanos · 1 día', 'Pasto · Sandoná'], ['Ruta del Pacífico', 'oklch(0.52 0.14 240)', 'Playa, manglar y marimba · 2 a 3 días', 'Pasto · Tumaco']].map(([nombre, color, descripcion, paradasTxt]) => ({ nombre, color, descripcion, paradasTxt })),
+      alertas: s.alertas.map((a, i) => Object.assign({ t: a.t, s: a.s, estado: a.on ? 'Visible en la app' : 'Oculta', track: a.on ? OK : '#C9D0D6', justify: a.on ? 'flex-end' : 'flex-start', toggle: () => { const L0 = s.alertas.map((x, j) => j === i ? Object.assign({}, x, { on: !x.on }) : x); setLS('dn_alertas', L0); this.setState({ alertas: L0 }); this.toast(a.on ? 'Alerta oculta en la app' : 'Alerta visible en la app'); } }, alertView(a))),
+      consultas: allCons.map(c => ({ q: c.q, mun: c.mun, n: c.n, nueva: c.nueva, crear: () => { openNew(c.q); this.setState(st => ({ drawer: Object.assign({}, st.drawer, { municipio: c.mun === 'Sin municipio' ? '' : c.mun }) })); } })),
+      hasDrawer: !!s.drawer, dr: { kicker: dr.mode === 'new' ? 'Nueva ficha' : 'Editar ficha', title: dr.nombre || 'Sin nombre', nombre: dr.nombre || '', tipo: dr.tipo || 'Atractivo', municipio: dr.municipio || '', rnt: dr.rnt || '', precio: dr.precio || '', desc: dr.desc || '', nota: dr.nota || '', hasNota: !!dr.nota },
+      drOn: { nombre: setDr('nombre'), tipo: setDr('tipo'), municipio: setDr('municipio'), rnt: setDr('rnt'), precio: setDr('precio'), desc: setDr('desc') },
+      closeDrawer: () => this.setState({ drawer: null }), saveBorrador: () => save('Borrador'), savePublicar: () => save('Publicada'),
+      hasToast: !!s.toast, toast: s.toast || ''
+    };
+  }
+}
+</script>
+</body>
+</html>

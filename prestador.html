@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Descubre Nariño · Portal del prestador</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,300..600,0..1,0&display=block" rel="stylesheet">
+<style>body{margin:0;background:#F4F6F7;font-family:'Public Sans',system-ui,sans-serif;color:#141A21;-webkit-font-smoothing:antialiased}*{box-sizing:border-box}button{font:inherit;color:inherit}input,select,textarea{font:inherit;color:#141A21;background-color:#fff}a{color:oklch(0.5 0.19 35)}a:hover{color:oklch(0.42 0.17 35)}@keyframes tin{from{opacity:0;transform:translate(-50%,8px)}to{opacity:1;transform:translate(-50%,0)}}</style>
+</helmet>
+<div style="min-height:100vh;display:flex;flex-direction:column">
+<div style="background:#1B232B"><sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+<div style="flex:none;display:flex;align-items:center;flex-wrap:wrap;gap:10px 20px;padding:12px 24px;color:#fff;border-bottom:1px solid rgba(255,255,255,.08)">
+<a href="index.html" style="text-decoration:none;color:#fff;font:400 24px/1 'Instrument Serif',serif;white-space:nowrap" style-hover="color:#fff">Descubre <span style="font-style:italic">Nariño</span></a>
+<nav style="display:flex;flex-wrap:nowrap;gap:4px;padding:4px;border-radius:22px;background:rgba(255,255,255,.08);max-width:100%;overflow-x:auto;scrollbar-width:none">
+<a href="index.html" style="display:flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:18px;font-size:13.5px;font-weight:600;text-decoration:none;white-space:nowrap;color:#fff" style-hover="color:#fff;background:rgba(255,255,255,.1)"><span style="font:400 18px/1 'Material Symbols Rounded'">hub</span>Plataforma</a>
+<a href="app.html" style="display:flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:18px;font-size:13.5px;font-weight:600;text-decoration:none;white-space:nowrap;color:#fff" style-hover="color:#fff;background:rgba(255,255,255,.1)"><span style="font:400 18px/1 'Material Symbols Rounded'">smartphone</span>App turista</a>
+<a href="prestador.html" aria-current="page" style="display:flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:18px;font-size:13.5px;font-weight:600;text-decoration:none;white-space:nowrap;background:#fff;color:#141A21" style-hover="color:#141A21"><span style="font:400 18px/1 'Material Symbols Rounded'">storefront</span>Prestador</a>
+<a href="gobierno.html" style="display:flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:18px;font-size:13.5px;font-weight:600;text-decoration:none;white-space:nowrap;color:#fff" style-hover="color:#fff;background:rgba(255,255,255,.1)"><span style="font:400 18px/1 'Material Symbols Rounded'">account_balance</span>Gobernación</a>
+</nav>
+<div style="flex:1"></div>
+<div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+<a href="https://wigilabs.com" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:rgba(255,255,255,.72);font-size:12px;white-space:nowrap" style-hover="color:#fff"><span>Una propuesta de</span><img src="img/brand/wigilabs-wordmark-white.png" alt="Wigilabs" style="height:12px;width:auto;display:block"></img></a>
+<a href="https://meetings.hubspot.com/andresm/reuniones-andres-mendez" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:18px;background:oklch(0.56 0.19 35);color:#fff;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap" style-hover="color:#fff;background:oklch(0.5 0.19 35)"><span style="font:400 18px/1 'Material Symbols Rounded'">event</span>Agendar reunión</a>
+</div>
+</div>
+</sc-if></div>
+<div style="flex:1;display:grid;grid-template-columns:{{ cols }};min-height:0">
+
+<aside style="background:#fff;border-right:1px solid #E2E6E9;padding:20px 14px;display:flex;flex-direction:column;gap:4px">
+<div style="display:flex;align-items:center;gap:12px;padding:6px 8px 14px">
+<span style="width:44px;height:44px;border-radius:12px;background:oklch(0.24 0.03 250);color:#fff;display:flex;align-items:center;justify-content:center;font:400 italic 22px/1 'Instrument Serif',serif;flex:none">LE</span>
+<div style="min-width:0"><div style="font-size:14px;font-weight:700;line-height:1.25">Lancheros El Encano</div><div style="font-size:12px;color:#4B5560;margin-top:2px">Experiencias · El Encano, Pasto</div></div>
+</div>
+<div style="margin:0 8px 14px;display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:10px;background:oklch(0.96 0.03 160);color:oklch(0.35 0.09 160);font-size:12px;font-weight:600"><span style="font:400 18px/1 'Material Symbols Rounded';font-variation-settings:'FILL' 1">verified</span>RNT 48211 · vigente</div>
+<sc-for list="{{ nav }}" as="n" hint-placeholder-count="7">
+<button onClick="{{ n.go }}" style="border:0;cursor:pointer;text-align:left;display:flex;align-items:center;gap:10px;min-height:42px;padding:0 10px;border-radius:10px;font-size:13.5px;font-weight:600;background:{{ n.bg }};color:{{ n.fg }}"><span style="font:400 20px/1 'Material Symbols Rounded'">{{ n.icon }}</span><span style="flex:1">{{ n.label }}</span><sc-if value="{{ n.hasBadge }}"><span style="font-size:11px;font-weight:700;padding:2px 7px;border-radius:9px;background:oklch(0.56 0.19 35);color:#fff">{{ n.badge }}</span></sc-if></button>
+</sc-for>
+<div style="margin-top:auto;padding:12px 10px 0;font-size:11.5px;line-height:1.45;color:#6B747D">Cuenta de demostración. Lo que hagas aquí se refleja en la App turista abierta en otra pestaña.</div>
+</aside>
+
+<main style="padding:28px 32px 48px;display:flex;flex-direction:column;gap:20px;min-width:0">
+<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap">
+<div style="flex:1 1 420px;max-width:720px;min-width:0"><div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><div style="font:400 36px/1.1 'Instrument Serif',serif;min-width:0">{{ head.title }}</div><span style="flex:none;white-space:nowrap;font-size:11px;font-weight:700;padding:3px 8px;border-radius:6px;background:{{ head.phaseBg }};color:{{ head.phaseFg }}">{{ head.phase }}</span></div><p style="margin:10px 0 0;font-size:14px;line-height:1.55;color:#4B5560;text-wrap:pretty">{{ head.desc }}</p></div>
+<sc-if value="{{ head.hasApp }}"><a href="app.html" target="_blank" style="display:flex;align-items:center;gap:6px;height:40px;padding:0 16px;border-radius:20px;border:1.5px solid #141A21;color:#141A21;text-decoration:none;font-size:13.5px;font-weight:700;white-space:nowrap" style-hover="color:#141A21;background:#fff"><span style="font:400 18px/1 'Material Symbols Rounded'">open_in_new</span>{{ head.appLabel }}</a></sc-if>
+</div>
+
+<sc-if value="{{ sec.resumen }}" hint-placeholder-val="{{ true }}">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px">
+<sc-for list="{{ kpis }}" as="k" hint-placeholder-count="5">
+<div style="background:#fff;border-radius:14px;padding:16px"><div style="font-size:12px;color:#4B5560">{{ k.k }}</div><div style="font:400 34px/1.1 'Instrument Serif',serif;margin-top:6px">{{ k.v }}</div><div style="font-size:12px;font-weight:600;margin-top:4px;color:{{ k.dc }}">{{ k.d }}</div></div>
+</sc-for>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px">
+<div style="background:#fff;border-radius:14px;padding:18px">
+<div style="font-size:14px;font-weight:700">Visitas a tu ficha por mes</div><div style="font-size:12px;color:#4B5560;margin-top:4px">Fuera de enero también llegan turistas cuando la ficha está al día</div>
+<div style="display:flex;align-items:flex-end;gap:10px;height:180px;margin-top:16px">
+<sc-for list="{{ visitas }}" as="b" hint-placeholder-count="8">
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end"><div style="font-size:11px;font-weight:600;color:#4B5560">{{ b.v }}</div><div style="width:100%;border-radius:6px 6px 2px 2px;height:{{ b.h }};background:{{ b.c }}"></div><div style="font-size:11px;color:#6B747D">{{ b.m }}</div></div>
+</sc-for>
+</div>
+</div>
+<div style="background:#fff;border-radius:14px;padding:18px">
+<div style="font-size:14px;font-weight:700">Cómo te encuentran</div><div style="font-size:12px;color:#4B5560;margin-top:4px">Origen de las visitas a tu ficha, últimos 30 días</div>
+<div style="display:flex;flex-direction:column;gap:12px;margin-top:16px">
+<sc-for list="{{ canales }}" as="c" hint-placeholder-count="5">
+<div style="display:grid;grid-template-columns:150px 1fr 44px;gap:10px;align-items:center;font-size:13px"><span>{{ c.k }}</span><div style="height:10px;border-radius:5px;background:#EEF0F2;overflow:hidden"><div style="height:100%;width:{{ c.w }};background:{{ c.c }};border-radius:5px"></div></div><span style="font-weight:700;text-align:right">{{ c.v }}</span></div>
+</sc-for>
+</div>
+</div>
+<div style="background:#fff;border-radius:14px;padding:18px">
+<div style="font-size:14px;font-weight:700">De dónde vienen</div><div style="font-size:12px;color:#4B5560;margin-top:4px">Según idioma y punto de llegada declarado</div>
+<div style="display:flex;height:14px;border-radius:7px;overflow:hidden;margin-top:18px">
+<sc-for list="{{ origen }}" as="o" hint-placeholder-count="4"><div style="height:100%;width:{{ o.w }};background:{{ o.c }}"></div></sc-for>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;margin-top:14px">
+<sc-for list="{{ origen }}" as="o" hint-placeholder-count="4"><div style="display:flex;align-items:center;gap:8px;font-size:13px"><span style="width:10px;height:10px;border-radius:3px;background:{{ o.c }}"></span><span style="flex:1">{{ o.k }}</span><strong>{{ o.v }}</strong></div></sc-for>
+</div>
+</div>
+<div style="background:#fff;border-radius:14px;padding:18px">
+<div style="font-size:14px;font-weight:700">Lo que preguntan al Guía sobre ti</div><div style="font-size:12px;color:#4B5560;margin-top:4px">Responderlas en tu ficha mejora tus recomendaciones</div>
+<sc-for list="{{ preguntas }}" as="p" hint-placeholder-count="4"><div style="display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid #EEF0F2;font-size:13px;margin-top:6px"><span>{{ p.q }}</span><strong style="white-space:nowrap">×{{ p.n }}</strong></div></sc-for>
+</div>
+</div>
+<div style="font-size:12px;color:#6B747D">Cifras de ejemplo. En producción salen del uso real de la plataforma.</div>
+</sc-if>
+
+<sc-if value="{{ sec.ficha }}" hint-placeholder-val="{{ false }}">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:16px;align-items:start">
+<div style="background:#fff;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:14px">
+<label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600">Nombre de la experiencia<input value="{{ f.nombre }}" onChange="{{ on.nombre }}" style="height:42px;border-radius:10px;border:1px solid #D3D9DE;padding:0 12px;font-size:14px;font-weight:400;outline:0"></input></label>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600">Descripción<textarea value="{{ f.desc }}" onChange="{{ on.desc }}" rows="4" style="border-radius:10px;border:1px solid #D3D9DE;padding:10px 12px;font-size:14px;font-weight:400;line-height:1.45;resize:vertical;outline:0"></textarea></label>
+<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px">
+<label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600">Precio sugerido (COP)<input value="{{ f.precio }}" onChange="{{ on.precio }}" inputmode="numeric" style="width:100%;min-width:0;height:42px;border-radius:10px;border:1px solid {{ precioBd }};padding:0 12px;font-size:14px;font-weight:400;outline:0"></input></label>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600">Horario<input value="{{ f.hor }}" onChange="{{ on.hor }}" style="width:100%;min-width:0;height:42px;border-radius:10px;border:1px solid #D3D9DE;padding:0 12px;font-size:14px;font-weight:400;outline:0"></input></label>
+</div>
+<div style="font-size:12.5px;line-height:1.45;color:{{ precioMsgC }}">{{ precioMsg }}</div>
+<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px">
+<label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600">WhatsApp de contacto<input value="{{ f.wa }}" onChange="{{ on.wa }}" style="width:100%;min-width:0;height:42px;border-radius:10px;border:1px solid #D3D9DE;padding:0 12px;font-size:14px;font-weight:400;outline:0"></input></label>
+<div style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600">Accesibilidad<button onClick="{{ toggleAcc }}" style="cursor:pointer;height:42px;border-radius:10px;border:1px solid #D3D9DE;background:#fff;display:flex;align-items:center;gap:8px;padding:0 12px;font-size:14px;font-weight:400"><span style="width:36px;height:22px;border-radius:11px;padding:2px;display:flex;background:{{ accTrack }};justify-content:{{ accJustify }}"><span style="width:18px;height:18px;border-radius:50%;background:#fff"></span></span>{{ accTxt }}</button></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600">Fotos
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px">
+<div style="aspect-ratio:1;border-radius:10px;background:url('img/cocha-encano.jpg') center/cover"></div>
+<div style="aspect-ratio:1;border-radius:10px;background:url('img/cocha-botes.avif') center/cover"></div>
+<div style="aspect-ratio:1;border-radius:10px;background:url('img/cocha-noche.jpg') center/cover"></div>
+<div style="aspect-ratio:1;border-radius:10px;border:1.5px dashed #C3CAD0;display:flex;align-items:center;justify-content:center;color:#4B5560"><span style="font:400 24px/1 'Material Symbols Rounded'">add_photo_alternate</span></div>
+</div>
+</div>
+<div style="display:flex;gap:8px;justify-content:flex-end;align-items:center;flex-wrap:wrap;padding-top:4px">
+<span style="font-size:12.5px;color:#4B5560;margin-right:auto">{{ fichaEstado }}</span>
+<button onClick="{{ enviarRevision }}" style="border:0;cursor:pointer;height:44px;padding:0 20px;border-radius:22px;background:oklch(0.56 0.19 35);color:#fff;font-size:14px;font-weight:700">Enviar a revisión</button>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6B747D">Así te ve el turista</div>
+<div style="background:#fff;border-radius:18px;overflow:hidden;max-width:380px">
+<div style="height:180px;background:url('img/cocha-encano.jpg') center/cover"></div>
+<div style="padding:16px;display:flex;flex-direction:column;gap:8px">
+<div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6B747D">Experiencia · El Encano, Pasto</div>
+<div style="font:400 26px/1.1 'Instrument Serif',serif">{{ f.nombre }}</div>
+<div style="display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:10px;background:oklch(0.96 0.03 160);color:oklch(0.35 0.09 160);font-size:12.5px;font-weight:700"><span style="font:400 20px/1 'Material Symbols Rounded';font-variation-settings:'FILL' 1">verified</span>Verificado RNT · N.º 48211</div>
+<div style="font-size:13.5px;line-height:1.5;color:#2F3740">{{ f.desc }}</div>
+<div style="display:flex;justify-content:space-between;font-size:13px;padding-top:6px;border-top:1px solid #EEF0F2"><span style="color:#4B5560">Precio sugerido</span><strong>{{ precioTxt }}</strong></div>
+<div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:#4B5560">Horario</span><strong>{{ f.hor }}</strong></div>
+</div>
+</div>
+<div style="font-size:12px;color:#6B747D;line-height:1.45;max-width:380px">Los cambios se publican después de la revisión de la Gobernación. El Guía empieza a usarlos en su siguiente respuesta.</div>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ sec.cupones }}" hint-placeholder-val="{{ false }}">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;align-items:start">
+<div style="background:#fff;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:14px">
+<div style="font-size:15px;font-weight:700">Nuevo cupón</div>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600">Qué ofreces<input value="{{ nc.t }}" onChange="{{ onNc.t }}" placeholder="Ej. Bebida caliente gratis antes de embarcar" style="height:42px;border-radius:10px;border:1px solid #D3D9DE;padding:0 12px;font-size:14px;font-weight:400;outline:0"></input></label>
+<div style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600">Tipo
+<div style="display:flex;gap:6px;flex-wrap:wrap">
+<sc-for list="{{ tipos }}" as="tp" hint-placeholder-count="3"><button onClick="{{ tp.go }}" style="cursor:pointer;height:38px;padding:0 14px;border-radius:19px;font-size:13px;font-weight:600;background:{{ tp.bg }};color:{{ tp.fg }};border:1px solid {{ tp.bd }}">{{ tp.l }}</button></sc-for>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px">
+<label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600">{{ valorLabel }}<input value="{{ nc.valor }}" onChange="{{ onNc.valor }}" style="width:100%;min-width:0;height:42px;border-radius:10px;border:1px solid #D3D9DE;padding:0 12px;font-size:14px;font-weight:400;outline:0"></input></label>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600">Cupo de canjes<input value="{{ nc.cupo }}" onChange="{{ onNc.cupo }}" style="width:100%;min-width:0;height:42px;border-radius:10px;border:1px solid #D3D9DE;padding:0 12px;font-size:14px;font-weight:400;outline:0"></input></label>
+</div>
+<div style="font-size:12px;color:#6B747D;line-height:1.45">Los cupones solo se muestran si tu RNT está vigente. Aparecen en el Pase del turista y el Guía puede sugerirlos.</div>
+<button onClick="{{ publicarCupon }}" style="border:0;cursor:pointer;height:46px;border-radius:23px;background:oklch(0.56 0.19 35);color:#fff;font-size:14px;font-weight:700">Publicar cupón</button>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<sc-for list="{{ misCupones }}" as="mc" hint-placeholder-count="3">
+<div style="display:flex;align-items:stretch;border-radius:14px;background:#fff;overflow:hidden">
+<div style="width:84px;flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;background:oklch(0.95 0.04 35);color:oklch(0.45 0.17 35);border-right:2px dashed #F4F6F7"><span style="font:400 26px/1 'Instrument Serif',serif">{{ mc.big }}</span><span style="font-size:10.5px;font-weight:700">{{ mc.small }}</span></div>
+<div style="flex:1;min-width:0;padding:14px"><div style="font-size:14px;font-weight:700">{{ mc.t }}</div><div style="font-size:12px;color:#4B5560;margin-top:4px">{{ mc.meta }}</div></div>
+<div style="display:flex;align-items:center;padding:0 14px"><span style="font-size:12px;font-weight:700;padding:4px 9px;border-radius:10px;background:oklch(0.95 0.035 160);color:oklch(0.38 0.1 160)">{{ mc.estado }}</span></div>
+</div>
+</sc-for>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ sec.validar }}" hint-placeholder-val="{{ false }}">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;align-items:start">
+<div style="background:#fff;border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:14px">
+<div style="font-size:15px;font-weight:700">Código que muestra el turista</div>
+<input value="{{ code }}" onChange="{{ onCode }}" onKeyDown="{{ onCodeKey }}" placeholder="DN-0000" style="height:64px;border-radius:14px;border:1.5px solid #D3D9DE;padding:0 18px;font:700 28px/1 ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase;outline:0"></input>
+<button onClick="{{ validar }}" style="border:0;cursor:pointer;height:50px;border-radius:25px;background:oklch(0.56 0.19 35);color:#fff;font-size:15px;font-weight:700">Validar canje</button>
+<sc-if value="{{ hasResult }}"><div style="padding:14px;border-radius:12px;font-size:14px;line-height:1.45;font-weight:600;background:{{ result.bg }};color:{{ result.fg }}">{{ result.t }}</div></sc-if>
+<div style="font-size:12px;color:#6B747D;line-height:1.45">En la demo puedes validar cualquier código generado en la App turista. En producción cada prestador valida solo sus cupones y puede escanear el QR con la cámara.</div>
+</div>
+<div style="background:#fff;border-radius:14px;overflow-x:auto">
+<div style="padding:16px 18px;font-size:14px;font-weight:700;border-bottom:1px solid #EEF0F2">Códigos generados por turistas</div>
+<sc-for list="{{ canjes }}" as="cj" hint-placeholder-count="3">
+<div style="display:flex;align-items:center;gap:12px;padding:12px 18px;border-bottom:1px solid #F1F3F4">
+<span style="font:700 15px/1 ui-monospace,Menlo,monospace;letter-spacing:.08em;width:84px">{{ cj.code }}</span>
+<div style="flex:1;min-width:0"><div style="font-size:13.5px;font-weight:600">{{ cj.t }}</div><div style="font-size:12px;color:#4B5560;margin-top:2px">{{ cj.prest }}</div></div>
+<sc-if value="{{ cj.pend }}"><button onClick="{{ cj.go }}" style="cursor:pointer;background:transparent;height:34px;padding:0 12px;border-radius:17px;border:1.5px solid #141A21;font-size:12.5px;font-weight:700">Validar</button></sc-if>
+<sc-if value="{{ cj.done }}"><span style="font-size:12px;font-weight:700;padding:4px 9px;border-radius:10px;background:oklch(0.95 0.035 160);color:oklch(0.38 0.1 160)">Canjeado</span></sc-if>
+</div>
+</sc-for>
+<sc-if value="{{ noCanjes }}"><div style="padding:24px 18px;font-size:13.5px;color:#4B5560;line-height:1.5">Aún no hay códigos. En la App turista abre Pase y toca «Usar» en un cupón.</div></sc-if>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ sec.reservas }}" hint-placeholder-val="{{ false }}">
+<div style="background:#fff;border-radius:14px;overflow-x:auto">
+<div style="min-width:720px;display:grid;grid-template-columns:1.6fr 1fr .6fr 1.2fr 1fr 1.3fr;gap:12px;padding:12px 18px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#6B747D;border-bottom:1px solid #EEF0F2"><div>Experiencia</div><div>Fecha</div><div>Personas</div><div>Turista</div><div>Estado</div><div></div></div>
+<sc-for list="{{ reservas }}" as="r" hint-placeholder-count="3">
+<div style="min-width:720px;display:grid;grid-template-columns:1.6fr 1fr .6fr 1.2fr 1fr 1.3fr;gap:12px;padding:0 18px;min-height:56px;align-items:center;font-size:13.5px;border-bottom:1px solid #F1F3F4">
+<span style="font-weight:600">{{ r.n }}<sc-if value="{{ r.isNew }}"><span style="margin-left:6px;font-size:10.5px;font-weight:700;color:oklch(0.5 0.19 35)">NUEVA</span></sc-if></span><span>{{ r.fecha }}</span><span>{{ r.pers }}</span><span style="color:#4B5560">{{ r.nombre }} · {{ r.origen }}</span>
+<span><span style="font-size:12px;font-weight:700;padding:4px 9px;border-radius:10px;background:{{ r.bg }};color:{{ r.fg }}">{{ r.estado }}</span></span>
+<span style="display:flex;gap:6px;justify-content:flex-end"><sc-if value="{{ r.pend }}"><button onClick="{{ r.ok }}" style="border:0;cursor:pointer;height:34px;padding:0 12px;border-radius:17px;background:#141A21;color:#fff;font-size:12.5px;font-weight:700">Confirmar</button><button onClick="{{ r.no }}" style="cursor:pointer;background:transparent;height:34px;padding:0 12px;border-radius:17px;border:1px solid #D3D9DE;font-size:12.5px;font-weight:600">Sin cupo</button></sc-if></span>
+</div>
+</sc-for>
+</div>
+<div style="font-size:12px;color:#6B747D">Las solicitudes llegan desde «Solicitar reserva» en la ficha de la App turista. Sin pagos en línea hasta la Fase 3.</div>
+</sc-if>
+
+<sc-if value="{{ sec.resenas }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-direction:column;gap:12px;max-width:820px">
+<sc-for list="{{ resenas }}" as="rv" hint-placeholder-count="3">
+<div style="background:#fff;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;justify-content:space-between;gap:12px;align-items:center"><div><div style="font-size:14px;font-weight:700">{{ rv.nombre }}</div><div style="font-size:12px;color:#4B5560;margin-top:2px">{{ rv.meta }}</div></div><div style="font-size:15px;letter-spacing:2px;color:oklch(0.62 0.15 70)">{{ rv.stars }}</div></div>
+<div style="font-size:14px;line-height:1.55;color:#2F3740">{{ rv.txt }}</div>
+<sc-if value="{{ rv.hasReply }}"><div style="padding:12px 14px;border-radius:10px;background:#F4F6F7;font-size:13.5px;line-height:1.5"><strong>Tu respuesta: </strong>{{ rv.reply }}</div></sc-if>
+<sc-if value="{{ rv.noReply }}"><div style="display:flex;gap:8px"><input value="{{ rv.draft }}" onChange="{{ rv.onDraft }}" placeholder="Responde de forma pública…" style="flex:1;min-width:0;height:40px;border-radius:20px;border:1px solid #D3D9DE;padding:0 14px;font-size:13.5px;outline:0"></input><button onClick="{{ rv.send }}" style="border:0;cursor:pointer;height:40px;padding:0 16px;border-radius:20px;background:#141A21;color:#fff;font-size:13px;font-weight:700">Responder</button></div></sc-if>
+</div>
+</sc-for>
+</div>
+</sc-if>
+
+<sc-if value="{{ sec.rnt }}" hint-placeholder-val="{{ false }}">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;align-items:start">
+<div style="background:#fff;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:2px">
+<sc-for list="{{ rntRows }}" as="rr" hint-placeholder-count="5"><div style="display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid #EEF0F2;font-size:13.5px"><span style="color:#4B5560">{{ rr.k }}</span><strong style="text-align:right">{{ rr.v }}</strong></div></sc-for>
+<button onClick="{{ renovar }}" style="margin-top:14px;cursor:pointer;background:transparent;height:44px;border-radius:22px;border:1.5px solid #141A21;font-size:14px;font-weight:700">Iniciar renovación</button>
+</div>
+<div style="background:#fff;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:10px">
+<div style="font-size:14px;font-weight:700">Qué pasa si el RNT vence</div>
+<sc-for list="{{ rntRules }}" as="ru" hint-placeholder-count="3"><div style="display:flex;gap:10px;font-size:13.5px;line-height:1.5"><span style="font:400 20px/1.1 'Material Symbols Rounded';color:#4B5560;flex:none">{{ ru.i }}</span><span>{{ ru.t }}</span></div></sc-for>
+</div>
+</div>
+</sc-if>
+</main>
+</div>
+<sc-if value="{{ hasToast }}"><div style="position:fixed;left:50%;bottom:28px;transform:translateX(-50%);z-index:40;background:#141A21;color:#fff;padding:12px 18px;border-radius:14px;font-size:13.5px;font-weight:600;box-shadow:0 10px 30px rgba(0,0,0,.25);max-width:420px;text-align:center">{{ toast }}</div></sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const INK = '#141A21', MUT = '#4B5560', ACC = 'oklch(0.56 0.19 35)';
+const getLS = (k, d) => { try { const v = JSON.parse(localStorage.getItem(k)); return v == null ? d : v; } catch (e) { return d; } };
+const setLS = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} };
+const fmt = n => '$' + Math.round(n).toLocaleString('es-CO');
+const PH = { MVP: ['#EEF0F2', MUT], 'Fase 2': ['oklch(0.95 0.05 80)', 'oklch(0.42 0.1 70)'], Nuevo: ['oklch(0.95 0.04 35)', 'oklch(0.45 0.17 35)'] };
+const SECS = [
+  ['resumen', 'Resumen', 'insights', 'Fase 2', 'Estadísticas de tu negocio en la plataforma: cuántos turistas ven tu ficha, cuántas veces te recomienda el Guía, de dónde vienen y qué preguntan. Es lo que hace que valga la pena mantener la ficha al día.'],
+  ['ficha', 'Mi ficha', 'storefront', 'Fase 2', 'Edita lo que ve el turista: nombre, descripción, precio sugerido, horario, accesibilidad, contacto y fotos. Los cambios pasan por revisión de la Gobernación antes de publicarse, y el precio se compara con el rango de referencia.'],
+  ['cupones', 'Cupones', 'confirmation_number', 'Fase 2', 'Publica descuentos para el Pase Nariño. Aparecen al instante en la billetera del turista y el Guía puede sugerirlos. Solo los prestadores con RNT vigente pueden publicar.'],
+  ['validar', 'Validar cupón', 'qr_code_scanner', 'Fase 2', 'Cuando un turista te muestra un cupón, escribe su código o escanéalo. El canje queda registrado como gasto inducido y el ahorro aparece en el plan del turista.'],
+  ['reservas', 'Reservas', 'event_available', 'Fase 2', 'Solicitudes que los turistas envían desde tu ficha. Confirma o indica que no hay cupo; el turista ve la respuesta en la app. Los pagos en línea llegan en la Fase 3.'],
+  ['resenas', 'Reseñas', 'reviews', 'Fase 2', 'Opiniones de turistas que usaron tu servicio a través de la plataforma. Responder en público mejora la confianza y la posición en el catálogo.'],
+  ['rnt', 'Registro RNT', 'verified', 'MVP', 'Estado de tu Registro Nacional de Turismo, cruzado automáticamente con el registro oficial. Es la condición para aparecer en el catálogo, recibir reservas y publicar cupones.']
+];
+const SEED_RES = [
+  { id: 'R7Q2K', n: 'Paseo en lancha a la Isla La Corota', fecha: 'Sáb 11 oct', pers: 4, nombre: 'Familia Rosero', origen: 'Pasto', estado: 'Confirmada' },
+  { id: 'R8M1T', n: 'Paseo en lancha a la Isla La Corota', fecha: 'Dom 12 oct', pers: 2, nombre: 'Andrés V.', origen: 'Quito, Ecuador', estado: 'Pendiente' }
+];
+const SEED_CUP = [{ id: 'p0', t: '15% en el paseo a La Corota', big: '15%', small: 'DCTO', meta: 'Vigente hasta 30 nov · 41 canjes de 100', estado: 'Publicado' }];
+
+class Component extends DCLogic {
+  state = { sec: 'resumen', w: typeof window !== 'undefined' ? window.innerWidth : 1400, f: { nombre: 'Paseo en lancha a la Isla La Corota', desc: 'Recorrido en lancha por la Laguna de La Cocha hasta el santuario de flora Isla La Corota, con un sendero corto entre bosque andino.', precio: '30000', hor: '8:00 – 17:00 diario', wa: '+57 312 000 0000', acc: true }, fichaSent: false, tipo: 'pct', nc: { t: '', valor: '10', cupo: '50' }, mine: [], code: '', result: null, canjes: [], reservas: [], seedRes: SEED_RES, replies: {}, drafts: {}, toast: null };
+  componentDidMount() {
+    this.sync();
+    this.onS = e => { if (e.key && e.key.indexOf('dn_') === 0) this.sync(); };
+    this.onR = () => this.setState({ w: window.innerWidth });
+    window.addEventListener('storage', this.onS); window.addEventListener('resize', this.onR);
+  }
+  componentWillUnmount() { window.removeEventListener('storage', this.onS); window.removeEventListener('resize', this.onR); clearTimeout(this.tt); }
+  sync() { this.setState({ canjes: getLS('dn_canjes', []), reservas: getLS('dn_reservas', []), mine: getLS('dn_cupones', []).filter(c => c.prest === 'Lancheros El Encano') }); }
+  toast(t) { clearTimeout(this.tt); this.setState({ toast: t }); this.tt = setTimeout(() => this.setState({ toast: null }), 2600); }
+  validar(codeIn) {
+    const code = String(codeIn || this.state.code).trim().toUpperCase();
+    const list = getLS('dn_canjes', []); const hit = list.find(c => c.code === code);
+    if (!hit) { this.setState({ result: { t: 'No encontramos el código ' + (code || '—') + '. Revisa que esté bien escrito.', bg: 'oklch(0.95 0.04 30)', fg: 'oklch(0.42 0.16 30)' } }); return; }
+    if (hit.estado === 'Canjeado') { this.setState({ result: { t: 'Este código ya se canjeó.', bg: 'oklch(0.95 0.05 80)', fg: 'oklch(0.42 0.1 70)' } }); return; }
+    const next = list.map(c => c.code === code ? Object.assign({}, c, { estado: 'Canjeado', validado: new Date().toISOString() }) : c);
+    setLS('dn_canjes', next);
+    this.setState({ canjes: next, code: '', result: { t: 'Canje válido: ' + hit.t + '. Ahorro de ' + fmt(hit.ahorro || 0) + ' registrado.', bg: 'oklch(0.95 0.035 160)', fg: 'oklch(0.35 0.09 160)' } });
+  }
+  setRes(r, estado) {
+    if (r.seed) { this.setState(s => ({ seedRes: s.seedRes.map(x => x.id === r.id ? Object.assign({}, x, { estado }) : x) })); }
+    else { const list = getLS('dn_reservas', []).map(x => x.id === r.id ? Object.assign({}, x, { estado }) : x); setLS('dn_reservas', list); this.setState({ reservas: list }); }
+    this.toast(estado === 'Confirmada' ? 'Reserva confirmada · el turista lo ve en su ficha' : 'Respuesta enviada al turista');
+  }
+  renderVals() {
+    const s = this.state;
+    const sec = {}; SECS.forEach(x => { sec[x[0]] = s.sec === x[0]; });
+    const cur = SECS.find(x => x[0] === s.sec);
+    const pendRes = s.reservas.filter(r => r.estado === 'Pendiente').length + s.seedRes.filter(r => r.estado === 'Pendiente').length;
+    const pendCj = s.canjes.filter(c => c.estado === 'Pendiente').length;
+    const nav = SECS.map(([k, label, icon]) => { const badge = k === 'reservas' ? pendRes : k === 'validar' ? pendCj : 0; return { label, icon, hasBadge: badge > 0, badge, bg: s.sec === k ? '#F1F3F4' : 'transparent', fg: s.sec === k ? INK : MUT, go: () => this.setState({ sec: k, result: null }) }; });
+    const canjeados = s.canjes.filter(c => c.estado === 'Canjeado').length;
+    const vis = [['Mar', 410], ['Abr', 520], ['May', 480], ['Jun', 690], ['Jul', 940], ['Ago', 860], ['Sep', 1010], ['Oct', 1284]];
+    const vmax = 1284;
+    const p = Number(String(s.f.precio).replace(/\D/g, '')) || 0;
+    const inRange = p >= 25000 && p <= 35000;
+    const on = {}; ['nombre', 'desc', 'precio', 'hor', 'wa'].forEach(k => { on[k] = e => { const v = e.target.value; this.setState(st => ({ f: Object.assign({}, st.f, { [k]: v }), fichaSent: false })); }; });
+    const onNc = {}; ['t', 'valor', 'cupo'].forEach(k => { onNc[k] = e => { const v = e.target.value; this.setState(st => ({ nc: Object.assign({}, st.nc, { [k]: v }) })); }; });
+    const allRes = s.reservas.map(r => Object.assign({}, r, { isNew: true })).concat(s.seedRes.map(r => Object.assign({}, r, { seed: true })));
+    const stc = { Pendiente: ['oklch(0.95 0.05 80)', 'oklch(0.42 0.1 70)'], Confirmada: ['oklch(0.95 0.035 160)', 'oklch(0.38 0.1 160)'], Rechazada: ['#EEF0F2', MUT] };
+    const RESENAS = [
+      { id: 'v1', nombre: 'Daniela M.', meta: 'Bogotá · sep 2026 · vino por la Ruta de Naturaleza', stars: '★★★★★', txt: 'El lanchero nos contó la historia de la isla y esperó sin afán. La audioguía en el sendero fue un plus.' },
+      { id: 'v2', nombre: 'Jorge P.', meta: 'Ibarra, Ecuador · ago 2026', stars: '★★★★☆', txt: 'Muy bonito. Hacía frío en la lancha, sería bueno avisar en la ficha que lleven abrigo.' },
+      { id: 'v3', nombre: 'Lucía R.', meta: 'Pasto · jul 2026', stars: '★★★★★', txt: 'Precio justo, tal cual decía la app. Volveremos en temporada baja.' }
+    ];
+    return {
+      cols: s.w < 900 ? '1fr' : '248px minmax(0,1fr)', desktop: s.w >= 520,
+      aiDot: 'oklch(0.75 0.15 155)', aiLabel: 'Sesión: Lancheros El Encano · RNT 48211',
+      nav, sec,
+      head: { title: cur[1], desc: cur[4], phase: cur[3], phaseBg: PH[cur[3]][0], phaseFg: PH[cur[3]][1], hasApp: ['cupones', 'validar', 'reservas', 'ficha'].indexOf(s.sec) >= 0, appLabel: s.sec === 'reservas' ? 'Solicitar desde la app' : s.sec === 'validar' ? 'Generar código en la app' : 'Ver en la App turista' },
+      kpis: [{ k: 'Visitas a tu ficha · 30 días', v: '1.284', d: '+18% vs. septiembre', dc: 'oklch(0.45 0.11 160)' }, { k: 'Veces que te recomendó el Guía', v: '312', d: '24% de las conversaciones sobre La Cocha', dc: MUT }, { k: 'Clics a WhatsApp y llamada', v: '146', d: '11% de las visitas', dc: MUT }, { k: 'Cupones canjeados', v: String(41 + canjeados), d: 'Gasto inducido ' + fmt((41 + canjeados) * 30000), dc: MUT }, { k: 'Solicitudes de reserva', v: String(allRes.length + 16), d: pendRes + ' pendientes', dc: pendRes ? 'oklch(0.5 0.19 35)' : MUT }],
+      visitas: vis.map(([m, v], i) => ({ m, v: v.toLocaleString('es-CO'), h: Math.round(100 * v / vmax) + '%', c: i === vis.length - 1 ? ACC : 'oklch(0.85 0.03 250)' })),
+      canales: [['Guía Nariño (asistente)', 46], ['Catálogo y búsqueda', 28], ['Mapa y rutas', 14], ['Audioguía de La Cocha', 7], ['QR en el muelle', 5]].map(([k, v], i) => ({ k, v: v + '%', w: (v * 2) + '%', c: i === 0 ? ACC : 'oklch(0.45 0.06 250)' })),
+      origen: [['Nariño', 34, 'oklch(0.45 0.06 250)'], ['Ecuador', 31, ACC], ['Resto de Colombia', 27, 'oklch(0.6 0.12 160)'], ['Otros países', 8, 'oklch(0.75 0.1 80)']].map(([k, v, c]) => ({ k, v: v + '%', w: v + '%', c })),
+      preguntas: [{ q: '¿La lancha sale si llueve?', n: 18 }, { q: '¿Aceptan pago con tarjeta?', n: 11 }, { q: '¿Hay chalecos para niños?', n: 7 }, { q: '¿Cuánto dura el recorrido completo?', n: 5 }],
+      f: s.f, on, precioTxt: p ? fmt(p) : '—', precioBd: inRange ? '#D3D9DE' : 'oklch(0.6 0.15 60)',
+      precioMsg: inRange ? 'Dentro del rango de referencia de la Gobernación ($25.000 – $35.000).' : 'Fuera del rango de referencia ($25.000 – $35.000). Puedes publicarlo, pero el revisor te pedirá justificarlo.', precioMsgC: inRange ? 'oklch(0.4 0.09 160)' : 'oklch(0.45 0.12 60)',
+      toggleAcc: () => this.setState(st => ({ f: Object.assign({}, st.f, { acc: !st.f.acc }) })), accTrack: s.f.acc ? 'oklch(0.45 0.11 160)' : '#C9D0D6', accJustify: s.f.acc ? 'flex-end' : 'flex-start', accTxt: s.f.acc ? 'Accesible con asistencia' : 'No accesible',
+      fichaEstado: s.fichaSent ? 'En revisión · la Gobernación responde en 48 h' : 'Publicada · actualizada el 2 sep 2026',
+      enviarRevision: () => { const L0 = getLS('dn_revisiones', []); setLS('dn_revisiones', [{ prest: 'Lancheros El Encano', ficha: s.f.nombre, cambios: 'Descripción, precio y horario', precio: p, t: Date.now() }].concat(L0)); this.setState({ fichaSent: true }); this.toast('Enviado. Aparece en Gobernación › Prestadores y RNT'); },
+      tipos: [['pct', '% de descuento'], ['2x1', '2x1'], ['gratis', 'Algo gratis']].map(([k, l]) => ({ l, bg: s.tipo === k ? INK : '#fff', fg: s.tipo === k ? '#fff' : INK, bd: s.tipo === k ? INK : '#D3D9DE', go: () => this.setState({ tipo: k }) })),
+      nc: s.nc, onNc, valorLabel: s.tipo === 'pct' ? 'Porcentaje' : s.tipo === '2x1' ? 'Ahorro estimado (COP)' : 'Valor del regalo (COP)',
+      publicarCupon: () => {
+        const t = s.nc.t.trim(); if (!t) { this.toast('Escribe qué ofrece el cupón'); return; }
+        const v = Number(String(s.nc.valor).replace(/\D/g, '')) || 0;
+        const c = { id: 'u' + Date.now().toString(36), t, prest: 'Lancheros El Encano', mun: 'El Encano', big: s.tipo === 'pct' ? v + '%' : s.tipo === '2x1' ? '2x1' : '1', small: s.tipo === 'pct' ? 'DCTO' : s.tipo === '2x1' ? 'PROMO' : 'GRATIS', ahorro: s.tipo === 'pct' ? Math.round(30000 * v / 100) : v, cupo: s.nc.cupo, estado: 'Publicado' };
+        setLS('dn_cupones', [c].concat(getLS('dn_cupones', []))); this.setState(st => ({ mine: [c].concat(st.mine), nc: { t: '', valor: '10', cupo: '50' } })); this.toast('Cupón publicado · ya aparece en el Pase de la App turista');
+      },
+      misCupones: s.mine.map(c => ({ t: c.t, big: c.big, small: c.small, meta: 'Publicado hoy · 0 canjes de ' + (c.cupo || '—'), estado: 'Publicado' })).concat(SEED_CUP),
+      code: s.code, onCode: e => this.setState({ code: e.target.value, result: null }), onCodeKey: e => { if (e.key === 'Enter') this.validar(); }, validar: () => this.validar(),
+      hasResult: !!s.result, result: s.result || { t: '', bg: '#fff', fg: INK },
+      canjes: s.canjes.map(c => ({ code: c.code, t: c.t, prest: c.prest, pend: c.estado === 'Pendiente', done: c.estado === 'Canjeado', go: () => this.validar(c.code) })), noCanjes: s.canjes.length === 0,
+      reservas: allRes.map(r => ({ n: r.n, fecha: r.fecha, pers: String(r.pers), nombre: r.nombre, origen: r.origen, estado: r.estado, isNew: !!r.isNew, bg: stc[r.estado][0], fg: stc[r.estado][1], pend: r.estado === 'Pendiente', ok: () => this.setRes(r, 'Confirmada'), no: () => this.setRes(r, 'Rechazada') })),
+      resenas: RESENAS.map(r => ({ nombre: r.nombre, meta: r.meta, stars: r.stars, txt: r.txt, hasReply: !!s.replies[r.id], noReply: !s.replies[r.id], reply: s.replies[r.id] || '', draft: s.drafts[r.id] || '', onDraft: e => { const v = e.target.value; this.setState(st => ({ drafts: Object.assign({}, st.drafts, { [r.id]: v }) })); }, send: () => { const v = (s.drafts[r.id] || '').trim(); if (!v) return; this.setState(st => ({ replies: Object.assign({}, st.replies, { [r.id]: v }) })); this.toast('Respuesta publicada'); } })),
+      rntRows: [{ k: 'Número de registro', v: '48211' }, { k: 'Categoría', v: 'Guía y operador de experiencias' }, { k: 'Estado', v: 'Activo' }, { k: 'Vigencia', v: 'Hasta el 30 mar 2027' }, { k: 'Última verificación automática', v: 'Hoy, 6:00' }],
+      rntRules: [{ i: 'visibility_off', t: 'La ficha se oculta del catálogo y el Guía deja de recomendarte.' }, { i: 'confirmation_number', t: 'Los cupones se pausan y no se pueden canjear.' }, { i: 'notifications', t: 'Te avisamos por correo y WhatsApp 30, 15 y 3 días antes del vencimiento.' }],
+      renovar: () => this.toast('Te llevamos al trámite oficial de renovación del RNT'),
+      hasToast: !!s.toast, toast: s.toast || ''
+    };
+  }
+}
+</script>
+</body>
+</html>

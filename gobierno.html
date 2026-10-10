@@ -302,7 +302,7 @@ class Component extends DCLogic {
     const key = c.p.id + ':' + this.state.selLang;
     this.setState(s => ({ gen: Object.assign({}, s.gen, { [key]: 'gen' }) }));
     try {
-      const r = await fetch('api/tts', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text: txt, lang: this.state.selLang, id: c.p.id }) });
+      const r = await fetch('/api/tts', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text: txt, lang: this.state.selLang, id: c.p.id }) });
       if (r.ok && (r.headers.get('content-type') || '').indexOf('audio') >= 0) { this.blobUrl = URL.createObjectURL(await r.blob()); this.setState(s => ({ gen: Object.assign({}, s.gen, { [key]: 'ok' }) })); this.toast('Audio generado con ElevenLabs'); this.play(); return; }
     } catch (e) {}
     this.setState(s => ({ gen: Object.assign({}, s.gen, { [key]: 'nokey' }) }));

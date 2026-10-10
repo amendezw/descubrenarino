@@ -846,7 +846,7 @@ class Component extends DCLogic {
     const tryUrl = url => new Promise(res => { const el = new Audio(); let done = false; const fin = v => { if (!done) { done = true; res(v); } }; el.preload = 'auto'; el.oncanplay = () => fin(el); el.onerror = () => fin(null); setTimeout(() => fin(null), 2500); el.src = url; });
     let el = await tryUrl('audio/' + P.id + (lang === 'en' && P.en ? '-en' : '') + '.mp3'), src = 'Narración de estudio';
     if (!el && tok === this.engTok) {
-      try { const r = await fetch('api/tts', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text: this.ptxt(P), lang, id: P.id }) }); if (r.ok && (r.headers.get('content-type') || '').indexOf('audio') >= 0) { el = await tryUrl(URL.createObjectURL(await r.blob())); src = 'Narración generada con IA'; } } catch (e) {}
+      try { const r = await fetch('/api/tts', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text: this.ptxt(P), lang, id: P.id }) }); if (r.ok && (r.headers.get('content-type') || '').indexOf('audio') >= 0) { el = await tryUrl(URL.createObjectURL(await r.blob())); src = 'Narración generada con IA'; } } catch (e) {}
     }
     if (tok !== this.engTok) return;
     if (el) {
@@ -942,7 +942,7 @@ class Component extends DCLogic {
   }
   async aiReply(hist) {
     const lang = this.state.lang;
-    try { const r = await fetch('api/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ messages: hist, lang }) }); if (r.ok && (r.headers.get('content-type') || '').indexOf('json') >= 0) { const j = await r.json(); if (j && j.text) return Object.assign({}, j, { src: 'api' }); } } catch (e) {}
+    try { const r = await fetch('/api/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ messages: hist, lang }) }); const isJson = (r.headers.get('content-type') || '').indexOf('json') >= 0; const j = isJson ? await r.json().catch(() => null) : null; if (r.ok && j && j.text) return Object.assign({}, j, { src: 'api' }); if (this.state.aiMode === 'api') { const msg = (j && j.error) || ('Error ' + r.status); console.warn('[Guía Nariño] /api/chat', r.status, j); this.toast('El asistente no respondió: ' + msg + '. Respuesta de demostración.'); } } catch (e) { if (this.state.aiMode === 'api') { console.warn('[Guía Nariño] /api/chat', e); this.toast('Sin conexión con el asistente. Respuesta de demostración.'); } }
     if (window.claude && window.claude.complete) { try { const raw = await window.claude.complete({ system: buildSystem(lang), messages: hist, max_tokens: 800 }); const j = parseAI(raw); if (j) return Object.assign({}, j, { src: 'claude' }); } catch (e) {} }
     await new Promise(r => setTimeout(r, 900));
     return null;
@@ -959,7 +959,7 @@ class Component extends DCLogic {
     window.addEventListener('storage', this.onStorage);
     this.onMsg = e => { const d = e.data; if (d && d.dn === 'audio' && AUDIO[d.rec]) this.startAudio(d.rec, 0, true); };
     window.addEventListener('message', this.onMsg);
-    fetch('api/chat').then(r => r.ok && (r.headers.get('content-type') || '').indexOf('json') >= 0 ? r.json() : null).then(j => { if (j && j.ok) this.setState({ aiMode: 'api', aiModel: j.model || '' }); else this.setState({ aiMode: window.claude && window.claude.complete ? 'claude' : 'demo' }); }).catch(() => this.setState({ aiMode: window.claude && window.claude.complete ? 'claude' : 'demo' }));
+    fetch('/api/chat').then(r => r.ok && (r.headers.get('content-type') || '').indexOf('json') >= 0 ? r.json() : null).then(j => { if (j && j.ok) this.setState({ aiMode: 'api', aiModel: j.model || '' }); else this.setState({ aiMode: window.claude && window.claude.complete ? 'claude' : 'demo' }); }).catch(() => this.setState({ aiMode: window.claude && window.claude.complete ? 'claude' : 'demo' }));
 
     this.onResize = () => this.setState({ w: window.innerWidth, h: window.innerHeight });
     window.addEventListener('resize', this.onResize);

@@ -20,6 +20,7 @@
 3. Deployments › los tres puntos del último deploy › **Redeploy**. Las variables solo se aplican en un deploy nuevo.
 
 ## 3. Comprobar
+- **Diagnóstico directo:** abre `https://TU-DOMINIO/api/chat?test=1`. Hace una llamada real mínima a Claude y muestra si la clave, el modelo, el saldo y el origen están bien.
 - Abre `https://TU-DOMINIO/api/chat`. Debe responder `{"ok":true,"model":"claude-haiku-4-5"}`.
 - En la portada, la barra superior debe decir que el chat está activo.
 - Prueba en la app:

@@ -161,8 +161,8 @@ const it = (t, d, ph) => ({ t, d, ph, bg: PH[ph][0], fg: PH[ph][1] });
 class Component extends DCLogic {
   state = { chat: 'detect', model: '', tts: 'detect', reset: false };
   componentDidMount() {
-    fetch('api/chat').then(r => r.ok && (r.headers.get('content-type') || '').indexOf('json') >= 0 ? r.json() : null).then(j => this.setState({ chat: j && j.ok ? 'api' : (window.claude && window.claude.complete ? 'claude' : 'demo'), model: j && j.model || '' })).catch(() => this.setState({ chat: window.claude && window.claude.complete ? 'claude' : 'demo' }));
-    fetch('api/tts').then(r => r.ok && (r.headers.get('content-type') || '').indexOf('json') >= 0 ? r.json() : null).then(j => this.setState({ tts: j && j.ok ? 'api' : 'browser' })).catch(() => this.setState({ tts: 'browser' }));
+    fetch('/api/chat').then(r => r.ok && (r.headers.get('content-type') || '').indexOf('json') >= 0 ? r.json() : null).then(j => this.setState({ chat: j && j.ok ? 'api' : (window.claude && window.claude.complete ? 'claude' : 'demo'), model: j && j.model || '' })).catch(() => this.setState({ chat: window.claude && window.claude.complete ? 'claude' : 'demo' }));
+    fetch('/api/tts').then(r => r.ok && (r.headers.get('content-type') || '').indexOf('json') >= 0 ? r.json() : null).then(j => this.setState({ tts: j && j.ok ? 'api' : 'browser' })).catch(() => this.setState({ tts: 'browser' }));
   }
   renderVals() {
     const s = this.state;

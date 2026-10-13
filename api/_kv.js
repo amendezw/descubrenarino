@@ -33,5 +33,22 @@ async function kvZrangeRev(key, start, stop) {
 }
 function kvPfadd(key, value) { return kv(['PFADD', key, value]); }
 async function kvPfcount(key) { const v = await kv(['PFCOUNT', key]); return Number(v) || 0; }
+function kvZincrby(key, increment, member) { return kv(['ZINCRBY', key, String(increment), member]); }
+async function kvZrangeRevWithScores(key, start, stop) {
+  const v = await kv(['ZRANGE', key, String(start), String(stop), 'REV', 'WITHSCORES']);
+  const out = [];
+  if (Array.isArray(v)) for (let i = 0; i < v.length; i += 2) out.push({ member: v[i], score: Number(v[i + 1]) || 0 });
+  return out;
+}
+function kvHset(key, field, value) { return kv(['HSET', key, field, value]); }
+async function kvHgetAll(key) {
+  const v = await kv(['HGETALL', key]);
+  const out = {};
+  if (Array.isArray(v)) for (let i = 0; i < v.length; i += 2) out[v[i]] = v[i + 1];
+  return out;
+}
 
-module.exports = { kvReady, kvGetJSON, kvSetJSON, kvGetStr, kvSetStr, kvIncr, kvZadd, kvZrangeRev, kvPfadd, kvPfcount };
+module.exports = {
+  kvReady, kvGetJSON, kvSetJSON, kvGetStr, kvSetStr, kvIncr, kvZadd, kvZrangeRev, kvPfadd, kvPfcount,
+  kvZincrby, kvZrangeRevWithScores, kvHset, kvHgetAll
+};

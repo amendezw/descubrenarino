@@ -405,9 +405,23 @@ class Component extends DCLogic {
     if (!vid) { vid = (crypto.randomUUID ? crypto.randomUUID() : (Date.now() + '-' + Math.random().toString(36).slice(2))); localStorage.setItem('dn_vid', vid); }
   } catch (e) {}
   beacon({ event: 'pageview', path: location.pathname, vid: vid });
+  function slug(s) {
+    return String(s || '').trim().toLowerCase()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '').slice(0, 50);
+  }
+  function zonaDe(el) {
+    var manual = el.getAttribute && el.getAttribute('data-zona');
+    return slug(manual || el.textContent || el.getAttribute('aria-label') || el.getAttribute('title') || '');
+  }
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a[href*="meetings.hubspot.com"]');
     if (a) beacon({ event: 'agendar_click', path: location.pathname, vid: vid });
+    var clic = e.target.closest && e.target.closest('a,button,[role="button"],[data-zona]');
+    if (clic) {
+      var zona = zonaDe(clic);
+      if (zona) beacon({ event: 'click_zona', path: location.pathname, vid: vid, zona: zona });
+    }
   }, true);
 })();
 </script>

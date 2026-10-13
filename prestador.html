@@ -28,9 +28,43 @@
 <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
 <a href="https://wigilabs.com" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:rgba(255,255,255,.72);font-size:12px;white-space:nowrap" style-hover="color:#fff"><span>Una propuesta de</span><img src="img/brand/wigilabs-wordmark-white.png" alt="Wigilabs" style="height:12px;width:auto;display:block"></img></a>
 <a href="https://meetings.hubspot.com/andresm/reuniones-andres-mendez" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:18px;background:oklch(0.56 0.19 35);color:#fff;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap" style-hover="color:#fff;background:oklch(0.5 0.19 35)"><span style="font:400 18px/1 'Material Symbols Rounded'">event</span>Agendar reunión</a>
+<button onClick="{{ openPropuesta }}" style="display:flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:18px;background:rgba(255,255,255,.1);color:#fff;border:0;cursor:pointer;font-size:13px;font-weight:700;white-space:nowrap" style-hover="background:rgba(255,255,255,.18)"><span style="font:400 18px/1 'Material Symbols Rounded'">description</span>Descargar propuesta</button>
 </div>
 </div>
 </sc-if></div>
+
+<sc-if value="{{ propuestaOpen }}">
+<div style="position:fixed;inset:0;z-index:50;background:rgba(11,15,19,.6);display:flex;align-items:center;justify-content:center;padding:20px">
+<button onClick="{{ closePropuesta }}" aria-label="Cerrar" style="position:absolute;inset:0;border:0;background:transparent;cursor:pointer"></button>
+<div style="position:relative;background:#fff;border-radius:24px;max-width:460px;width:100%;max-height:90vh;overflow-y:auto;padding:28px;color:#141A21">
+<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+<div style="font:400 30px/1.05 'Instrument Serif',serif">Descargar propuesta</div>
+<button onClick="{{ closePropuesta }}" aria-label="Cerrar" style="border:0;cursor:pointer;width:40px;height:40px;border-radius:50%;background:#EEF0F2;display:flex;align-items:center;justify-content:center;flex:none"><span style="font:400 20px/1 'Material Symbols Rounded'">close</span></button>
+</div>
+<sc-if value="{{ propuestaDone }}">
+<div style="margin-top:18px;display:flex;flex-direction:column;gap:10px;align-items:flex-start">
+<span style="font:400 40px/1 'Material Symbols Rounded';color:oklch(0.56 0.19 35)">mark_email_read</span>
+<div style="font-size:15px;line-height:1.55">Listo. Te enviamos el enlace de descarga a <strong>{{ propuestaForm.email }}</strong>. El enlace no vence, puedes guardarlo.</div>
+<button onClick="{{ closePropuesta }}" style="margin-top:4px;border:0;cursor:pointer;height:46px;padding:0 20px;border-radius:23px;background:#141A21;color:#fff;font-size:14px;font-weight:700">Listo</button>
+</div>
+</sc-if>
+<sc-if value="{{ propuestaForm2 }}">
+<div style="margin-top:6px;font-size:13.5px;line-height:1.5;color:#4B5560">Déjanos tus datos y te enviamos por correo el enlace para descargar la propuesta completa.</div>
+<div style="display:flex;flex-direction:column;gap:12px;margin-top:16px">
+<label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600">Nombre y apellido<input value="{{ propuestaForm.nombre }}" onChange="{{ onPropNombre }}" maxlength="120" style="height:42px;border-radius:10px;border:1px solid #D3D9DE;padding:0 12px;font-size:14px;outline:0"></input></label>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600">Correo electrónico<input value="{{ propuestaForm.email }}" onChange="{{ onPropEmail }}" type="email" maxlength="200" style="height:42px;border-radius:10px;border:1px solid #D3D9DE;padding:0 12px;font-size:14px;outline:0"></input></label>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600">Entidad donde trabaja<input value="{{ propuestaForm.entidad }}" onChange="{{ onPropEntidad }}" maxlength="160" style="height:42px;border-radius:10px;border:1px solid #D3D9DE;padding:0 12px;font-size:14px;outline:0"></input></label>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600">Rol dentro de la entidad<input value="{{ propuestaForm.rol }}" onChange="{{ onPropRol }}" maxlength="120" style="height:42px;border-radius:10px;border:1px solid #D3D9DE;padding:0 12px;font-size:14px;outline:0"></input></label>
+<input value="{{ propuestaForm.web }}" onChange="{{ onPropWeb }}" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0"></input>
+</div>
+<sc-if value="{{ hasPropError }}"><div style="margin-top:10px;font-size:12.5px;color:oklch(0.56 0.19 35)">{{ propuestaError }}</div></sc-if>
+<div style="margin-top:14px;font-size:11.5px;line-height:1.5;color:#6B747D">Al continuar, aceptas que usemos estos datos para enviarte la propuesta y hacer seguimiento sobre el proyecto, conforme a la Ley 1581 de 2012.</div>
+<button onClick="{{ submitPropuesta }}" style="margin-top:16px;width:100%;border:0;cursor:pointer;height:48px;border-radius:24px;background:oklch(0.56 0.19 35);color:#fff;font-size:14.5px;font-weight:700;opacity:{{ propBtnOp }}">{{ propuestaBtnLabel }}</button>
+</sc-if>
+</div>
+</div>
+</sc-if>
+
 <div style="flex:1;display:grid;grid-template-columns:{{ cols }};min-height:0">
 
 <aside style="background:#fff;border-right:1px solid #E2E6E9;padding:20px 14px;display:flex;flex-direction:column;gap:4px">
@@ -255,7 +289,15 @@ const SEED_RES = [
 const SEED_CUP = [{ id: 'p0', t: '15% en el paseo a La Corota', big: '15%', small: 'DCTO', meta: 'Vigente hasta 30 nov · 41 canjes de 100', estado: 'Publicado' }];
 
 class Component extends DCLogic {
-  state = { sec: 'resumen', w: typeof window !== 'undefined' ? window.innerWidth : 1400, f: { nombre: 'Paseo en lancha a la Isla La Corota', desc: 'Recorrido en lancha por la Laguna de La Cocha hasta el santuario de flora Isla La Corota, con un sendero corto entre bosque andino.', precio: '30000', hor: '8:00 – 17:00 diario', wa: '+57 312 000 0000', acc: true }, fichaSent: false, tipo: 'pct', nc: { t: '', valor: '10', cupo: '50' }, mine: [], code: '', result: null, canjes: [], reservas: [], seedRes: SEED_RES, replies: {}, drafts: {}, toast: null };
+  state = { sec: 'resumen', w: typeof window !== 'undefined' ? window.innerWidth : 1400, f: { nombre: 'Paseo en lancha a la Isla La Corota', desc: 'Recorrido en lancha por la Laguna de La Cocha hasta el santuario de flora Isla La Corota, con un sendero corto entre bosque andino.', precio: '30000', hor: '8:00 – 17:00 diario', wa: '+57 312 000 0000', acc: true }, fichaSent: false, tipo: 'pct', nc: { t: '', valor: '10', cupo: '50' }, mine: [], code: '', result: null, canjes: [], reservas: [], seedRes: SEED_RES, replies: {}, drafts: {}, toast: null, propuestaOpen: false, propuestaForm: { nombre: '', email: '', entidad: '', rol: '', web: '' }, propuestaSending: false, propuestaError: '', propuestaDone: false };
+  submitPropuesta() {
+    if (this.state.propuestaSending) return;
+    this.setState({ propuestaSending: true, propuestaError: '' });
+    fetch('/api/propuesta-lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(this.state.propuestaForm) })
+      .then(r => r.json().then(j => ({ ok: r.ok, j })))
+      .then(({ ok, j }) => this.setState({ propuestaSending: false, propuestaDone: ok, propuestaError: ok ? '' : ((j && j.error) || 'No se pudo enviar, intenta de nuevo') }))
+      .catch(() => this.setState({ propuestaSending: false, propuestaError: 'No se pudo conectar, intenta de nuevo' }));
+  }
   componentDidMount() {
     this.sync();
     this.onS = e => { if (e.key && e.key.indexOf('dn_') === 0) this.sync(); };
@@ -302,6 +344,17 @@ class Component extends DCLogic {
     ];
     return {
       cols: s.w < 900 ? '1fr' : '248px minmax(0,1fr)', desktop: s.w >= 520,
+      propuestaOpen: s.propuestaOpen, propuestaDone: s.propuestaDone, propuestaForm2: !s.propuestaDone, propuestaForm: s.propuestaForm,
+      hasPropError: !!s.propuestaError, propuestaError: s.propuestaError, propBtnOp: s.propuestaSending ? 0.6 : 1,
+      propuestaBtnLabel: s.propuestaSending ? 'Enviando…' : 'Enviar',
+      openPropuesta: () => this.setState({ propuestaOpen: true, propuestaDone: false, propuestaError: '' }),
+      closePropuesta: () => this.setState({ propuestaOpen: false }),
+      onPropNombre: e => this.setState(st => ({ propuestaForm: Object.assign({}, st.propuestaForm, { nombre: e.target.value }) })),
+      onPropEmail: e => this.setState(st => ({ propuestaForm: Object.assign({}, st.propuestaForm, { email: e.target.value }) })),
+      onPropEntidad: e => this.setState(st => ({ propuestaForm: Object.assign({}, st.propuestaForm, { entidad: e.target.value }) })),
+      onPropRol: e => this.setState(st => ({ propuestaForm: Object.assign({}, st.propuestaForm, { rol: e.target.value }) })),
+      onPropWeb: e => this.setState(st => ({ propuestaForm: Object.assign({}, st.propuestaForm, { web: e.target.value }) })),
+      submitPropuesta: () => this.submitPropuesta(),
       aiDot: 'oklch(0.75 0.15 155)', aiLabel: 'Sesión: Lancheros El Encano · RNT 48211',
       nav, sec,
       head: { title: cur[1], desc: cur[4], phase: cur[3], phaseBg: PH[cur[3]][0], phaseFg: PH[cur[3]][1], hasApp: ['cupones', 'validar', 'reservas', 'ficha'].indexOf(s.sec) >= 0, appLabel: s.sec === 'reservas' ? 'Solicitar desde la app' : s.sec === 'validar' ? 'Generar código en la app' : 'Ver en la App turista' },
@@ -336,6 +389,27 @@ class Component extends DCLogic {
     };
   }
 }
+</script>
+<script>
+(function () {
+  function beacon(data) {
+    try {
+      var body = JSON.stringify(data);
+      if (navigator.sendBeacon) navigator.sendBeacon('/api/track', new Blob([body], { type: 'application/json' }));
+      else fetch('/api/track', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: body, keepalive: true });
+    } catch (e) {}
+  }
+  var vid = '';
+  try {
+    vid = localStorage.getItem('dn_vid') || '';
+    if (!vid) { vid = (crypto.randomUUID ? crypto.randomUUID() : (Date.now() + '-' + Math.random().toString(36).slice(2))); localStorage.setItem('dn_vid', vid); }
+  } catch (e) {}
+  beacon({ event: 'pageview', path: location.pathname, vid: vid });
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href*="meetings.hubspot.com"]');
+    if (a) beacon({ event: 'agendar_click', path: location.pathname, vid: vid });
+  }, true);
+})();
 </script>
 </body>
 </html>

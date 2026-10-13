@@ -19,5 +19,9 @@
         }
       ]
     }
+  ],
+  "rewrites": [
+    { "source": "/propuesta/:token", "destination": "/api/propuesta-descarga?token=:token" },
+    { "source": "/admin", "destination": "/api/admin" }
   ]
 }

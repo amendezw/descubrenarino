@@ -28,9 +28,42 @@
 <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
 <a href="https://wigilabs.com" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:rgba(255,255,255,.72);font-size:12px;white-space:nowrap" style-hover="color:#fff"><span>Una propuesta de</span><img src="img/brand/wigilabs-wordmark-white.png" alt="Wigilabs" style="height:12px;width:auto;display:block"></img></a>
 <a href="https://meetings.hubspot.com/andresm/reuniones-andres-mendez" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:18px;background:oklch(0.56 0.19 35);color:#fff;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap" style-hover="color:#fff;background:oklch(0.5 0.19 35)"><span style="font:400 18px/1 'Material Symbols Rounded'">event</span>Agendar reunión</a>
+<button onClick="{{ openPropuesta }}" style="display:flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:18px;background:rgba(255,255,255,.1);color:#fff;border:0;cursor:pointer;font-size:13px;font-weight:700;white-space:nowrap" style-hover="background:rgba(255,255,255,.18)"><span style="font:400 18px/1 'Material Symbols Rounded'">description</span>Descargar propuesta</button>
 </div>
 </div>
 </sc-if></div>
+
+<sc-if value="{{ propuestaOpen }}">
+<div style="position:fixed;inset:0;z-index:50;background:rgba(11,15,19,.6);display:flex;align-items:center;justify-content:center;padding:20px">
+<button onClick="{{ closePropuesta }}" aria-label="Cerrar" style="position:absolute;inset:0;border:0;background:transparent;cursor:pointer"></button>
+<div style="position:relative;background:#fff;border-radius:24px;max-width:460px;width:100%;max-height:90vh;overflow-y:auto;padding:28px;color:#141A21">
+<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+<div style="font:400 30px/1.05 'Instrument Serif',serif">Descargar propuesta</div>
+<button onClick="{{ closePropuesta }}" aria-label="Cerrar" style="border:0;cursor:pointer;width:40px;height:40px;border-radius:50%;background:#EEF0F2;display:flex;align-items:center;justify-content:center;flex:none"><span style="font:400 20px/1 'Material Symbols Rounded'">close</span></button>
+</div>
+<sc-if value="{{ propuestaDone }}">
+<div style="margin-top:18px;display:flex;flex-direction:column;gap:10px;align-items:flex-start">
+<span style="font:400 40px/1 'Material Symbols Rounded';color:oklch(0.56 0.19 35)">mark_email_read</span>
+<div style="font-size:15px;line-height:1.55">Listo. Te enviamos el enlace de descarga a <strong>{{ propuestaForm.email }}</strong>. El enlace no vence, puedes guardarlo.</div>
+<button onClick="{{ closePropuesta }}" style="margin-top:4px;border:0;cursor:pointer;height:46px;padding:0 20px;border-radius:23px;background:#141A21;color:#fff;font-size:14px;font-weight:700">Listo</button>
+</div>
+</sc-if>
+<sc-if value="{{ propuestaForm2 }}">
+<div style="margin-top:6px;font-size:13.5px;line-height:1.5;color:#4B5560">Déjanos tus datos y te enviamos por correo el enlace para descargar la propuesta completa.</div>
+<div style="display:flex;flex-direction:column;gap:12px;margin-top:16px">
+<label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600">Nombre y apellido<input value="{{ propuestaForm.nombre }}" onChange="{{ onPropNombre }}" maxlength="120" style="height:42px;border-radius:10px;border:1px solid #D3D9DE;padding:0 12px;font-size:14px;outline:0"></input></label>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600">Correo electrónico<input value="{{ propuestaForm.email }}" onChange="{{ onPropEmail }}" type="email" maxlength="200" style="height:42px;border-radius:10px;border:1px solid #D3D9DE;padding:0 12px;font-size:14px;outline:0"></input></label>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600">Entidad donde trabaja<input value="{{ propuestaForm.entidad }}" onChange="{{ onPropEntidad }}" maxlength="160" style="height:42px;border-radius:10px;border:1px solid #D3D9DE;padding:0 12px;font-size:14px;outline:0"></input></label>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600">Rol dentro de la entidad<input value="{{ propuestaForm.rol }}" onChange="{{ onPropRol }}" maxlength="120" style="height:42px;border-radius:10px;border:1px solid #D3D9DE;padding:0 12px;font-size:14px;outline:0"></input></label>
+<input value="{{ propuestaForm.web }}" onChange="{{ onPropWeb }}" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0"></input>
+</div>
+<sc-if value="{{ hasPropError }}"><div style="margin-top:10px;font-size:12.5px;color:oklch(0.56 0.19 35)">{{ propuestaError }}</div></sc-if>
+<div style="margin-top:14px;font-size:11.5px;line-height:1.5;color:#6B747D">Al continuar, aceptas que usemos estos datos para enviarte la propuesta y hacer seguimiento sobre el proyecto, conforme a la Ley 1581 de 2012.</div>
+<button onClick="{{ submitPropuesta }}" style="margin-top:16px;width:100%;border:0;cursor:pointer;height:48px;border-radius:24px;background:oklch(0.56 0.19 35);color:#fff;font-size:14.5px;font-weight:700;opacity:{{ propBtnOp }}">{{ propuestaBtnLabel }}</button>
+</sc-if>
+</div>
+</div>
+</sc-if>
 
 <section style="background:#1B232B;color:#fff;padding:56px 32px 64px">
 <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:40px;align-items:end">
@@ -159,7 +192,15 @@
 const PH = { MVP: ['#EEF0F2', '#4B5560'], 'Fase 2': ['oklch(0.95 0.05 80)', 'oklch(0.42 0.1 70)'], 'Fase 3': ['oklch(0.94 0.03 250)', 'oklch(0.4 0.08 250)'], Nuevo: ['oklch(0.95 0.04 35)', 'oklch(0.45 0.17 35)'] };
 const it = (t, d, ph) => ({ t, d, ph, bg: PH[ph][0], fg: PH[ph][1] });
 class Component extends DCLogic {
-  state = { chat: 'detect', model: '', tts: 'detect', reset: false };
+  state = { chat: 'detect', model: '', tts: 'detect', reset: false, propuestaOpen: false, propuestaForm: { nombre: '', email: '', entidad: '', rol: '', web: '' }, propuestaSending: false, propuestaError: '', propuestaDone: false };
+  submitPropuesta() {
+    if (this.state.propuestaSending) return;
+    this.setState({ propuestaSending: true, propuestaError: '' });
+    fetch('/api/propuesta-lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(this.state.propuestaForm) })
+      .then(r => r.json().then(j => ({ ok: r.ok, j })))
+      .then(({ ok, j }) => this.setState({ propuestaSending: false, propuestaDone: ok, propuestaError: ok ? '' : ((j && j.error) || 'No se pudo enviar, intenta de nuevo') }))
+      .catch(() => this.setState({ propuestaSending: false, propuestaError: 'No se pudo conectar, intenta de nuevo' }));
+  }
   componentDidMount() {
     fetch('/api/chat').then(r => r.ok && (r.headers.get('content-type') || '').indexOf('json') >= 0 ? r.json() : null).then(j => this.setState({ chat: j && j.ok ? 'api' : (window.claude && window.claude.complete ? 'claude' : 'demo'), model: j && j.model || '' })).catch(() => this.setState({ chat: window.claude && window.claude.complete ? 'claude' : 'demo' }));
     fetch('/api/tts').then(r => r.ok && (r.headers.get('content-type') || '').indexOf('json') >= 0 ? r.json() : null).then(j => this.setState({ tts: j && j.ok ? 'api' : 'browser' })).catch(() => this.setState({ tts: 'browser' }));
@@ -171,6 +212,17 @@ class Component extends DCLogic {
     const good = 'oklch(0.75 0.15 155)', warn = 'oklch(0.8 0.12 80)';
     return {
       desktop: true, aiDot: s.chat === 'api' || s.chat === 'claude' ? good : warn, aiLabel: 'Prototipo navegable · octubre 2026',
+      propuestaOpen: s.propuestaOpen, propuestaDone: s.propuestaDone, propuestaForm2: !s.propuestaDone, propuestaForm: s.propuestaForm,
+      hasPropError: !!s.propuestaError, propuestaError: s.propuestaError, propBtnOp: s.propuestaSending ? 0.6 : 1,
+      propuestaBtnLabel: s.propuestaSending ? 'Enviando…' : 'Enviar',
+      openPropuesta: () => this.setState({ propuestaOpen: true, propuestaDone: false, propuestaError: '' }),
+      closePropuesta: () => this.setState({ propuestaOpen: false }),
+      onPropNombre: e => this.setState(st => ({ propuestaForm: Object.assign({}, st.propuestaForm, { nombre: e.target.value }) })),
+      onPropEmail: e => this.setState(st => ({ propuestaForm: Object.assign({}, st.propuestaForm, { email: e.target.value }) })),
+      onPropEntidad: e => this.setState(st => ({ propuestaForm: Object.assign({}, st.propuestaForm, { entidad: e.target.value }) })),
+      onPropRol: e => this.setState(st => ({ propuestaForm: Object.assign({}, st.propuestaForm, { rol: e.target.value }) })),
+      onPropWeb: e => this.setState(st => ({ propuestaForm: Object.assign({}, st.propuestaForm, { web: e.target.value }) })),
+      submitPropuesta: () => this.submitPropuesta(),
       cifras: [{ v: '+750.000', k: 'visitantes al año en el Santuario de Las Lajas' }, { v: '64', k: 'municipios en el departamento; hoy el flujo llega a unos pocos' }, { v: '56', k: 'funcionalidades mapeadas en 9 módulos; 8 concentran el valor' }, { v: '4 meses', k: 'para tener el MVP en producción' }],
       sostener: [{ f: 'Fase 1', k: 'Inversión pública', v: 'La plataforma funciona como infraestructura de promoción del destino, como una campaña o un punto de información.' }, { f: 'Fase 2', k: 'Pase y cupones', v: 'El pase digital y los acuerdos con prestadores generan ingreso propio y datos de gasto inducido.' }, { f: 'Fase 3', k: 'Comisión y patrocinio', v: 'La comisión sobre reservas y los patrocinios sectoriales cubren la operación sin depender del presupuesto anual.' }],
       engines: [{ k: 'Asistente Guía Nariño', v: chatV, dot: s.chat === 'api' || s.chat === 'claude' ? good : warn }, { k: 'Voces de las audioguías', v: ttsV, dot: s.tts === 'api' ? good : warn }],
@@ -210,6 +262,27 @@ class Component extends DCLogic {
     };
   }
 }
+</script>
+<script>
+(function () {
+  function beacon(data) {
+    try {
+      var body = JSON.stringify(data);
+      if (navigator.sendBeacon) navigator.sendBeacon('/api/track', new Blob([body], { type: 'application/json' }));
+      else fetch('/api/track', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: body, keepalive: true });
+    } catch (e) {}
+  }
+  var vid = '';
+  try {
+    vid = localStorage.getItem('dn_vid') || '';
+    if (!vid) { vid = (crypto.randomUUID ? crypto.randomUUID() : (Date.now() + '-' + Math.random().toString(36).slice(2))); localStorage.setItem('dn_vid', vid); }
+  } catch (e) {}
+  beacon({ event: 'pageview', path: location.pathname, vid: vid });
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href*="meetings.hubspot.com"]');
+    if (a) beacon({ event: 'agendar_click', path: location.pathname, vid: vid });
+  }, true);
+})();
 </script>
 </body>
 </html>

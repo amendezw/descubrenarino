@@ -42,6 +42,17 @@ module.exports = async (req, res) => {
   if (ALLOWED.length && origin && !sameHost && !ALLOWED.map(norm).includes(norm(origin))) return res.status(403).json({ error: 'Origen no permitido: ' + origin + '. Agrégalo a ALLOWED_ORIGINS.' });
   if (req.method === 'GET') {
     const q = String(req.url || '');
+    if (q.indexOf('test=2') >= 0 && key) {
+      // Diagnóstico completo: /api/chat?test=2&q=texto  → mismo camino que el chat (prompt + catálogo + validación)
+      const m = q.match(/[?&]q=([^&]*)/); const pregunta = m ? decodeURIComponent(m[1].replace(/\+/g, ' ')) : '3 días desde Ipiales, me gustan las lagunas';
+      const t0 = Date.now();
+      try {
+        const t = await fetch('https://api.anthropic.com/v1/messages', { method: 'POST', headers: { 'content-type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01' }, body: JSON.stringify({ model: MODEL, max_tokens: 700, temperature: 0.3, system: buildSystem('es'), messages: [{ role: 'user', content: pregunta }] }) });
+        const data = await t.json().catch(() => null);
+        const raw = data && data.content ? data.content.filter(x => x.type === 'text').map(x => x.text).join('') : '';
+        return res.status(200).json({ pregunta, estado_anthropic: t.status, segundos: (Date.now() - t0) / 1000, respuesta_validada: parseReply(raw, 'es'), respuesta_cruda: raw.slice(0, 1500), stop_reason: data && data.stop_reason, uso: data && data.usage, error: t.ok ? null : data });
+      } catch (e) { return res.status(200).json({ pregunta, error: String(e && e.message || e) }); }
+    }
     if (q.indexOf('test=1') < 0) return res.status(200).json({ ok: !!key, model: key ? MODEL : null });
     // Diagnóstico: /api/chat?test=1 hace una llamada real mínima a Claude y devuelve el resultado
     const diag = { clave_configurada: !!key, clave_inicio: key ? key.slice(0, 10) + '…' : null, modelo: MODEL, origenes_permitidos: ALLOWED, origen_de_esta_peticion: origin || '(ninguno)' };
@@ -70,7 +81,7 @@ module.exports = async (req, res) => {
     const r = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: { 'content-type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01' },
-      body: JSON.stringify({ model: MODEL, max_tokens: 500, temperature: 0.3, system: buildSystem(lang), messages })
+      body: JSON.stringify({ model: MODEL, max_tokens: 700, temperature: 0.3, system: buildSystem(lang), messages })
     });
     if (!r.ok) { const detail = (await r.text()).slice(0, 400); console.error('Anthropic', r.status, detail); return res.status(502).json({ error: 'Claude respondió ' + r.status, detail }); }
     const data = await r.json();

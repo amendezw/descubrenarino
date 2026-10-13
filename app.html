@@ -941,15 +941,15 @@ class Component extends DCLogic {
     this.setState({ qrCode: '' }); this.startAudio(hit[0], hit[1], true);
   }
   async aiReply(hist) {
-    const lang = this.state.lang;
-    try { const r = await fetch('/api/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ messages: hist, lang }) }); const isJson = (r.headers.get('content-type') || '').indexOf('json') >= 0; const j = isJson ? await r.json().catch(() => null) : null; if (r.ok && j && j.text) return Object.assign({}, j, { src: 'api' }); if (this.state.aiMode === 'api') { const msg = (j && j.error) || ('Error ' + r.status); console.warn('[Guía Nariño] /api/chat', r.status, j); this.toast('El asistente no respondió: ' + msg + '. Respuesta de demostración.'); } } catch (e) { if (this.state.aiMode === 'api') { console.warn('[Guía Nariño] /api/chat', e); this.toast('Sin conexión con el asistente. Respuesta de demostración.'); } }
+    const lang = this.state.lang; this._aiErr = '';
+    try { const r = await fetch('/api/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ messages: hist, lang }) }); const isJson = (r.headers.get('content-type') || '').indexOf('json') >= 0; const j = isJson ? await r.json().catch(() => null) : null; if (r.ok && j && j.text) return Object.assign({}, j, { src: 'api' }); this._aiErr = 'HTTP ' + r.status + ' · ' + ((j && (j.error + (j.detail ? ' · ' + String(j.detail).slice(0, 160) : ''))) || (isJson ? 'respuesta sin texto' : 'la ruta /api/chat no devolvió JSON')); console.warn('[Guía Nariño] /api/chat', r.status, j); } catch (e) { this._aiErr = 'Sin conexión · ' + String(e && e.message || e); console.warn('[Guía Nariño] /api/chat', e); }
     if (window.claude && window.claude.complete) { try { const raw = await window.claude.complete({ system: buildSystem(lang), messages: hist, max_tokens: 800 }); const j = parseAI(raw); if (j) return Object.assign({}, j, { src: 'claude' }); } catch (e) {} }
     await new Promise(r => setTimeout(r, 900));
     return null;
   }
   applyReply(j, text) {
     if (j.offtopic || !String(j.text || '').trim()) { const en = this.state.lang === 'en'; j = Object.assign({}, j, { text: en ? 'I can only help with your trip to Nariño: places, routes, events, getting there and plans. What would you like to discover?' : 'Solo puedo ayudarte con tu viaje por Nariño: lugares, rutas, eventos, cómo llegar y planes. ¿Qué te gustaría conocer?', cards: [], map: false, cta: null, chips: (j.chips && j.chips.length) ? j.chips : T[this.state.lang].chips, miss: false }); }
-    const msg = { from: 'bot', text: String(j.text || ''), cards: (j.cards || []).filter(id => LUG[id]).slice(0, 3), map: !!j.map, cta: j.cta && j.cta.act ? j.cta : null, chips: (j.chips || []).slice(0, 3), src: j.src };
+    const msg = { err: j.err || '', from: 'bot', text: String(j.text || ''), cards: (j.cards || []).filter(id => LUG[id]).slice(0, 3), map: !!j.map, cta: j.cta && j.cta.act ? j.cta : null, chips: (j.chips || []).slice(0, 3), src: j.src };
     if (j.miss) pushLS('dn_consultas', { q: text, mun: 'Sin municipio', n: 1, nueva: true, t: Date.now() });
     this.setState(s => ({ typing: false, messages: s.messages.concat([msg]), aiMode: j.src === 'demo' && s.aiMode !== 'detect' ? s.aiMode : (j.src === 'demo' ? 'demo' : j.src), consultasExtra: j.miss ? [{ q: text, mun: 'Sin municipio', n: 1, nueva: true }].concat(s.consultasExtra) : s.consultasExtra }));
   }
@@ -1010,7 +1010,7 @@ class Component extends DCLogic {
     this.aiReply(hist).then(ai => {
       if (ai) { this.applyReply(ai, text); return; }
       const r = this.reply(text);
-      this.applyReply(Object.assign({}, r.msg, { miss: r.miss, src: 'demo' }), text);
+      this.applyReply(Object.assign({}, r.msg, { miss: r.miss, src: 'demo', err: this._aiErr || '' }), text);
     });
   }
   reply(text) {
@@ -1067,7 +1067,7 @@ class Component extends DCLogic {
       const isLast = i === s.messages.length - 1;
       const cards = (m.cards || []).map(id => this.lv(id));
       return {
-        isUser: m.from === 'user', isBot: m.from === 'bot', text: m.text, hasSrc: m.src === 'api' || m.src === 'claude', srcTxt: 'Generado con IA · solo con fichas del catálogo verificado',
+        isUser: m.from === 'user', isBot: m.from === 'bot', text: m.text, hasSrc: m.src === 'api' || m.src === 'claude' || !!m.err, srcTxt: m.err ? 'Respuesta de demostración · el asistente falló: ' + m.err : 'Generado con IA · solo con fichas del catálogo verificado',
         hasCards: cards.length > 0, cards, fuentes: cards.length + (cards.length === 1 ? ' ficha' : ' fichas') + ' del catálogo · actualizadas sep 2026',
         hasMap: !!m.map, hasCta: !!m.cta, ctaLabel: m.cta && m.cta.label, ctaGo: () => m.cta && this.ctaAction(m.cta.act),
         hasChips: isLast && !s.typing && !!(m.chips && m.chips.length),

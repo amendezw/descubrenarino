@@ -53,7 +53,7 @@ function buildSystem(lang) {
     '4. Prioriza municipios poco visitados y temporadas distintas de enero cuando encajen.',
     '5. Ante una emergencia indica la línea 123.',
     '',
-    'FORMATO: responde ÚNICAMENTE con un objeto JSON válido, sin texto adicional ni bloques de código:',
+    'FORMATO: responde ÚNICAMENTE con un objeto JSON válido en una sola línea, sin markdown, sin emojis, sin texto antes ni después y sin bloques de código:',
     '{"text": string, "cards": [ids del catálogo, máximo 3], "map": boolean, "cta": {"label": string, "act": string} | null, "chips": [máximo 3 sugerencias cortas sobre turismo en Nariño], "miss": boolean, "offtopic": boolean}',
     'Valores válidos de "act": ' + Array.from(ACTS).join(', ') + '.',
     '',
@@ -64,6 +64,7 @@ function buildSystem(lang) {
 // Validación de salida: cualquier respuesta que no sea JSON válido o que se marque fuera de alcance
 // se sustituye por el mensaje fijo. Nunca se reenvía texto libre del modelo.
 function parseReply(raw, lang) {
+  raw = String(raw || '').replace(/```(?:json)?/gi, '');
   const a = raw.indexOf('{'), b = raw.lastIndexOf('}');
   let j = null;
   if (a >= 0 && b > a) { try { j = JSON.parse(raw.slice(a, b + 1)); } catch (e) { j = null; } }
